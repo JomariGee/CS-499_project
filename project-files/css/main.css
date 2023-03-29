@@ -167,6 +167,150 @@
         color: black;
     }
 
+	.Rectangle44 {
+		position: absolute;
+		width: 1012px;
+		height: 427px;
+		left: 398px;
+		top: 498px;
+
+		background: #D9D9D9;
+		border-radius: 6px;
+	}
+	
+	.Rectangle45 {
+		position: absolute;
+		width: 950px;
+		height: 78px;
+		left: 437px;
+		top: 150px; 
+
+		background: #D9D9D9;
+		border-radius: 9px;
+	}
+	
+	.Rectangle45 p {
+		font-size: 30px;
+		line-height: 100%;
+        text-align: center;
+        color: black;
+		
+	}
+	
+	.Rectangle46{
+		position: absolute;
+		width: 448px;
+		height: 78px;
+		left: 478px;
+		top: 300px;
+
+		background: #D9D9D9;
+		border-radius: 9px;
+	}
+	
+	.Rectangle46 p {
+		font-size: 30px;
+		line-height: 100%;
+        text-align: center;
+        color: black;
+		
+	}
+	
+	.Rectangle47 {
+		position: absolute;
+		width: 327px;
+		height: 78px;
+		left: 986px;
+		top: 300px;
+
+		background: #D9D9D9;
+		border-radius: 9px;
+	}
+	
+	.Rectangle47 p {
+		font-size: 30px;
+		line-height: 100%;
+        text-align: center;
+        color: black;
+		
+	}
+	
+	.Rectangle48 {
+		position: absolute;
+		width: 209px;
+		height: 78px;
+		left: 434px;
+		top: 450px; 
+
+		background: #D9D9D9;
+		border-radius: 9px;
+	}
+	
+	.Rectangle48 p {
+		font-size: 30px;
+		line-height: 100%;
+        text-align: center;
+        color: black;
+		
+	}
+	
+	.Rectangle49 {
+		position: absolute;
+		width: 299px;
+		height: 78px;
+		left: 758px;
+		top: 450px;
+
+		background: #D9D9D9;
+		border-radius: 9px;
+	}
+	
+	.Rectangle49 p {
+		font-size: 30px;
+		line-height: 100%;
+        text-align: center;
+        color: black;
+		
+	}
+	
+	.Rectangle50 {
+		position: absolute;
+		width: 238px;
+		height: 78px;
+		left: 1144px;
+		top: 450px;
+
+		background: #D9D9D9;
+		border-radius: 9px;
+	}
+	
+	
+	.Rectangle50 p {
+		font-size: 30px;
+		line-height: 100%;
+        text-align: center;
+        color: black;
+		
+	}
+	
+	.Rectangle51 {
+		position: absolute;
+		width: 751px;
+		height: 300px;
+		left: 542px;
+		top: 600px; 
+
+		background: #D9D9D9;
+		border-radius: 9px;
+	}
+	
+	.Rectangle51 p {
+		font-size: 30px;
+		line-height: 100%;
+        text-align: center;
+        color: black;
+		
+	}
     /* User Data */
     .data-row {
     display: inline-flex;
