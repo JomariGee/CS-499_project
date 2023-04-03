@@ -3,11 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Goals</title>
+        <title>Assessments</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="main.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     </head>
     <style>
         body {
@@ -259,7 +258,7 @@
                 <div></div>
                 <div></div>
             </div>
-            <h1 class="title">Goal</h1>
+            <h1 class="title">Assessments</h1>
         </div>
 
         <!-- Navigation bar -->
@@ -271,44 +270,33 @@
                 <li><a href="assessments.html">Assessment History</a></li>
             </ul>
         </div>
-
+        
         <!-- Importation & New Goal creation -->
         <div class="main">
             <div class="rectangle">
-                <i class="fa fa-file-import"></i> 
-                <h2>Import</h2>
-            </div>
-            <div class="rectangle">
                 <i class="fa fa-file-circle-plus"></i> 
-                <h2>New Goals</h2> 
+                <h2>New Assessment</h2> 
             </div>
         </div>
     
-        <!-- Filters -->
-        <div class="FilterGroup">
-            <div class="Spacing"></div>
-            <div class="Filter-DividingLine"></div>
-            <div class="Spacing"></div>
-            <p class="Filter">Filters:</p>
-            <div class="Spacing"></div>
-            <div class="Filter-DividingLine"></div>
-        </div>
         
         <!-- Information Parameters -->
         <div class="ParametersGroup">
             <div class="ParametersRectangle">
-                <p class=" goal">Goal</p>
-                <p class="last-assessment">Last Assessment</p>
-                <p class="status">Status</p>
-                <p class="actions">Actions</p>
+                <p class="assessment-date">Assessment Date</p>
+                <p class="assessment-status">Status</p>
+                <p class="assessment-actions">Actions</p>
             </div>
         </div>
 
         <!-- User Data -->
         <div class="data-row">
-            <p class="goal">Detection of Unsuccessful Login Attempts</p>
-            <p class="last-assessment">27-Aug-2019</p>
-            <p class="status">Not Started</p>
+            <p class="assessment-date">27-Aug-2019</p>
+            <p class="not-started">Not Started</p>
+            <div class="action-item">
+                <i class="fa fa-pen-to-square"></i> 
+                <p>View</p>
+            </div>
             <div class="action-item">
                 <i class="fa fa-pen-to-square"></i> 
                 <p>Edit</p>
@@ -316,10 +304,6 @@
             <div class="action-item">
                 <i class="fa fa-trash"></i> 
                 <p>Remove</p>
-            </div>
-            <div class="action-item">
-                <i class="fa fa-download"></i> 
-                <p>Export</p>
             </div>
         </div>
 
