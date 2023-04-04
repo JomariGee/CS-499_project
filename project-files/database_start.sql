@@ -7,12 +7,13 @@
 
 //impact:
 //0 = "low"
-//1 = "high"
+//1 = "medium"
+//2 = "high"
 
 
 //complexity:
 //0 = "low"
-// 1 = "medium"
+//1 = "medium"
 //2 = "high"
 
 
@@ -35,10 +36,49 @@ create table Goal (goalID int(11), goalTitle varchar(255), status_updateID int(1
 insert into Goal (goalTitle, cost, impact, complexity, categoryID) values 
 	("Detection of Unsuccessful (Automated) Login Attempts", 1, 1, 0, 0), 
 	("Changing Default Passwords", 1, 1, 1, 0),
-	(), 
-	(),
-	(),
-	(),
+	("Multi-Factor Authentication (MFA)", 2, 2, 1, 0), 
+	("Minimum Password Strength", 1, 2, 0, 0),
+	("Separating User and Privileged Accounts", 1, 2, 0, 0),
+	("Unique Credentials", 2, 1, 1, 0),
+	("Revoking Credentials for Departing Employees", 1, 1, 0, 0), 
+	
+	("Hardware and Software Approval Process", 2, 2, 1, 1), 
+	("Disable Macros by Default", 1, 1, 0, 1),
+	("Asset Inventory", 2, 2, 1, 1), 
+	("Prohibit Connection of Unauthorized Devices", 3, 2, 2, 1), 
+	("Document Device Configurations", 2, 2, 1, 1), 
+	
+	("Log Collection", 2, 2, 1, 2), 
+	("Secure Log Storage", 3, 2, 0, 2),
+	("Strong and Agile Encryption", 2, 2, 1, 2), 
+	("Secure Sensitive Data", 2, 2, 1, 2), 
+	
+	("Organizational Cybersecurity Leadership", 1, 2, 0, 3), 
+	("OT Cybersecurity Leadership", 1, 2, 0, 3), 
+	("Basic Cybersecurity Training", 1, 2, 0, 3), 
+	("OT Cybersecurity Training", 1, 2, 0, 3), 
+	("Improving IT and OT Cybersecurity Relationships", 1, 1, 0, 3), 
+	
+	("Mitigating Known Vulnerabilities", 1, 2, 1, 4), 
+	("Vulnerability Disclosure/Reporting", 3, 0, 2, 4), 
+	("Deploy Security.txt Files", 1, 2, 0, 4), 
+	("No Exploitable Services on the Internet", 1, 2, 0, 4), 
+	("Limit OT Connections to Public Internet", 3, 1, 1, 4), 
+	("Third-Party Validation of Cybersecurity Control Effectiveness", 3, 2, 2, 4), 
+	
+	("Vendor/Supplier Cybersecurity Requirements", 1, 2, 0, 5), 
+	("Supply Chain Incident Reporting", 1, 2, 0, 5), 
+	("Supply Chain Vulnerability Disclosure", 1, 2, 0, 5), 
+	
+	(" Incident Reporting", 1, 2, 0, 6), 
+	("Incident Response (IR) Plans", 1, 2, 0, 6), 
+	("System Back Ups", 2, 2, 1, 6), 
+	("Document Network Topology", 2, 1, 1, 6), 
+	
+	("Network Segmentation", 3, 2, 2, 7), 
+	("Detecting Relevant Threats and TTPs", 3, 1, 2, 7), 
+	("Email Security", 1, 1, 0, 7);
+
 	
 ------------------------------------------------------------------------------------
 
