@@ -12,7 +12,8 @@
 
 //complexity:
 //0 = "low"
-//1 = "high"
+// 1 = "medium"
+//2 = "high"
 
 
 // Status Table
@@ -33,7 +34,11 @@ create table Goal (goalID int(11), goalTitle varchar(255), status_updateID int(1
 
 insert into Goal (goalTitle, cost, impact, complexity, categoryID) values 
 	("Detection of Unsuccessful (Automated) Login Attempts", 1, 1, 0, 0), 
-	()
+	("Changing Default Passwords", 1, 1, 1, 0),
+	(), 
+	(),
+	(),
+	(),
 	
 ------------------------------------------------------------------------------------
 
