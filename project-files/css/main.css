@@ -15,12 +15,14 @@
         justify-content: center;
         align-items: center;
         position: relative;
+		
     }
 
         .header h1 {
             margin: 0;
             padding: 0;
         }
+		
 
     .title {
         font-size: 40px;
@@ -166,16 +168,96 @@
         text-align: center;
         color: black;
     }
+	
+	.Rectangle40 {
+    	position: absolute;
+		width: 173px;
+		height: 50px;
+		left: 828px;
+		top: 75px;
 
+    }
+	
+	.Rectangle40 p {
+		font-size: 35px;
+		line-height: 100%;
+        text-align: center;
+        color: black;
+		
+	}
+
+
+	.Rectangle41 {
+		position: absolute;
+		width: 201px;
+		height: 51px;
+		left: 489px;
+		top: 200px;
+
+		background: #D9D9D9;
+		border-radius: 6px;
+	}
+	
+	.Rectangle41 p {
+		font-size: 25px;
+		line-height: 100%;
+        text-align: center;
+        color: black;
+		
+	}
+	.Rectangle42 {
+		position: absolute;
+		width: 201px;
+		height: 51px;
+		left: 810px;
+		top: 200px;
+		background: #D9D9D9;
+		border-radius: 6px;
+	}
+	
+	.Rectangle42 p {
+		font-size: 25px;
+		line-height: 100%;
+        text-align: center;
+        color: black;
+		
+	}
+	.Rectangle43 {
+		position: absolute;
+		width: 201px;
+		height: 51px;
+		left: 1139px;
+		top: 200px;
+
+		background: #D9D9D9;
+		border-radius: 6px;
+	}
+	
+	.Rectangle43 p {
+		font-size: 25px;
+		line-height: 100%;
+        text-align: center;
+        color: black;
+		
+	}
+	
 	.Rectangle44 {
 		position: absolute;
 		width: 1012px;
 		height: 427px;
 		left: 398px;
-		top: 498px;
+		top: 425px;
 
 		background: #D9D9D9;
 		border-radius: 6px;
+	}
+	
+	.Rectangle44 p {
+		font-size: 25px;
+		line-height: 100%;
+        text-align: center;
+        color: black;
+		
 	}
 	
 	.Rectangle45 {
@@ -311,6 +393,23 @@
         color: black;
 		
 	}
+	
+	.Rectangle52 {
+    	position: absolute;
+		width: 364px;
+		height: 42px;
+		left: 740px;
+		top: 300px;
+    }
+	
+	.Rectangle52 p {
+		font-size: 35px;
+		line-height: 100%;
+        text-align: center;
+        color: black;
+	}
+	
+
     /* User Data */
     .data-row {
     display: inline-flex;
