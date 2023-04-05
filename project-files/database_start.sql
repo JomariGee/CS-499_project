@@ -84,10 +84,26 @@ insert into Goal (goalTitle, cost, impact, complexity, categoryID, csf) values
 /* Risk Table*/
 create table Risk (riskID int(11), risk_desc varchar(255), risk_link varchar(255), goalID int(11));
 insert into Risk (risk_desc, goalID) values
-		("Brute Force - Password Guessing (T1110.001)", 0), 
-		("Brute Force - Password Cracking (T1110.002)", 0), 
-		("Brute Force - Password Spraying (T1110.003)", 0), 
-		("Brute Force - Credential Stuffing (T1110.004)", 0);
+/*ACCOUNT SECURITY (1.0)*/
+		(0, "Brute Force - Password Guessing (T1110.001)"), 
+		(0, "Brute Force - Password Cracking (T1110.002)"), 
+		(0, "Brute Force - Password Spraying (T1110.003)"), 
+		(0, "Brute Force - Credential Stuffing (T1110.004)"), 
+		(1, "Valid Accounts - Default Accounts (T1078.001)"), 
+		(1, "Valid Accounts (ICS T0859)"), 
+		(2, "Brute Force (T1110)"), 
+		(2, "Remote Services - Remote Desktop Protocol (T1021.001)"), 
+		(2, "Remote Services - SSH (T1021.004)"), 
+		(2, "Valid Accounts (T1078, ICS T0859)"),
+		(2, "External Remote Services (ICS T0822)"),
+		(3, 
+/*DEVICE SECURITY (2.0)*/
+/*DATA SECURITY (3.0)*/
+/*GOVERNANCE AND TRAINING (4.0)*/
+/*VULNERABILITY MANAGEMENT (5.0)*/
+/*SUPPLY CHAIN / THIRD PARTY (6.0)*/	
+/* Response and Recovery */
+/*Other (8.0)*/
 		();
 
 ------------------------------------------------------------------------------------
@@ -211,15 +227,30 @@ insert into RecommendedAction (recAction_desc, IT_desc, OT_desc) values
 	  	NULL, 
 	  	NULL), 
 /* Response and Recovery */
-	 (30, " Organizations maintain codified policy and procedures on to whom and how to report all confirmed cybersecurity incidents to appropriate external entities (e.g. state/federal regulators or SRMA’s as required, ISAC/ISAO, as well as CISA).
+	 (30, "Organizations maintain codified policy and procedures on to whom and how to report all confirmed cybersecurity incidents to appropriate external entities (e.g. state/federal regulators or SRMA’s as required, ISAC/ISAO, as well as CISA).
 	Known incidents are reported to CISA as well as other necessary parties within timeframes directed by applicable regulatory guidance or in the absence of guidance, as soon as safely capable. This goal will be revisited following full implementation of the Cyber Incident Reporting for Critical Infrastructure Act of 2022 (CIRCIA). ", 
 	  	NULL, 
 	  	NULL), 
-	 (31, "", 
-	  	N,)
-	
-	
-	,();
+	 (31, "Organizations have, maintain, update, and regularly drill IT and OT cybersecurity incident response plans for both common and organizationally-specific (e.g. by sector, locality, etc.) threat scenarios and TTPs. When conducted, tests or drills are as realistic in nature as feasible. IR plans are drilled at least annually, and are updated within a risk-informed time frame following the lessons learned portion of any exercise or drill.", 
+	  	NULL,
+	 	NULL), 
+	 (32, "All systems that are necessary for operations are regularly backed up on a regular cadence, no less than once per year.
+	Backups are stored separately from the source systems and tested on a recurring basis, no less than once per year. Stored information for OT assets includes at a minimum: configurations, roles, PLC logic, engineering drawings and tools.", 
+	  	NULL, 
+	  	NULL), 
+	(33, "Organizations maintain accurate documentation describing updated network topology and relevant information across all IT and OT networks. Periodic reviews and updates should be performed and tracked on a recurring basis.", 
+	 	NULL, 
+	 	NULL), 
+/*Other (8.0)*/
+	 (34, "All connections to the OT network are denied by default unless explicitly allowed (e.g. by IP address and port) for specific system functionality. Necessary communications paths between the IT and OT networks must pass through an intermediary, such as a properly configured firewall, bastion host, “jump box,” or a demilitarized zone (DMZ), which is closely monitored, captures network logs, and only allows connections from approved assets", 
+	  	NULL, 
+	  	NULL), 
+	 (35, "Organizations have documented a list of threats and adversary TTPs relevant to their organization (for example, based on industry, sectors, etc.), and have the ability (such as via rules, alerting, or commercial prevention and detection systems) to detect instances of those key threats.", 
+	  	NULL, 
+	  	NULL), 
+	 (36, "On all corporate email infrastructure (1) STARTTLS is enabled, (2) SPF and DKIM are enabled, and (3) DMARC is enabled and set to “reject.” For further examples and information, see CISA’s past guidance for Federal Agencies at https://www.cisa.gov/binding-operational-directive-18-01.", 
+	  	NULL, 
+	  	NULL);
 
 ------------------------------------------------------------------------------------
 
