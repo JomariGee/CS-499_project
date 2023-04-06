@@ -33,6 +33,7 @@ insert into Category (category_desc) values ("Account Security"), ("Device Secur
 create table Goal (goalID int(11), goalTitle varchar(255), status_updateID int(11), cost int(11), impact int(11), complexity int(11), categoryID int(11), csf varchar(255));
 
 insert into Goal (goalTitle, cost, impact, complexity, categoryID, csf) values 
+/*ACCOUNT SECURITY (1.0)*/
 	("Detection of Unsuccessful (Automated) Login Attempts", 1, 1, 0, 0, "PR.AC-7"), 
 	("Changing Default Passwords", 1, 1, 1, 0, "PR.AC-1"),
 	("Multi-Factor Authentication (MFA)", 2, 2, 1, 0, "PR.AC-7"), 
@@ -40,62 +41,114 @@ insert into Goal (goalTitle, cost, impact, complexity, categoryID, csf) values
 	("Separating User and Privileged Accounts", 1, 2, 0, 0, "PR.AC-4"),
 	("Unique Credentials", 2, 1, 1, 0, "PR.AC-1"),
 	("Revoking Credentials for Departing Employees", 1, 1, 0, 0, "PR.AC-1"), 
-	
+/*DEVICE SECURITY (2.0)*/
 	("Hardware and Software Approval Process", 2, 2, 1, 1, "PR.IP-3"), 
 	("Disable Macros by Default", 1, 1, 0, 1, "PR.IP-1, PR.IP-3"),
 	("Asset Inventory", 2, 2, 1, 1, "ID.AM-1"), 
 	("Prohibit Connection of Unauthorized Devices", 3, 2, 2, 1, "PR.PT-2"), 
 	("Document Device Configurations", 2, 2, 1, 1, "PR.IP-1"), 
-	
+/*DATA SECURITY (3.0)*/
 	("Log Collection", 2, 2, 1, 2, "PR.PT-1"), 
 	("Secure Log Storage", 3, 2, 0, 2, "PR.PT-1"),
 	("Strong and Agile Encryption", 2, 2, 1, 2, "PR.DS-1, PR.DS-2"), 
 	("Secure Sensitive Data", 2, 2, 1, 2, "PR.DS-1, PR.DS-2, PR.DS-5"), 
-	
+/*GOVERNANCE AND TRAINING (4.0)*/
 	("Organizational Cybersecurity Leadership", 1, 2, 0, 3, "ID.GV-1, ID.GV-2"), 
 	("OT Cybersecurity Leadership", 1, 2, 0, 3, "ID.GV-1, ID.GV-2"), 
 	("Basic Cybersecurity Training", 1, 2, 0, 3, "PR.AT-1"), 
 	("OT Cybersecurity Training", 1, 2, 0, 3, "PR.AT-2, PR.AT-3, PR.AT-5"), 
 	("Improving IT and OT Cybersecurity Relationships", 1, 1, 0, 3, "ID.GV-2"), 
-	
-	("Mitigating Known Vulnerabilities", 1, 2, 1, 4), 
-	("Vulnerability Disclosure/Reporting", 3, 0, 2, 4), 
-	("Deploy Security.txt Files", 1, 2, 0, 4), 
-	("No Exploitable Services on the Internet", 1, 2, 0, 4), 
-	("Limit OT Connections to Public Internet", 3, 1, 1, 4), 
-	("Third-Party Validation of Cybersecurity Control Effectiveness", 3, 2, 2, 4), 
-	
-	("Vendor/Supplier Cybersecurity Requirements", 1, 2, 0, 5), 
-	("Supply Chain Incident Reporting", 1, 2, 0, 5), 
-	("Supply Chain Vulnerability Disclosure", 1, 2, 0, 5), 
-	
-	(" Incident Reporting", 1, 2, 0, 6), 
-	("Incident Response (IR) Plans", 1, 2, 0, 6), 
-	("System Back Ups", 2, 2, 1, 6), 
-	("Document Network Topology", 2, 1, 1, 6), 
-	
-	("Network Segmentation", 3, 2, 2, 7), 
-	("Detecting Relevant Threats and TTPs", 3, 1, 2, 7), 
-	("Email Security", 1, 1, 0, 7);
+/*VULNERABILITY MANAGEMENT (5.0)*/
+	("Mitigating Known Vulnerabilities", 1, 2, 1, 4, "PR.IP-12, ID.RA-1, DE.CM-8, RS.MI-3"), 
+	("Vulnerability Disclosure/Reporting", 3, 0, 2, 4, "RS.AN-5"), 
+	("Deploy Security.txt Files", 1, 2, 0, 4, "RS.AN-5"), 
+	("No Exploitable Services on the Internet", 1, 2, 0, 4, "PR.PT-4"), 
+	("Limit OT Connections to Public Internet", 3, 1, 1, 4, "PR.PT-4"), 
+	("Third-Party Validation of Cybersecurity Control Effectiveness", 3, 2, 2, 4, "ID.RA-1, ID.RA-3"), 
+/*SUPPLY CHAIN / THIRD PARTY (6.0)*/
+	("Vendor/Supplier Cybersecurity Requirements", 1, 2, 0, 5, "ID.SC-3"), 
+	("Supply Chain Incident Reporting", 1, 2, 0, 5, "ID.SC-1, ID.SC-3"), 
+	("Supply Chain Vulnerability Disclosure", 1, 2, 0, 5, "ID.SC-1, ID.SC-3"), 
+/* Response and Recovery */
+	(" Incident Reporting", 1, 2, 0, 6, "RS.CO-2, RS.CO-4"), 
+	("Incident Response (IR) Plans", 1, 2, 0, 6, "PR.IP-9, PR.IP-10"), 
+	("System Back Ups", 2, 2, 1, 6, "PR.IP-4"), 
+	("Document Network Topology", 2, 1, 1, 6, "PR.IP-1"), 
+/*Other (8.0)*/
+	("Network Segmentation", 3, 2, 2, 7, "PR.AC-5, PR.PT-4, DE.CM-1"), 
+	("Detecting Relevant Threats and TTPs", 3, 1, 2, 7, "ID.RA-3, DE.CM-1"), 
+	("Email Security", 1, 1, 0, 7, "PR.DS-1, PR.DS-2, PR.DS-5");
 
 	
 ------------------------------------------------------------------------------------
-
+create table GoalRisk (goalRiskID int(11), riskID int(11), goalID int(11));
+insert into GoalRisk (goalID, riskID) values
+/*ACCOUNT SECURITY (1.0)*/
+		(0, 0), 
+		(0, 1), 
+		(0, 2), 
+		(0, 3), 
+		(1, 5), 
+		(1, 6), 
+		(2, 4), 
+		(2, 8), 
+		(2, 9), 
+		(2, 6),
+		(2, 10),
+		(3, 0),
+		(3, 1), 
+		(3, 2), 
+		(3, 3), 
+		(4, 7), 
+		(5, 7), 
+		(5, 0), 
+		(6, 7), 
+		
+		(7, 11), 
+		(7, 12), 
+		(7, 13), 
+		(7, 14), 
+		(8, 15), 
+		(8, 16), 
+		(9, 12), 
+		(9, 16), 
+		(10, 12), 
+		(10, 17), 
+		(10, 18), 
+		(11, 12), 
+		(11, 19), 
+		(12, 20), 
+		
+		(13, 
+----------------------------------------------------------
 /* Risk Table*/
 create table Risk (riskID int(11), risk_desc varchar(255), risk_link varchar(255), goalID int(11));
-insert into Risk (risk_desc, goalID) values
-/*ACCOUNT SECURITY (1.0)*/
-		(0, "Brute Force - Password Guessing (T1110.001)"), 
-		(0, "Brute Force - Password Cracking (T1110.002)"), 
-		(0, "Brute Force - Password Spraying (T1110.003)"), 
-		(0, "Brute Force - Credential Stuffing (T1110.004)"), 
-		(1, "Valid Accounts - Default Accounts (T1078.001)"), 
-		(1, "Valid Accounts (ICS T0859)"), 
-		(2, "Brute Force (T1110)"), 
-		(2, "Remote Services - Remote Desktop Protocol (T1021.001)"), 
-		(2, "Remote Services - SSH (T1021.004)"), 
-		(2, "Valid Accounts (T1078, ICS T0859)"),
-		(2, "External Remote Services (ICS T0822)"),
+insert into Risk (goalID, risk_desc) values
+		("Brute Force - Password Guessing (T1110.001)"), 
+		("Brute Force - Password Cracking (T1110.002)"), 
+		("Brute Force - Password Spraying (T1110.003)"), 
+		("Brute Force - Credential Stuffing (T1110.004)"),
+		("Brute Force (T1110)"), 
+		
+	/*5*/	("Valid Accounts - Default Accounts (T1078.001)"), 
+		("Valid Accounts (ICS T0859)"), 
+		("Valid Accounts (T1078, ICS T0859)"),
+		("Remote Services - Remote Desktop Protocol (T1021.001)"), 
+		("Remote Services - SSH (T1021.004)"), 
+		
+	/*10/	("External Remote Services (ICS T0822)"),
+		("Supply Chain Compromise (T1195, ICS T0862)"), 
+		("Hardware Additions (T1200)"), 
+		("Browser Extensions (T1176)"), 
+		("Transient Cyber Asset (ICS T0864)"), 
+	/*15*/	("Phishing - Spearphishing Attachment (T1566.001)"), 
+		("User Execution - Malicious FIle (T1204.002)"), 
+		("Exploit Public-Facing Application (T0819, ICS T0819)"), 
+		("Internet Accessible Device (ICS T0883)"), 
+		("Replication Through Removable Media (T1091, ICS T0847)"), 
+	/*20*/  ("Delayed, insufficient, or incomplete ability to maintain or restore functionality of critical devices and service operations."), 
+		
+		
 		(3, 
 /*DEVICE SECURITY (2.0)*/
 /*DATA SECURITY (3.0)*/
