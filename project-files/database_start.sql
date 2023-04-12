@@ -16,6 +16,9 @@
 1 = "medium"
 2 = "high" */
 
+/* Database Creation */
+CREATE DATABASE CPG;
+
 /* Status Table*/
 create table Status (statusID int(11), status_desc varchar(255));
 insert into Status (status_desc) values("Not Started"), ("Scoped"), ("In Progress"), ("Implemented");
@@ -30,7 +33,7 @@ insert into Category (category_desc) values ("Account Security"), ("Device Secur
 ------------------------------------------------------------------------------------
 
 /*Goal Table*/
-create table Goal (goalID int(11), goalTitle varchar(255), status_updateID int(11), cost int(11), impact int(11), complexity int(11), categoryID int(11), csf varchar(255));
+create table Goal (goalID int(11), goalTitle varchar(255), status_updateID int(11), cost int(11), impact int(11), complexity int(11), categoryID int(11), csf varchar(255), goalCreateDate date);
 
 insert into Goal (goalTitle, cost, impact, complexity, categoryID, csf) values 
 /*ACCOUNT SECURITY (1.0)*/
@@ -103,7 +106,7 @@ insert into GoalRisk (goalID, riskID) values
 		(5, 7), 
 		(5, 0), 
 		(6, 7), 
-		
+/*DEVICE SECURITY (2.0)*/		
 		(7, 11), 
 		(7, 12), 
 		(7, 13), 
@@ -111,19 +114,87 @@ insert into GoalRisk (goalID, riskID) values
 		(8, 15), 
 		(8, 16), 
 		(9, 12), 
-		(9, 16), 
+		(9, 17), 
+		(9, 18), 
 		(10, 12), 
-		(10, 17), 
-		(10, 18), 
-		(11, 12), 
-		(11, 19), 
-		(12, 20), 
-		
-		(13, 
+		(10, 19), 
+		(11, 20), 
+/*DATA SECURITY (3.0)*/
+		(12, 21), 
+		(12, 22), 
+		(13, 23), 
+		(13, 24), 
+		(13, 25), 
+		(13, 26), 
+		(14, 27), 
+		(14, 28), 
+		(14, 29), 
+		(14, 30), 
+		(14, 31), 
+		(15, 32), 
+		(15, 33), 
+		(15, 34), 
+		(15, 35), 
+		(15, 36), 
+/*GOVERNANCE AND TRAINING (4.0)*/
+		(16, 37), 
+		(17, 38), 
+		(18, 39), 
+		(19, 39), 
+		(20, 40), 
+/*VULNERABILITY MANAGEMENT (5.0)*/
+		(21, 42), 
+		(21, 17),
+		(21, 41),
+		(21, 11), 
+		(21, 10),
+		(22, 42), 
+		(22, 17), 
+		(22, 41), 
+		(22, 11), 
+		(23, 42), 
+		(23, 17), 
+		(23, 41), 
+		(23, 11), 
+		(24, 42), 
+		(24, 17), 
+		(24, 41), 
+		(24, 10), 
+		(24, 8), 
+		(25, 42), 
+		(25, 17), 
+		(25, 41), 
+		(25, 10), 
+		(26, 43), 
+/*SUPPLY CHAIN / THIRD PARTY (6.0)*/
+		(27, 11), 
+		(28, 11), 
+		(29, 11), 
+/* Response and Recovery */
+		(30, 44), 
+		(31, 45),
+		(32, 46), 
+		(32, 47), 
+		(32, 48), 
+		(32, 49), 
+		(32, 50), 
+		(32, 51), 
+		(32, 52), 
+		(32, 53), 
+		(33, 54), 
+/*Other (8.0)*/
+		(34, 55), 
+		(34, 56), 
+		(34, 57), 
+		(34, 29), 
+		(35, 58), 
+		(36, 59), 
+		(36, 60);
+
 ----------------------------------------------------------
 /* Risk Table*/
-create table Risk (riskID int(11), risk_desc varchar(255), risk_link varchar(255), goalID int(11));
-insert into Risk (goalID, risk_desc) values
+create table Risk (riskID int(11), risk_desc varchar(255), risk_link varchar(255));
+insert into Risk (risk_desc) values
 		("Brute Force - Password Guessing (T1110.001)"), 
 		("Brute Force - Password Cracking (T1110.002)"), 
 		("Brute Force - Password Spraying (T1110.003)"), 
@@ -136,7 +207,7 @@ insert into Risk (goalID, risk_desc) values
 		("Remote Services - Remote Desktop Protocol (T1021.001)"), 
 		("Remote Services - SSH (T1021.004)"), 
 		
-	/*10/	("External Remote Services (ICS T0822)"),
+	/*10*/	("External Remote Services (ICS T0822)"),
 		("Supply Chain Compromise (T1195, ICS T0862)"), 
 		("Hardware Additions (T1200)"), 
 		("Browser Extensions (T1176)"), 
@@ -146,18 +217,49 @@ insert into Risk (goalID, risk_desc) values
 		("Exploit Public-Facing Application (T0819, ICS T0819)"), 
 		("Internet Accessible Device (ICS T0883)"), 
 		("Replication Through Removable Media (T1091, ICS T0847)"), 
+		 
 	/*20*/  ("Delayed, insufficient, or incomplete ability to maintain or restore functionality of critical devices and service operations."), 
-		
-		
-		(3, 
-/*DEVICE SECURITY (2.0)*/
-/*DATA SECURITY (3.0)*/
-/*GOVERNANCE AND TRAINING (4.0)*/
-/*VULNERABILITY MANAGEMENT (5.0)*/
-/*SUPPLY CHAIN / THIRD PARTY (6.0)*/	
-/* Response and Recovery */
-/*Other (8.0)*/
-		();
+		("Delayed, insufficient, or incomplete ability to detect and respond to potential cyber incidents."), 
+		("Impair Defenses (T1562)"), 
+		("Indicator Removal on Host - Clear Windows Event Logs (T1070.001)"), 
+		("Indicator Removal on Host - Clear Linux or Mac System Logs (T1070.002)"), 
+		 
+	/*25*/	("Indicator Removal on Host - File Deletion (T1070.004)"), 
+		("Indicator Removal on Host (ICS T0872)"), 
+		("Adversary-in-the-Middle (T1557)"), 
+		("Automated Collection (T1119)"), 
+		("Network Sniffing (T1040, ICS T0842)"), 
+		("Wireless Compromise (ICS T0860)"), 
+		("Wireness Sniffing (ICS T0887)"), 
+		("Unsecured Credentials (T1552)"), 
+		("Steal or Forge Kerberos Tickets (T1558)"), 
+		("OS Credential Dumping (T1003)"), 
+		("Data from Information Repositories (ICS T0811)"), 
+		("Theft of Operational Information (T0882)"), 
+		("Lack of sufficient cybersecurity accountability, investment, or effectiveness."), 
+		("Lack of accountability, investment, or effectiveness of OT cybersecurity program."), 
+		("User Training (M1017, ICS M0917)"), 
+		("Poor working relationships and a lack of mutual understanding between IT and OT cybersecurity can often result in increased risk for OT cybersecurity."), 
+		("Exploitation of Remote Service (T1210, ICS T0866)"), 
+		("Active Scanning - Vulnerability Scanning (T1595.002)"), 
+		("Reduce risk of gaps in cyber defenses or a false sense of security in existing protections."), 
+		("Without timely incident reporting, CISA and other groups are less able to assist affected organizations, and lack critical information into the broader threat landscape (such as whether a broader attack is occurring against a specific sector)."), 
+		("Inability to quickly and effectively contain, mitigate, and communicate about cybersecurity incidents"), 
+		("Data Destruction (T1485, ICS T0809)"), 
+		("Data Encrypted for Impact (T1486)"), 
+		("Disk Wipe (T1561)"), 
+		("Inhibit System Recovery (T1490)"), 
+		("Denial of Control (ICS T0813)"), 
+		("Denial/Loss of View (ICS T0815, T0829)"), 
+		("Loss of Availability (T0826)"), 
+		("Loss/Manipulation of Control (T0828, T0831)"), 
+		("Incomplete or inaccurate understanding of network topology inhibits effective incident response and recovery"), 
+		("Network Service Discovery (T1046)"), 
+		("Trusted Relationship (T1199)"), 
+		("Network Connection Enumeration (ICS T0840)"), 
+		("Without the knowledge of relevant threats and ability to detect them, organizations risk adversaries existing in their networks undetected for long periods."), 
+		("Phishing (T1566)"), 
+		("Business Email Compromise");
 
 ------------------------------------------------------------------------------------
 
@@ -309,7 +411,78 @@ insert into RecommendedAction (recAction_desc, IT_desc, OT_desc) values
 
 /* References Table*/
 create table References (referencesID int(11), ref_Title varchar(255), ref_purpose varchar(255), ref_link varchar(255));
-
+insert into References (ref_Title, ref_link) values
+	("CISA Bad Practices", "https://www.cisa.gov/news-events/news/bad-practices-0"), 
+	("XKCD 936", NULL), 
+	("Cyber Hygiene Services" , "https://www.cisa.gov/topics/cyber-threats-and-advisories/cyber-hygiene-services"), 
+	("email vulnerability@cisa.DHS.gov", "vulnerability@cisa.DHS.gov"), 
+	("'Stuff Off Search' Guide", "https://www.cisa.gov/resources-tools/resources/stuff-search"), 
+	("Validated Architecture Design Review (VADR); email central@cisa.gov", "central@cisa.gov"), 
+	("CISA Cyber Training", "https://www.cisa.gov/resources-tools/training"), 
+	("CISA ICS Training", "https://www.cisa.gov/ics-training-available-through-cisa"), 
+	 ("Known Exploited Vulnerabilities (KEV) Catalog", "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"), 
+	 ("Vulnerability Disclosure Policy Template", "https://www.cisa.gov/vulnerability-disclosure-policy-template"), 
+	 ("Disclose.io Policy Maker", "https://policymaker.disclose.io/policymaker/introduction/"), 
+	 ("Vulnerability Reporting; email vulnerability@cisa.dhs.gov", "vulnerability@cisa.dhs.gov"), 
+	 ("Coordinated Vulnerability Disclosure Process", "https://www.cisa.gov/coordinated-vulnerability-disclosure-process"), 
+	 ("https://securitytxt.org", "https://securitytxt.org/"), 
+	 ("Remote Penetrating Testing (RPT)", "https://www.cisa.gov/resources-tools/services/penetration-testing"), 
+	 ("Risk and Vulnerability Assessment (RVA)", "https://www.cisa.gov/sites/default/files/publications/VM_Assessments_Fact_Sheet_RVA_508C.pdf"), 
+	 ("Table Top Exercise Packages", "https://www.cisa.gov/resources-tools/services/cisa-tabletop-exercise-packages"), 
+	 ("Critical Infrastructure Exercises", "https://www.cisa.gov/resources-tools/services/stakeholder-exercises"), 
+	 ("Incident Reporting", "https://www.cisa.gov/forms/report"), 
+	 ("contact report@cisa.gov or (888) 282-0870", "report@cisa.gov"), 
+	 ("CISA Binding Operational Directive", "https://www.cisa.gov/news-events/directives/binding-operational-directive-18-01");
+	 
+/*Reference Instances*/	 
+create table ReferenceInstances (refInstancesID int(11), goalID int(11), referencesID int(11));
+insert into ReferenceInstances (goalID, referencesID) values 
+/*ACCOUNT SECURITY (1.0)*/
+	 (1, 0), 
+	 (2, 0),
+	 (3, 0),
+	 (3, 1),
+/*DEVICE SECURITY (2.0) [7-11]*/
+	 (9, 2),
+	 (9, 3), 
+	 (9, 4), 
+	 (9, 5), 
+/*DATA SECURITY (3.0) [12-5]*/
+	 (12, 5), 
+	 (13, 5), 
+	 (14, 5), 
+/*GOVERNANCE AND TRAINING (4.0) [16-20]*/
+	 (18, 6), 
+	 (19, 7), 
+/*VULNERABILITY MANAGEMENT (5.0) [21-26]*/
+	 (21, 8), 
+	 (21, 2), 
+	 (21 ,3), 
+	 (22, 9),
+	 (22, 10), 
+	 (22, 11), 
+	 (22, 12), 
+	 (23, 13), 
+	 (24, 2), 
+	 (24, 3),
+	 (24, 4), 
+	 (24, 14), 
+	 (24, 
+	 (25, ), 
+	 (26, ), 
+/*SUPPLY CHAIN / THIRD PARTY (6.0) [27-29]*/	
+	 (27, ), 
+	 (28, ), 
+	 (29, ), 
+/* Response and Recovery (7.0) [30-33]*/
+	 (30, ), 
+	 (31, ), 
+	 (32, ), 
+	 (33, ), 
+/*Other (8.0) [34-36]*/
+	 (34, ), 
+	 (35, ), 
+	 (36, ), 
 ------------------------------------------------------------------------------------
 
 /* Files Table*/
