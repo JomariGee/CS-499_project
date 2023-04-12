@@ -193,8 +193,8 @@ insert into GoalRisk (goalID, riskID) values
 
 ----------------------------------------------------------
 /* Risk Table*/
-create table Risk (riskID int(11), risk_desc varchar(255), risk_link varchar(255));
-insert into Risk (risk_desc) values
+create table Risks (riskID int(11), risk_desc varchar(255), risk_link varchar(255));
+insert into Risks (risk_desc) values
 		("Brute Force - Password Guessing (T1110.001)"), 
 		("Brute Force - Password Cracking (T1110.002)"), 
 		("Brute Force - Password Spraying (T1110.003)"), 
@@ -263,8 +263,8 @@ insert into Risk (risk_desc) values
 
 ------------------------------------------------------------------------------------
 
-/* StatusUpdate Table*/
-create table StatusUpdate (stat_updateID int(11), statusID int(11), goalID int(11), update_date date, noteID int(11), fileID int(11));
+/* StatusUpdates Table*/
+create table StatusUpdates (stat_updateID int(11), statusID int(11), goalID int(11), update_date date, noteID int(11), fileID int(11));
 
 /* fill inital status*/
 for x < (# of goals +1){
@@ -486,11 +486,11 @@ insert into ReferenceInstances (goalID, referencesID) values
 ------------------------------------------------------------------------------------
 
 /* Files Table*/
-create table files (fileID int(11), fileLocation varchar(255), goalID int(11));
+create table UpdateFiles (fileID int(11), fileLocation varchar(255), goalID int(11));
 
 ------------------------------------------------------------------------------------
 
 /* Notes Table */
-create table notes (noteID int(11), note_desc varchar(255), goalID int(11));
+create table UpdateNotes (noteID int(11), note_desc varchar(255), goalID int(11));
 
 ------------------------------------------------------------------------------------
