@@ -20,14 +20,14 @@
 CREATE DATABASE CPG;
 
 /* Status Table*/
-create table Status (statusID int(11), status_desc varchar(255));
-insert into Status (status_desc) values("Not Started"), ("Scoped"), ("In Progress"), ("Implemented");
+create table GoalStatus (statusID int(11), status_desc varchar(255));
+insert into GoalStatus (status_desc) values("Not Started"), ("Scoped"), ("In Progress"), ("Implemented");
 
 ------------------------------------------------------------------------------------
 
 /*Category Table*/
-create table Category (categoryID int(11), category_desc varchar(255));
-insert into Category (category_desc) values ("Account Security"), ("Device Security"), ("Data Security"), ("Governance and Training"), 
+create table GoalCategory (categoryID int(11), category_desc varchar(255));
+insert into GoalCategory (category_desc) values ("Account Security"), ("Device Security"), ("Data Security"), ("Governance and Training"), 
 	("Vulnerability Management"), ("Supply Chain / Third Party"), ("Response and Recovery"), ("Other");
 
 ------------------------------------------------------------------------------------
@@ -266,12 +266,6 @@ insert into Risks (risk_desc) values
 /* StatusUpdates Table*/
 create table StatusUpdates (stat_updateID int(11), statusID int(11), goalID int(11), update_date date, noteID int(11), fileID int(11));
 
-/* fill inital status*/
-for x < (# of goals +1){
-	insert into StatusUpdate (statusID, goalID, update_date, noteID, fileID) values
-		(0, x, current_date, NULL, NULL);
-}
-
 ------------------------------------------------------------------------------------
 
 /* RecommendedAction Table*/
@@ -467,22 +461,24 @@ insert into ReferenceInstances (goalID, referencesID) values
 	 (24, 3),
 	 (24, 4), 
 	 (24, 14), 
-	 (24, 
-	 (25, ), 
-	 (26, ), 
-/*SUPPLY CHAIN / THIRD PARTY (6.0) [27-29]*/	
-	 (27, ), 
-	 (28, ), 
-	 (29, ), 
+	 (24, 15),
+	 (25, 2), 
+	 (25, 3), 
+	 (25, 4), 
+	 (25, 14),
+	 (26, 14),
+	 (26, 15), 
+	 (26, 16), 
+	 (26, 17), 
 /* Response and Recovery (7.0) [30-33]*/
-	 (30, ), 
-	 (31, ), 
-	 (32, ), 
-	 (33, ), 
+	 (30, 18), 
+	 (30, 19), 
+	 (31, 16), 
+	 (31, 17), 
+	 (33, 5), 
 /*Other (8.0) [34-36]*/
-	 (34, ), 
-	 (35, ), 
-	 (36, ), 
+	 (34, 5), 
+	 (36, 20);
 ------------------------------------------------------------------------------------
 
 /* Files Table*/
