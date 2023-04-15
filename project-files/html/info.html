@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Info</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="main.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <!-- Hamburger Menu & Title -->
+        <div class="header">
+            <div class="hamburger-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <h1 class="title">Info</h1>
+        </div>
+
+        <!-- Navigation bar -->
+        <div class="nav">
+            <ul>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="recommended-action.html">Recommended Action</a></li>
+                <li><a href="assessments.html">Assessment History</a></li>
+            </ul>
+        </div>
+		
+      
+        <!-- Goal -->
+		<div class="main">
+            <div class="Rectangle45">
+                <p>Goal:</p>
+            </div>
+			
+		<!-- Category -->
+            <div class="Rectangle46">
+                <p>Category:</p>
+            </div>
+			
+        <!-- Status -->
+            <div class="Rectangle47">
+                <p>Status:</p>
+            </div>
+       
+		<!-- Cost -->
+            <div class="Rectangle48">
+                <p>Cost:</p>
+            </div>
+        
+		<!-- Complexity -->
+            <div class="Rectangle49">
+                <p>Complexity:</p>
+            </div>
+        
+		<!-- Impact -->
+            <div class="Rectangle50">
+                <p>Impact:</p>
+            </div>
+		
+		<!-- Risks Addressed -->
+            <div class="Rectangle51">
+                <p>Risks Addressed:</p>
+            </div>
+		
+		<!-- Hamburger Menu animation -->
+        <script>
+            $(document).ready(function() {
+                $(".hamburger-menu").click(function() {
+                    $(".nav").slideToggle("fast");
+                });
+            });
+        </script>
+
+    </body>
+</html>
+
