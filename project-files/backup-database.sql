@@ -19,6 +19,8 @@
 /* Database Creation */
 CREATE DATABASE CPG;
 
+USE CPG;
+
 /* Status Table*/
 create table GoalStatus (statusID int(11), status_desc varchar(255));
 insert into GoalStatus (status_desc) values("Not Started"), ("Scoped"), ("In Progress"), ("Implemented");
