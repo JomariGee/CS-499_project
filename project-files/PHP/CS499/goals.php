@@ -342,8 +342,6 @@
                     FROM goal 
                     INNER JOIN status ON goal.status_updateID=status.statusID";
 
-        $query2 =  "DELETE 
-                    FROM goal";
 
         // If the query executed properly proceed
         $response = @mysqli_query($dbc, $query);
@@ -354,21 +352,17 @@
                     cellspacing="0" cellpadding="8">
                     <div class="data-row">';
                     
-
-                    
-                    
-                    
-                    
-                    
                     while($row = mysqli_fetch_array($response)){
-                        
+                        $id = $row['GoalID'];
+
+
                         echo '<tr><td align="center">' .
                         $row['Goal'] . '</td><td align="center">' .
                         $row['LastAssessment'] . '</td><td align="center">' .
                         $row['Status'] . '</td>' . '<td align="center">
                         
                             <div class="action-item">
-                                <a href="edit_goal.php">
+                                <a href="edit_goal.php?goalID=' . $id . '">
                                     <i class="fa fa-pen-to-square"></i> 
                                     <p>Edit</p>
                                 </a>
@@ -378,9 +372,10 @@
                             &nbsp;&nbsp;&nbsp;
 
                             <div class="action-item">
-                                <i class="fa fa-trash"></i> 
-                                <p>Remove</p>
-                            </form>
+                                <a href="delete_goal.php?goalID=' . $id . '">
+                                    <i class="fa fa-trash"></i> 
+                                    <p>Remove</p>
+                                </a>
                             </div>
                 
                             &nbsp;&nbsp;&nbsp;
