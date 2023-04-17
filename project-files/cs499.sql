@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 -- Database: `cs499`
 --
 
+/*cost: 
+0 = none
+1 = $
+2 = $$
+3 = $$$
+4 = $$$$ */
+
+/*impact:
+0 = none
+1 = "low"
+2 = "medium"
+3 = "high" */
+
+
+/*complexity:
+0 = none
+1 = "low"
+2 = "medium"
+3 = "high" */
+
 -- --------------------------------------------------------
 
 --
