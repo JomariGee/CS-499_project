@@ -244,19 +244,11 @@
 
         <!-- Hamburger Menu & Title -->
         <div class="header">
-            <div class="hamburger-menu">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
             <h1 class="title">Create New Goal</h1>
         </div>
 
 
-    <?php
-
-    ?>
- <form action="http://localhost/CS499/goals.php" method="post">
+ <form action="http://localhost/CS499/create_goal_successful.php" method="post">
 
 <p>Title: <br>
 <input type="text" name="goalTitle" size="30" value="" />
@@ -299,26 +291,23 @@
 
 <p>Complexity: <br>
     <select id="complexity" name="complexity"> 
-    <option value="3">--Select Complexity--</option>
-    <option value="0">Low</option>
-    <option value="1">Medium</option>
-    <option value="2">High</option>
+    <option value="0">--Select Complexity--</option>
+    <option value="1">Low</option>
+    <option value="2">Medium</option>
+    <option value="3">High</option>
 
     </select>
 </p>
 
 <p>Impact: <br>
     <select id="impact" name="impact"> 
-    <option value="3">--Select Impact--</option>
-    <option value="0">Low</option>
-    <option value="1">Medium</option>
-    <option value="2">High</option>
+    <option value="0">--Select Impact--</option>
+    <option value="1">Low</option>
+    <option value="2">Medium</option>
+    <option value="3">High</option>
     </select>
 </p>
 
-<p>Risks Addressed: <br>
-<input type="text" name="csf" size="30" value="" />
-</p>
 
 <p>Notes: <br>
 <input type="text" name="notes" size="30" value="" />
