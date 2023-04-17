@@ -21,8 +21,12 @@ CREATE DATABASE CPG;
 
 USE CPG;
 
-/* Status Table*/
-/*create table GoalStatus (statusID int(11), status_desc varchar(255));*/
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `status`
+--
+
 CREATE TABLE `status` (
   `statusID` int(11) NOT NULL AUTO_INCREMENT,
   `status_desc` varchar(255) DEFAULT NULL, 
@@ -31,9 +35,12 @@ CREATE TABLE `status` (
 
 insert into status (status_desc) values("Not Started"), ("Scoped"), ("In Progress"), ("Implemented");
 
+-- --------------------------------------------------------
 
-/*Category Table*/
-/*create table GoalCategory (categoryID int(11), category_desc varchar(255));*/
+--
+-- Table structure for table `category`
+--
+
 CREATE TABLE `category` (
   `categoryID` int(11) NOT NULL AUTO_INCREMENT,
   `category_desc` varchar(255) DEFAULT NULL, 
@@ -43,9 +50,12 @@ CREATE TABLE `category` (
 insert into category (category_desc) values ("Account Security"), ("Device Security"), ("Data Security"), ("Governance and Training"), 
 	("Vulnerability Management"), ("Supply Chain / Third Party"), ("Response and Recovery"), ("Other");
 
+-- --------------------------------------------------------
 
-/*Goal Table*/
-/*create table Goal (goalID int(11), goalTitle varchar(255), status_updateID int(11), cost int(11), impact int(11), complexity int(11), categoryID int(11), csf varchar(255), goalCreateDate date);*/
+--
+-- Table structure for table `goal`
+--
+
 CREATE TABLE `goal` (
   `goalID` int(11) NOT NULL AUTO_INCREMENT,
   `goalTitle` varchar(255) DEFAULT NULL,
@@ -59,61 +69,66 @@ CREATE TABLE `goal` (
   PRIMARY KEY (goalID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-insert into goal (goalTitle, cost, impact, complexity, categoryID, csf) values 
+insert into goal (goalTitle, cost, impact, complexity, categoryID, csf, status_updateID) values 
 /*ACCOUNT SECURITY (1.0)*/
-	("Detection of Unsuccessful (Automated) Login Attempts", 1, 1, 0, 0, "PR.AC-7"), 
-	("Changing Default Passwords", 1, 1, 1, 0, "PR.AC-1"),
-	("Multi-Factor Authentication (MFA)", 2, 2, 1, 0, "PR.AC-7"), 
-	("Minimum Password Strength", 1, 2, 0, 0, "PR.AC-1"),
-	("Separating User and Privileged Accounts", 1, 2, 0, 0, "PR.AC-4"),
-	("Unique Credentials", 2, 1, 1, 0, "PR.AC-1"),
-	("Revoking Credentials for Departing Employees", 1, 1, 0, 0, "PR.AC-1"), 
+	("Detection of Unsuccessful (Automated) Login Attempts", 1, 1, 0, 0, "PR.AC-7", 0), 
+	("Changing Default Passwords", 1, 1, 1, 0, "PR.AC-1", 0),
+	("Multi-Factor Authentication (MFA)", 2, 2, 1, 0, "PR.AC-7", 0), 
+	("Minimum Password Strength", 1, 2, 0, 0, "PR.AC-1", 0),
+	("Separating User and Privileged Accounts", 1, 2, 0, 0, "PR.AC-4", 0),
+	("Unique Credentials", 2, 1, 1, 0, "PR.AC-1", 0),
+	("Revoking Credentials for Departing Employees", 1, 1, 0, 0, "PR.AC-1", 0), 
 /*DEVICE SECURITY (2.0)*/
-	("Hardware and Software Approval Process", 2, 2, 1, 1, "PR.IP-3"), 
-	("Disable Macros by Default", 1, 1, 0, 1, "PR.IP-1, PR.IP-3"),
-	("Asset Inventory", 2, 2, 1, 1, "ID.AM-1"), 
-	("Prohibit Connection of Unauthorized Devices", 3, 2, 2, 1, "PR.PT-2"), 
-	("Document Device Configurations", 2, 2, 1, 1, "PR.IP-1"), 
+	("Hardware and Software Approval Process", 2, 2, 1, 1, "PR.IP-3", 0), 
+	("Disable Macros by Default", 1, 1, 0, 1, "PR.IP-1, PR.IP-3", 0),
+	("Asset Inventory", 2, 2, 1, 1, "ID.AM-1", 0), 
+	("Prohibit Connection of Unauthorized Devices", 3, 2, 2, 1, "PR.PT-2", 0), 
+	("Document Device Configurations", 2, 2, 1, 1, "PR.IP-1", 0), 
 /*DATA SECURITY (3.0)*/
-	("Log Collection", 2, 2, 1, 2, "PR.PT-1"), 
-	("Secure Log Storage", 3, 2, 0, 2, "PR.PT-1"),
-	("Strong and Agile Encryption", 2, 2, 1, 2, "PR.DS-1, PR.DS-2"), 
-	("Secure Sensitive Data", 2, 2, 1, 2, "PR.DS-1, PR.DS-2, PR.DS-5"), 
+	("Log Collection", 2, 2, 1, 2, "PR.PT-1", 0), 
+	("Secure Log Storage", 3, 2, 0, 2, "PR.PT-1", 0),
+	("Strong and Agile Encryption", 2, 2, 1, 2, "PR.DS-1, PR.DS-2", 0), 
+	("Secure Sensitive Data", 2, 2, 1, 2, "PR.DS-1, PR.DS-2, PR.DS-5", 0), 
 /*GOVERNANCE AND TRAINING (4.0)*/
-	("Organizational Cybersecurity Leadership", 1, 2, 0, 3, "ID.GV-1, ID.GV-2"), 
-	("OT Cybersecurity Leadership", 1, 2, 0, 3, "ID.GV-1, ID.GV-2"), 
-	("Basic Cybersecurity Training", 1, 2, 0, 3, "PR.AT-1"), 
-	("OT Cybersecurity Training", 1, 2, 0, 3, "PR.AT-2, PR.AT-3, PR.AT-5"), 
+	("Organizational Cybersecurity Leadership", 1, 2, 0, 3, "ID.GV-1, ID.GV-2", 0), 
+	("OT Cybersecurity Leadership", 1, 2, 0, 3, "ID.GV-1, ID.GV-2", 0), 
+	("Basic Cybersecurity Training", 1, 2, 0, 3, "PR.AT-1", 0), 
+	("OT Cybersecurity Training", 1, 2, 0, 3, "PR.AT-2, PR.AT-3, PR.AT-5", 0), 
 	("Improving IT and OT Cybersecurity Relationships", 1, 1, 0, 3, "ID.GV-2"), 
 /*VULNERABILITY MANAGEMENT (5.0)*/
-	("Mitigating Known Vulnerabilities", 1, 2, 1, 4, "PR.IP-12, ID.RA-1, DE.CM-8, RS.MI-3"), 
-	("Vulnerability Disclosure/Reporting", 3, 0, 2, 4, "RS.AN-5"), 
-	("Deploy Security.txt Files", 1, 2, 0, 4, "RS.AN-5"), 
-	("No Exploitable Services on the Internet", 1, 2, 0, 4, "PR.PT-4"), 
-	("Limit OT Connections to Public Internet", 3, 1, 1, 4, "PR.PT-4"), 
-	("Third-Party Validation of Cybersecurity Control Effectiveness", 3, 2, 2, 4, "ID.RA-1, ID.RA-3"), 
+	("Mitigating Known Vulnerabilities", 1, 2, 1, 4, "PR.IP-12, ID.RA-1, DE.CM-8, RS.MI-3", 0), 
+	("Vulnerability Disclosure/Reporting", 3, 0, 2, 4, "RS.AN-5", 0), 
+	("Deploy Security.txt Files", 1, 2, 0, 4, "RS.AN-5", 0), 
+	("No Exploitable Services on the Internet", 1, 2, 0, 4, "PR.PT-4", 0), 
+	("Limit OT Connections to Public Internet", 3, 1, 1, 4, "PR.PT-4", 0), 
+	("Third-Party Validation of Cybersecurity Control Effectiveness", 3, 2, 2, 4, "ID.RA-1, ID.RA-3", 0), 
 /*SUPPLY CHAIN / THIRD PARTY (6.0)*/
-	("Vendor/Supplier Cybersecurity Requirements", 1, 2, 0, 5, "ID.SC-3"), 
-	("Supply Chain Incident Reporting", 1, 2, 0, 5, "ID.SC-1, ID.SC-3"), 
-	("Supply Chain Vulnerability Disclosure", 1, 2, 0, 5, "ID.SC-1, ID.SC-3"), 
+	("Vendor/Supplier Cybersecurity Requirements", 1, 2, 0, 5, "ID.SC-3", 0), 
+	("Supply Chain Incident Reporting", 1, 2, 0, 5, "ID.SC-1, ID.SC-3", 0), 
+	("Supply Chain Vulnerability Disclosure", 1, 2, 0, 5, "ID.SC-1, ID.SC-3", 0), 
 /* Response and Recovery */
-	(" Incident Reporting", 1, 2, 0, 6, "RS.CO-2, RS.CO-4"), 
-	("Incident Response (IR) Plans", 1, 2, 0, 6, "PR.IP-9, PR.IP-10"), 
-	("System Back Ups", 2, 2, 1, 6, "PR.IP-4"), 
-	("Document Network Topology", 2, 1, 1, 6, "PR.IP-1"), 
+	(" Incident Reporting", 1, 2, 0, 6, "RS.CO-2, RS.CO-4", 0), 
+	("Incident Response (IR) Plans", 1, 2, 0, 6, "PR.IP-9, PR.IP-10", 0), 
+	("System Back Ups", 2, 2, 1, 6, "PR.IP-4", 0), 
+	("Document Network Topology", 2, 1, 1, 6, "PR.IP-1", 0), 
 /*Other (8.0)*/
-	("Network Segmentation", 3, 2, 2, 7, "PR.AC-5, PR.PT-4, DE.CM-1"), 
-	("Detecting Relevant Threats and TTPs", 3, 1, 2, 7, "ID.RA-3, DE.CM-1"), 
-	("Email Security", 1, 1, 0, 7, "PR.DS-1, PR.DS-2, PR.DS-5");
+	("Network Segmentation", 3, 2, 2, 7, "PR.AC-5, PR.PT-4, DE.CM-1", 0), 
+	("Detecting Relevant Threats and TTPs", 3, 1, 2, 7, "ID.RA-3, DE.CM-1", 0), 
+	("Email Security", 1, 1, 0, 7, "PR.DS-1, PR.DS-2, PR.DS-5", 0);
 
-/* GOAL RISK TABLE */
-/*create table GoalRisk (goalRiskID int(11), riskID int(11), goalID int(11));*/
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `goal_risk`
+--
+
 CREATE TABLE `goal_risk` (
   `goalRiskID` int(10) NOT NULL AUTO_INCREMENT,
   `riskID` int(10) DEFAULT NULL,
   `goalID` int(10) DEFAULT NULL, 
   PRIMARY KEY (goalRiskID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 insert into goal_risk (goalID, riskID) values
 /*ACCOUNT SECURITY (1.0)*/
 		(0, 0), 
@@ -220,8 +235,12 @@ insert into goal_risk (goalID, riskID) values
 		(36, 59), 
 		(36, 60);
 
-/* Risk Table*/
-/*create table Risks (riskID int(11), risk_desc varchar(255), risk_link varchar(255));*/
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `risk`
+--
+
 CREATE TABLE `risk` (
   `riskID` int(11) NOT NULL AUTO_INCREMENT,
   `risk_desc` varchar(255) DEFAULT NULL,
@@ -295,9 +314,15 @@ insert into risk (risk_desc) values
 		("Phishing (T1566)"), 
 		("Business Email Compromise");
 
-/* StatusUpdates Table*/
-create table StatusUpdates (stat_updateID int(11), statusID int(11), goalID int(11), update_date date, noteID int(11), fileID int(11));
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `status_update`
+--
+
+create table status_update (stat_updateID int(11), statusID int(11), goalID int(11), update_date date, noteID int(11), fileID int(11));
+insert into status_update (statusID) values
+	(0);
 
 /* RecommendedAction Table*/
 /*create table RecommendedAction (recActionID int(11), goalID int(11), recAction_desc varchar(255), IT_desc varchar(255), OT_desc varchar(255));*/
