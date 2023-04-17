@@ -244,20 +244,52 @@
 
         <!-- Hamburger Menu & Title -->
         <div class="header">
-            <div class="hamburger-menu">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <h1 class="title">Edit Goal</h1>
+            <h1 class="title">Edit Goal: </h1>
         </div>
 
 
-    <?php
+<?php
 
-    ?>
- <form action="http://localhost/CS499/goals.php" method="post">
+    require_once('mysqli_connect.php');
+    if (isset($_POST['submit'])) {
+      // Get the form data
+        $id = $_GET['goalID'];
+        $goalTitle = $_POST['goalTitle'];
+        $category = $_POST['category'];
+        $status = $_POST['status'];
+        $cost = $_POST['cost'];
+        $complexity = $_POST['complexity'];
+        $impact = $_POST['impact'];
+        $notes = $_POST['notes'];
+        $today = date("m/d/y");
 
+
+      // Update the record in the database
+      $query = "UPDATE goal 
+                SET goalTitle='$goalTitle', categoryID='$category', status_updateID='$status', cost='$cost',   
+                    complexity='$complexity', impact='$impact', notes='$notes', assessment_date='$today'
+                WHERE goalID='$id'";
+
+
+      mysqli_query($dbc, $query);
+
+      var_dump(mysqli_error($dbc));
+
+      exit();
+
+    }
+
+    // Display the form with the existing information
+    $id = $_GET['goalID'];
+
+    $query = "SELECT * FROM goal WHERE goalID='$id'";
+
+    $response = @mysqli_query($dbc, $query);
+    $row = mysqli_fetch_assoc($response);
+
+
+?>
+<form action="goals.php" method="post">
 <p>Title: <br>
 <input type="text" name="goalTitle" size="30" value="" />
 </p>
@@ -296,7 +328,6 @@
     <option value="4">$$$$</option>
     </select>
 </p>
-
 <p>Complexity: <br>
     <select id="complexity" name="complexity"> 
     <option value="3">--Select Complexity--</option>
@@ -316,9 +347,6 @@
     </select>
 </p>
 
-<p>Risks Addressed: <br>
-<input type="text" name="csf" size="30" value="" />
-</p>
 
 <p>Notes: <br>
 <input type="text" name="notes" size="30" value="" />
