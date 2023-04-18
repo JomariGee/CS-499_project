@@ -1,9 +1,54 @@
-<!DOCTYPE html>
+<?php
+// NEED TO UPDATE SO THAT DROPDOWN DOESNT SET ALL STUFF UNCHANGED TO 0!
+
+// Connect to the database
+require_once('mysqli_connect.php');
+$id = $_GET['goalID'];
+$sql = "SELECT * FROM goal WHERE goalID = $id";
+$response = mysqli_query($dbc, $sql);
+
+if ($response) {
+  $row = mysqli_fetch_assoc($response);
+  if (isset($_POST['submit'])) {
+    $today = date("m/d/y");
+
+    // Get the updated values or use existing values if input fields are empty
+    $goalTitle = isset($_POST['goalTitle']) && $_POST['goalTitle'] !== '' ? $_POST['goalTitle'] : $row['goalTitle'];
+    $category = isset($_POST['category']) && $_POST['category'] !== '' ? $_POST['category'] : $row['categoryID'];
+
+    // set default status to Not Started (also temp fix)
+    $status = 1;
+    $cost = isset($_POST['cost']) && $_POST['cost'] !== '' ? $_POST['cost'] : $row['cost'];
+    $complexity = isset($_POST['complexity']) && $_POST['complexity'] !== '' ? $_POST['complexity'] : $row['complexity'];
+    $impact = isset($_POST['impact']) && $_POST['impact'] !== '' ? $_POST['impact'] : $row['impact'];
+    $notes = isset($_POST['notes']) && $_POST['notes'] !== '' ? $_POST['notes'] : $row['notes'];
+
+    // Update the record in the database
+    $sql = "UPDATE goal 
+            SET goalTitle='$goalTitle', categoryID='$category', status_updateID='$status', cost='$cost',   
+                    complexity='$complexity', impact='$impact', notes='$notes', assessment_date='$today'
+            WHERE goalID='$id'";
+    mysqli_query($dbc, $sql);
+
+    // Redirect to the view page
+    header("Location:goals.php");
+  }
+} else {
+  // Log the error to a file or send it to a logging service
+  error_log(mysqli_error($dbc));
+}
+
+// Close connection to the database
+mysqli_close($dbc);
+?>
+
+
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Edit Goal</title>
+        <title>Goals</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="main.css" type="text/css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -240,87 +285,44 @@
             }
     </style>
 
+    
     <body>
 
         <!-- Hamburger Menu & Title -->
         <div class="header">
-            <h1 class="title">Edit Goal: </h1>
+            <h1 class="title">Edit Goal</h1>
         </div>
 
-
-<?php
-
-    require_once('mysqli_connect.php');
-    if (isset($_POST['submit'])) {
-      // Get the form data
-        $id = $_GET['goalID'];
-        $goalTitle = $_POST['goalTitle'];
-        $category = $_POST['category'];
-        $status = $_POST['status'];
-        $cost = $_POST['cost'];
-        $complexity = $_POST['complexity'];
-        $impact = $_POST['impact'];
-        $notes = $_POST['notes'];
-        $today = date("m/d/y");
-
-
-      // Update the record in the database
-      $query = "UPDATE goal 
-                SET goalTitle='$goalTitle', categoryID='$category', status_updateID='$status', cost='$cost',   
-                    complexity='$complexity', impact='$impact', notes='$notes', assessment_date='$today'
-                WHERE goalID='$id'";
-
-
-      mysqli_query($dbc, $query);
-
-      var_dump(mysqli_error($dbc));
-
-      exit();
-
-    }
-
-    // Display the form with the existing information
-    $id = $_GET['goalID'];
-
-    $query = "SELECT * FROM goal WHERE goalID='$id'";
-
-    $response = @mysqli_query($dbc, $query);
-    $row = mysqli_fetch_assoc($response);
-
-
-?>
-<form action="goals.php" method="post">
-<p>Title: <br>
-<input type="text" name="goalTitle" size="30" value="" />
-</p>
-
-
-<p>Category: <br>
-    <select id="category" name="category">                      
-    <option value="0">--Select Category--</option>
-    <option value="1">Account Security</option>
-    <option value="2">Device Security</option>
-    <option value="3">Data Security</option>
-    <option value="4">Governance and Training</option>
-    <option value="5">Vulnerability Management</option>
-    <option value="6">Supply Chain / Third Party</option>
-    <option value="7">Response and Recovery</option>
-    <option value="8">Other</option>
-    </select>
-    </p>
-    
+<form method="post">
+  <label>Goal Title: <br></label>
+  <input type="text" name="goalTitle" value="<?php echo $row['goalTitle']; ?>"><br>
+  
+  <p>Category: <br>
+  <select id="category" name="category" value="<?php echo $row['category']; ?>">               
+  <option value="0">--Select Category--</option>
+  <option value="1">Account Security</option>
+  <option value="2">Device Security</option>
+  <option value="3">Data Security</option>
+  <option value="4">Governance and Training</option>
+  <option value="5">Vulnerability Management</option>
+  <option value="6">Supply Chain / Third Party</option>
+  <option value="7">Response and Recovery</option>
+  <option value="8">Other</option>
+  </select>
+  </p>
+  
 <p>Status: <br>
-    <select id="status" name="status">                      
-    <option value="0">--Select Status--</option>
-    <option value="1">Not Started</option>
-    <option value="2">Scoped</option>
-    <option value="3">In Progress</option>
-    <option value="4">Implemented</option>
-    </select>
+  <select id="status" name="status" value="<?php echo $row['status']; ?>">                   
+  <option value="0">--Select Status--</option>
+  <option value="1">Not Started</option>
+  <option value="2">Scoped</option>
+  <option value="3">In Progress</option>
+  <option value="4">Implemented</option>
+  </select>
 </p>
 
 <p>Cost: <br>
-    <select id="cost" name="cost"> 
+    <select id="cost" name="cost" value="<?php echo $row['cost']; ?>">
     <option value="0">--Select Cost--</option>
     <option value="1">$</option>
     <option value="2">$$</option>
@@ -328,37 +330,31 @@
     <option value="4">$$$$</option>
     </select>
 </p>
+
 <p>Complexity: <br>
-    <select id="complexity" name="complexity"> 
-    <option value="3">--Select Complexity--</option>
-    <option value="0">Low</option>
-    <option value="1">Medium</option>
-    <option value="2">High</option>
+    <select id="complexity" name="complexity" value="<?php echo $row['complexity']; ?>">
+    <option value="0">--Select Complexity--</option>
+    <option value="1">Low</option>
+    <option value="2">Medium</option>
+    <option value="3">High</option>
 
     </select>
 </p>
 
 <p>Impact: <br>
-    <select id="impact" name="impact"> 
-    <option value="3">--Select Impact--</option>
-    <option value="0">Low</option>
-    <option value="1">Medium</option>
-    <option value="2">High</option>
+    <select id="impact" name="impact" value="<?php echo $row['impact']; ?>">
+    <option value="0">--Select Impact--</option>
+    <option value="1">Low</option>
+    <option value="2">Medium</option>
+    <option value="3">High</option>
     </select>
 </p>
 
-
-<p>Notes: <br>
-<input type="text" name="notes" size="30" value="" />
-</p>
-
-<p>
-<input type="submit" name="submit" value="Edit Goal" />
-</p>
+  <label>Notes: <br></label>
+  <input type="text" name="notes" value="<?php echo $row['notes']; ?>"><br>
+  
+  <input type="submit" name="submit" value="Save Changes">
 </form>
-
-
-
 
 </body>
 </html>
