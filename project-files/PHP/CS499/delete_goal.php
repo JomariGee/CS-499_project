@@ -6,7 +6,10 @@ $query =  "DELETE FROM goal WHERE goalID = $id";
 $response = @mysqli_query($dbc, $query);
         
         if($response){
-            echo "Goal deleted successfully";
+            header('Location:goals.php');
+            exit;
+            mysqli_stmt_close($stmt);
+            mysqli_close($dbc);
         
         } else {
             echo "Couldn't issue database query<br />";
@@ -16,8 +19,3 @@ $response = @mysqli_query($dbc, $query);
     mysqli_close($dbc);
                 
 ?>
-
-</form>
-<form method = "POST" action ="goals.php">
-<input type = "submit" value="goals page"/>
-</form>
