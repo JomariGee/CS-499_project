@@ -4,27 +4,26 @@
 // Connect to the database
 require_once('mysqli_connect.php');
 $id = $_GET['goalID'];
-$sql = "select * from status_update su right join 
-	(select g.goalID as GoalID, g.goalTitle as Title, c.category_desc as Cat, g.status_updateID, g.cost, g.impact, g.complexity as StatUpdate 
-	from goal g left join category c on g.categoryID=c.categoryID) AS gc 
-	on su.stat_updateID=gc.StatUpdate where gc.GoalID=$id;";
+$sql = "select * from status_update su 
+	right join 
+	(select g.goalID as GoalID, g.goalTitle as Title, c.category_desc as Cat, 
+	g.status_updateID as StatUpdate, g.cost, g.impact, g.complexity 
+	from goal g 
+	left join category c 
+	on g.categoryID=c.categoryID ) 
+	AS gc 
+	on su.stat_updateID=gc.StatUpdate 
+	where gc.goalID=$id";
 $response = mysqli_query($dbc, $sql);
-/*CREATE TABLE `goal` (
-  `goalID` int(11) NOT NULL AUTO_INCREMENT,
-  `goalTitle` varchar(255) DEFAULT NULL,
-  `status_updateID` int(11) DEFAULT NULL,
-  `cost` int(11) DEFAULT NULL,
-  `impact` int(11) DEFAULT NULL,
-  `complexity` int(11) DEFAULT NULL,
-  `categoryID` int(11) DEFAULT NULL,
-  `csf` varchar(255) DEFAULT NULL,
-  `assessment_date` varchar(50) DEFAULT NULL, 
-  PRIMARY KEY (goalID)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-*/
+
 if ($response) {
   $row = mysqli_fetch_assoc($response);
 	$title = $row['Title'];
+	$cat = $row['Cat'];
+	$cost = $row['cost'];
+	$impact = $row['impact'];
+	$complexity = $row['complexity'];
+	$status = $row['status_desc'];
 
 
     // Redirect to the view page
@@ -69,11 +68,12 @@ mysqli_close($dbc);
             </ul>
         </div>
 		
+		
       
         <!-- Goal -->
 		<div class="main">
             <div class="Rectangle45">
-                <p>Goal:</p>
+                <p>Goal: '.$title.'</p>
             </div>
 			
 		<!-- Category -->
