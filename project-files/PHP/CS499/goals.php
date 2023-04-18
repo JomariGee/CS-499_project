@@ -380,8 +380,10 @@
                 
                             &nbsp;&nbsp;&nbsp;
                             <div class="action-item">
+                            <a href="export_goal.php?goalID=' . $id . '">
                                 <i class="fa fa-download"></i> 
                                 <p>Export</p>
+                                </a>
                             </div>
                             
                            
