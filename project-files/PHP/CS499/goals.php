@@ -354,12 +354,14 @@
                     
                     while($row = mysqli_fetch_array($response)){
                         $id = $row['GoalID'];
+						$title = $row["Goal"];
+						$last = $row["LastAssessment"];
+						$status = $row["Status"];
 
 
-                        echo '<tr><td align="center">' .
-                        $row['Goal'] . '</td><td align="center">' .
-                        $row['LastAssessment'] . '</td><td align="center">' .
-                        $row['Status'] . '</td>' . '<td align="center">
+                        echo '<tr><td align="center"><a href="info.html?goalID=' .$id. '">' .$title. '</a></td>
+						<td align="center">' .$last. '</td>
+						<td align="center">' .$status. '</td>' . '<td align="center">
                         
                             <div class="action-item">
                                 <a href="edit_goal.php?goalID=' . $id . '">
@@ -418,3 +420,4 @@
         </script>
     </body>
 </html>
+
