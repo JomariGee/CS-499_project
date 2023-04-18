@@ -313,10 +313,15 @@
 <input type="text" name="notes" size="30" value="" />
 </p>
 
+<input type="hidden" name="timezone_offset" id="timezone_offset" value="">
+
 <p>
 <input type="submit" name="submit" value="Create New Goal" />
 </p>
+
+
 </form>
+
 
 
 
