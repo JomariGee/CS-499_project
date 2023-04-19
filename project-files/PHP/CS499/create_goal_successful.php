@@ -9,7 +9,6 @@ $status;
 $cost = null;
 $complexity = null;
 $impact = null;
-$notes= null;
 $today = date("m/d/y");  
 
 if(isset($_POST['submit'])){
@@ -56,20 +55,15 @@ if(isset($_POST['submit'])){
 		$impact = null;
 	}
 
-	if(isset($_POST['notes']) && !empty($_POST['notes'])){
-		$notes = $_POST['notes'];
-	}else{
-		$notes = null;
-	}
 
 
 	 if(empty($data_missing)){
 		 require_once('mysqli_connect.php');
-		 $query = "INSERT INTO goal (goalTitle, categoryID, status_updateID, cost, complexity, impact, assessment_date, notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+		 $query = "INSERT INTO goal (goalTitle, categoryID, status_updateID, cost, complexity, impact, assessment_date) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 		 $stmt = mysqli_prepare($dbc, $query);
 
-		mysqli_stmt_bind_param($stmt, 'ssssssss', $goalTitle, $category, $status, $cost, $complexity, $impact, $today, $notes);
+		mysqli_stmt_bind_param($stmt, 'sssssss', $goalTitle, $category, $status, $cost, $complexity, $impact, $today);
 		 mysqli_stmt_execute($stmt);
 		 $affected_rows = mysqli_stmt_affected_rows($stmt);
 		 if($affected_rows == 1){
@@ -341,7 +335,7 @@ if(isset($_POST['submit'])){
             <h1 class="title">Create New Goal</h1>
         </div>
 
- <form action="http://localhost/CS499/create_goal_successful.php" method="post">
+ <form action="create_goal_successful.php" method="post">
 
 <p>Title: <br>
 <input type="text" name="goalTitle" size="30" value="" />
@@ -402,9 +396,6 @@ if(isset($_POST['submit'])){
 </p>
 
 
-<p>Notes: <br>
-<input type="text" name="notes" size="30" value="" />
-</p>
 
 <p>
 <input type="submit" name="submit" value="Create New Goal" />
