@@ -107,46 +107,44 @@ mysqli_close($dbc);
                 <li><a href="goals.php">Goals</a></li>
                 <li><a href="info.php">Info</a></li>
                 <li><a href="recommended-action.html">Recommended Action</a></li>
-                <li><a href="assessments.html">Assessment History</a></li>
+                <li><a href="assessments.php">Assessment History</a></li>
             </ul>
         </div>
 		
-		
-      
         <!-- Goal -->
 		<div class="main">
             <div class="Rectangle45">
-                <p>Goal: <?php echo $title; ?></p>
+                <p><b>Goal:</b> <?php echo $title; ?></p>
             </div>
 			
 		<!-- Category -->
             <div class="Rectangle46">
-                <p>Category: <?php echo $cat; ?></p>
+                <p><b>Category:</b> <?php echo $cat; ?></p>
             </div>
 			
         <!-- Status -->
             <div class="Rectangle47">
-                <p>Status: <?php echo $status; ?></p>
+                <p><b>Status: </b><?php echo $status; ?></p>
             </div>
        
 		<!-- Cost -->
             <div class="Rectangle48">
-                <p>Cost: <?php echo $cost; ?></p>
+                <p><b>Cost:</b> <?php echo $cost; ?></p>
             </div>
         
 		<!-- Complexity -->
             <div class="Rectangle49">
-                <p>Complexity: <?php echo $complexity; ?></p>
+                <p><b>Complexity:</b> <?php echo $complexity; ?></p>
             </div>
         
 		<!-- Impact -->
             <div class="Rectangle50">
-                <p>Impact: <?php echo $impact; ?></p>
+                <p><b>Impact: </b><?php echo $impact; ?></p>
             </div>
 		
 		<!-- Risks Addressed -->
             <div class="Rectangle51">
-                <p>Risks Addressed: <?php echo $risk; ?></p>
+                <p><b>Risks Addressed:</b><?php echo $risk; ?></p>
             </div>
 		
 		<!-- Hamburger Menu animation -->
