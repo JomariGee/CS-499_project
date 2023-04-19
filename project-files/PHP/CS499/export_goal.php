@@ -19,7 +19,7 @@ if ($result) {
     // Write data to the file in CSV format
     if ($result->num_rows > 0) {
         // Write the column headers
-        fputcsv($fp, array('goalID', 'name', 'description', 'target_date'));
+        fputcsv($fp, array('goalID', 'goalTitle', 'status_updateID', 'cost','impact', 'complexity', 'categoryID', 'csf', 'assessment_date'));
 
         // Write each row of data
         while ($row = $result->fetch_assoc()) {
