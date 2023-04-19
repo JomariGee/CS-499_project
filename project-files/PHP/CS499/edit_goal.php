@@ -1,6 +1,4 @@
 <?php
-// NEED TO UPDATE SO THAT DROPDOWN DOESNT SET ALL STUFF UNCHANGED TO 0!
-
 // Connect to the database
 require_once('mysqli_connect.php');
 $id = $_GET['goalID'];
@@ -14,19 +12,20 @@ if ($response) {
 
     // Get the updated values or use existing values if input fields are empty
     $goalTitle = isset($_POST['goalTitle']) && $_POST['goalTitle'] !== '' ? $_POST['goalTitle'] : $row['goalTitle'];
-    $category = isset($_POST['category']) && $_POST['category'] !== '' ? $_POST['category'] : $row['categoryID'];
+    $category = ($_POST['category']) && $_POST['category'] !== '' ? $_POST['category'] : $row['categoryID'];
 
-    // set default status to Not Started (also temp fix)
-    $status = 1;
-    $cost = isset($_POST['cost']) && $_POST['cost'] !== '' ? $_POST['cost'] : $row['cost'];
-    $complexity = isset($_POST['complexity']) && $_POST['complexity'] !== '' ? $_POST['complexity'] : $row['complexity'];
-    $impact = isset($_POST['impact']) && $_POST['impact'] !== '' ? $_POST['impact'] : $row['impact'];
-    $notes = isset($_POST['notes']) && $_POST['notes'] !== '' ? $_POST['notes'] : $row['notes'];
+    
+    $status = ($_POST['status']) && $_POST['status'] !== '' ? $_POST['status'] : $row['status_updateID'];
+
+    $cost = ($_POST['cost']) && $_POST['cost'] !== '' ? $_POST['cost'] : $row['cost'];
+    $complexity =($_POST['complexity']) && $_POST['complexity'] !== '' ? $_POST['complexity'] : $row['complexity'];
+    $impact = ($_POST['impact']) && $_POST['impact'] !== '' ? $_POST['impact'] : $row['impact'];
+    
 
     // Update the record in the database
     $sql = "UPDATE goal 
             SET goalTitle='$goalTitle', categoryID='$category', status_updateID='$status', cost='$cost',   
-                    complexity='$complexity', impact='$impact', notes='$notes', assessment_date='$today'
+                    complexity='$complexity', impact='$impact', assessment_date='$today'
             WHERE goalID='$id'";
     mysqli_query($dbc, $sql);
 
@@ -350,8 +349,7 @@ mysqli_close($dbc);
     </select>
 </p>
 
-  <label>Notes: <br></label>
-  <input type="text" name="notes" value="<?php echo $row['notes']; ?>"><br>
+
   
   <input type="submit" name="submit" value="Save Changes">
 </form>
