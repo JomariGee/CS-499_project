@@ -4,6 +4,9 @@
 // Connect to the database
 require_once('mysqli_connect.php');
 $id = $_GET['goalID'];
+if (!$id){
+	echo "<script language='javascript'>window.alert('Your Message');window.location='http://localhost/CS499/goals.php';</script>";
+}
 $sql = "select * from status_update su 
 	right join 
 	(select g.goalID as GoalID, g.goalTitle as Title, c.category_desc as Cat, 
