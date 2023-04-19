@@ -1,5 +1,5 @@
 <?php
-// NEED TO UPDATE SO THAT DROPDOWN DOESNT SET ALL STUFF UNCHANGED TO 0!
+// NEED TO EXECUTE database_backup.sql WITH SCHEMA "cpg" ! 
 
 // Connect to the database
 require_once('mysqli_connect.php');
@@ -23,7 +23,7 @@ if ($response) {
 	$cost = $row['cost'];
 	$impact = $row['impact'];
 	$complexity = $row['complexity'];
-	$status = $row['status_desc'];
+	$status = $row['statusID'];
 	
 	if ($cost == 0)
 		$cost = "$";
@@ -33,18 +33,27 @@ if ($response) {
 		$cost = "$$$";
 		
 	if ($impact == 0)
-		$impact = "low";
+		$impact = "Low";
 	elseif ($impact == 1)
-		$impact = "medium";
+		$impact = "Medium";
 	elseif ($impact == 2)
-		$impact = "high";
+		$impact = "High";
 		
 	if ($complexity == 0)
-		$complexity = "low";
+		$complexity = "Low";
 	elseif ($complexity == 1)
-		$complexity = "medium";
+		$complexity = "Medium";
 	elseif ($complexity == 2)
-		$complexity = "high";
+		$complexity = "High";
+
+	if ($status == 1)
+		$status = "Not Started";
+	elseif ($status == 2)
+		$status = "Scoped";
+	elseif ($status == 3)
+		$status = "In Progress";
+	elseif ($status == 4)
+		$status = "Implemented";
 	
 	$sql = "select * from risk r join goal_risk gr on r.riskID=gr.riskID where gr.goalID=$id;";
 	$response = @mysqli_query($dbc, $sql);
