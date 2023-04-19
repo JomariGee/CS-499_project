@@ -359,7 +359,7 @@
 						$status = $row["Status"];
 
 
-                        echo '<tr><td align="center"><a href="info.html?goalID=' .$id. '">' .$title. '</a></td>
+                        echo '<tr><td align="center"><a href="info.php?goalID=' .$id. '">' .$title. '</a></td>
 						<td align="center">' .$last. '</td>
 						<td align="center">' .$status. '</td>' . '<td align="center">
                         
