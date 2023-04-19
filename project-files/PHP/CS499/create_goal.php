@@ -248,7 +248,7 @@
         </div>
 
 
- <form action="http://localhost/CS499/create_goal_successful.php" method="post">
+ <form action="create_goal_successful.php" method="post">
 
 <p>Title: <br>
 <input type="text" name="goalTitle" size="30" value="" />
@@ -308,10 +308,6 @@
     </select>
 </p>
 
-
-<p>Notes: <br>
-<input type="text" name="notes" size="30" value="" />
-</p>
 
 <input type="hidden" name="timezone_offset" id="timezone_offset" value="">
 
