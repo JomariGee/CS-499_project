@@ -24,7 +24,36 @@ if ($response) {
 	$impact = $row['impact'];
 	$complexity = $row['complexity'];
 	$status = $row['status_desc'];
-
+	
+	if ($cost == 0)
+		$cost = "$";
+	elseif ($cost == 1)
+		$cost = "$$";
+	elseif ($cost == 2)
+		$cost = "$$$";
+		
+	if ($impact == 0)
+		$impact = "low";
+	elseif ($impact == 1)
+		$impact = "medium";
+	elseif ($impact == 2)
+		$impact = "high";
+		
+	if ($complexity == 0)
+		$complexity = "low";
+	elseif ($complexity == 1)
+		$complexity = "medium";
+	elseif ($complexity == 2)
+		$complexity = "high";
+	
+	$sql = "select * from risk r join goal_risk gr on r.riskID=gr.riskID where gr.goalID=$id;";
+	$response = @mysqli_query($dbc, $sql);
+    $risk="";       
+    if($response){
+        while($row = mysqli_fetch_array($response)){
+			$risk.=$row['risk_desc'];
+		}
+	}
 
     // Redirect to the view page
     //header("Location:goals.php");
@@ -61,8 +90,8 @@ mysqli_close($dbc);
         <!-- Navigation bar -->
         <div class="nav">
             <ul>
-                <li><a href="goals.html">Goals</a></li>
-                <li><a href="info.html">Info</a></li>
+                <li><a href="goals.php">Goals</a></li>
+                <li><a href="info.php">Info</a></li>
                 <li><a href="recommended-action.html">Recommended Action</a></li>
                 <li><a href="assessments.html">Assessment History</a></li>
             </ul>
@@ -73,37 +102,37 @@ mysqli_close($dbc);
         <!-- Goal -->
 		<div class="main">
             <div class="Rectangle45">
-                <p>Goal: '.$title.'</p>
+                <p>Goal: <?php echo $title; ?></p>
             </div>
 			
 		<!-- Category -->
             <div class="Rectangle46">
-                <p>Category:</p>
+                <p>Category: <?php echo $cat; ?></p>
             </div>
 			
         <!-- Status -->
             <div class="Rectangle47">
-                <p>Status:</p>
+                <p>Status: <?php echo $status; ?></p>
             </div>
        
 		<!-- Cost -->
             <div class="Rectangle48">
-                <p>Cost:</p>
+                <p>Cost: <?php echo $cost; ?></p>
             </div>
         
 		<!-- Complexity -->
             <div class="Rectangle49">
-                <p>Complexity:</p>
+                <p>Complexity: <?php echo $complexity; ?></p>
             </div>
         
 		<!-- Impact -->
             <div class="Rectangle50">
-                <p>Impact:</p>
+                <p>Impact: <?php echo $impact; ?></p>
             </div>
 		
 		<!-- Risks Addressed -->
             <div class="Rectangle51">
-                <p>Risks Addressed:</p>
+                <p>Risks Addressed: <?php echo $risk; ?></p>
             </div>
 		
 		<!-- Hamburger Menu animation -->
