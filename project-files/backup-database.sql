@@ -6,15 +6,18 @@
 4 = $$$$ */
 
 /*impact:
-0 = "low"
-1 = "medium"
-2 = "high" */
+
+0 = "none"
+1 = "low"
+2 = "medium"
+3 = "high" */
 
 
 /*complexity:
-0 = "low"
-1 = "medium"
-2 = "high" */
+0 = "none"
+1 = "low"
+2 = "medium"
+3 = "high" */
 
 /* Database Creation */
 CREATE DATABASE CPG;
@@ -564,3 +567,43 @@ CREATE TABLE `notes` (
   `goalID` int(11) DEFAULT NULL, 
   PRIMARY KEY (noteID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+/* Change the multiple ids to start from 1 instead of 0 */
+UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '1' WHERE (`goalID` = '37');
+UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '3' WHERE (`goalID` = '36');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '3' WHERE (`goalID` = '35');
+UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '2' WHERE (`goalID` = '34');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '33');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '32');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '31');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '30');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '29');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '28');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '3' WHERE (`goalID` = '27');
+UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '2' WHERE (`goalID` = '26');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '25');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '24');
+UPDATE `cpg`.`goal` SET `impact` = '1', `complexity` = '3' WHERE (`goalID` = '23');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '22');
+UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '1' WHERE (`goalID` = '21');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '20');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '19');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '18');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '17');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '16');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '15');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '14');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '13');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '12');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '3' WHERE (`goalID` = '11');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '10');
+UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '1' WHERE (`goalID` = '9');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '8');
+UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '1' WHERE (`goalID` = '7');
+UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '2' WHERE (`goalID` = '6');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '5');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '4');
+UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '3');
+UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '2' WHERE (`goalID` = '2');
+UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '1' WHERE (`goalID` = '1');
