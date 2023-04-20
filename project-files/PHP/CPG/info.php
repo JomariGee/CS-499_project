@@ -47,8 +47,6 @@ if (!$id){
 			}
 
 
-
-
 			// RECOMMENDED ACTION
 			$recAct_sql =  "SELECT recAction_desc, IT_desc, OT_desc FROM recommendedaction
 			 WHERE goalID = $id";
@@ -147,7 +145,7 @@ if ($response) {
                 <div></div>
                 <div></div>
             </div>
-            <h1 class="title">Info</h1>
+            <h1 class="title"><?php echo $title; ?></h1>
         </div>
 		
 		
@@ -175,9 +173,13 @@ if ($response) {
         <!-- Goal -->
 		<div class="main">
 
+		    <div class="Rectangle45">
+                <p>Details</p>
+            </div>
+
 			<div class="previous">
 			  <a href="info.php?goalID=<?php echo $previous_id ?>">
-			    <i class="fas fa-arrow-circle-left"></i>Previous Page
+			    <i class="fas fa-arrow-circle-left"></i>Previous Goal
 			  </a>
 			</div>
 
@@ -191,15 +193,15 @@ if ($response) {
 
 			<div class="next">
 			  <a href="info.php?goalID=<?php echo $next_id ?>">
-			    <i class="fas fa-arrow-circle-right"></i>Next Page
+			    <i class="fas fa-arrow-circle-right"></i>Next Goal
 			  </a>
 			</div>
 
-
+<!--
             <div class="Rectangle45">
                 <p><b>Goal:</b> <?php echo $title; ?></p>
             </div>
-
+-->
         <!-- Category -->
             <div class="Rectangle46">
                 <p><b>Category:</b> <?php echo $cat; ?></p>
@@ -256,3 +258,4 @@ if ($response) {
 
     </body>
 </html>
+
