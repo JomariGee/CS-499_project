@@ -1,47 +1,45 @@
 <?php
-// Connect to the database
-require_once('mysqli_connect.php');
-$id = $_GET['goalID'];
-$sql = "SELECT * FROM goal WHERE goalID = $id";
-$response = mysqli_query($dbc, $sql);
+    // Connect to the database
+    require_once('mysqli_connect.php');
+    $id = $_GET['goalID'];
+    $sql = "SELECT * FROM goal WHERE goalID = $id";
+    $response = mysqli_query($dbc, $sql);
 
-if ($response) {
-  $row = mysqli_fetch_assoc($response);
-  if (isset($_POST['submit'])) {
-    $today = date("m/d/y");
+    if ($response) {
+    $row = mysqli_fetch_assoc($response);
+    if (isset($_POST['submit'])) {
+        $today = date("m/d/y");
 
-    // Get the updated values or use existing values if input fields are empty
-    $goalTitle = isset($_POST['goalTitle']) && $_POST['goalTitle'] !== '' ? $_POST['goalTitle'] : $row['goalTitle'];
-    $category = ($_POST['category']) && $_POST['category'] !== '' ? $_POST['category'] : $row['categoryID'];
+        // Get the updated values or use existing values if input fields are empty
+        $goalTitle = isset($_POST['goalTitle']) && $_POST['goalTitle'] !== '' ? $_POST['goalTitle'] : $row['goalTitle'];
+        $category = ($_POST['category']) && $_POST['category'] !== '' ? $_POST['category'] : $row['categoryID'];
 
-    
-    $status = ($_POST['status']) && $_POST['status'] !== '' ? $_POST['status'] : $row['status_updateID'];
+        
+        $status = ($_POST['status']) && $_POST['status'] !== '' ? $_POST['status'] : $row['status_updateID'];
 
-    $cost = ($_POST['cost']) && $_POST['cost'] !== '' ? $_POST['cost'] : $row['cost'];
-    $complexity =($_POST['complexity']) && $_POST['complexity'] !== '' ? $_POST['complexity'] : $row['complexity'];
-    $impact = ($_POST['impact']) && $_POST['impact'] !== '' ? $_POST['impact'] : $row['impact'];
-    
+        $cost = ($_POST['cost']) && $_POST['cost'] !== '' ? $_POST['cost'] : $row['cost'];
+        $complexity =($_POST['complexity']) && $_POST['complexity'] !== '' ? $_POST['complexity'] : $row['complexity'];
+        $impact = ($_POST['impact']) && $_POST['impact'] !== '' ? $_POST['impact'] : $row['impact'];
+        
 
-    // Update the record in the database
-    $sql = "UPDATE goal 
-            SET goalTitle='$goalTitle', categoryID='$category', status_updateID='$status', cost='$cost',   
-                    complexity='$complexity', impact='$impact', assessment_date='$today'
-            WHERE goalID='$id'";
-    mysqli_query($dbc, $sql);
+        // Update the record in the database
+        $sql = "UPDATE goal 
+                SET goalTitle='$goalTitle', categoryID='$category', status_updateID='$status', cost='$cost',   
+                        complexity='$complexity', impact='$impact', assessment_date='$today'
+                WHERE goalID='$id'";
+        mysqli_query($dbc, $sql);
 
-    // Redirect to the view page
-    header("Location:goals.php");
-  }
-} else {
-  // Log the error to a file or send it to a logging service
-  error_log(mysqli_error($dbc));
-}
+        // Redirect to the view page
+        header("Location:goals.php");
+    }
+    } else {
+    // Log the error to a file or send it to a logging service
+    error_log(mysqli_error($dbc));
+    }
 
-// Close connection to the database
-mysqli_close($dbc);
+    // Close connection to the database
+    mysqli_close($dbc);
 ?>
-
-
 
 <html lang="en">
     <head>
@@ -51,7 +49,6 @@ mysqli_close($dbc);
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="main.css" type="text/css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     </head>
     <style>
 
@@ -286,73 +283,73 @@ mysqli_close($dbc);
 
     
     <body>
-
         <!-- Hamburger Menu & Title -->
         <div class="header">
-            <h1 class="title">Edit Goal</h1>
+            <h1 class="title"> Edit Goal</h1>
         </div>
 
-<form method="post">
-  <label>Goal Title: <br></label>
-  <input type="text" name="goalTitle" value="<?php echo $row['goalTitle']; ?>"><br>
-  
-  <p>Category: <br>
-  <select id="category" name="category" value="<?php echo $row['category']; ?>">               
-  <option value="0">--Select Category--</option>
-  <option value="1">Account Security</option>
-  <option value="2">Device Security</option>
-  <option value="3">Data Security</option>
-  <option value="4">Governance and Training</option>
-  <option value="5">Vulnerability Management</option>
-  <option value="6">Supply Chain / Third Party</option>
-  <option value="7">Response and Recovery</option>
-  <option value="8">Other</option>
-  </select>
-  </p>
-  
-<p>Status: <br>
-  <select id="status" name="status" value="<?php echo $row['status']; ?>">                   
-  <option value="0">--Select Status--</option>
-  <option value="1">Not Started</option>
-  <option value="2">Scoped</option>
-  <option value="3">In Progress</option>
-  <option value="4">Implemented</option>
-  </select>
-</p>
+        <form method="post">
+            <label> Goal Title: <br></label>
+            <input type="text" name="goalTitle" value="<?php echo $row['goalTitle']; ?>"><br>
+        
+            <p>Category: 
+                <br>
+                <select id="category" name="category" value="<?php echo $row['category']; ?>">               
+                <option value="0">--Select Category--</option>
+                <option value="1">Account Security</option>
+                <option value="2">Device Security</option>
+                <option value="3">Data Security</option>
+                <option value="4">Governance and Training</option>
+                <option value="5">Vulnerability Management</option>
+                <option value="6">Supply Chain / Third Party</option>
+                <option value="7">Response and Recovery</option>
+                <option value="8">Other</option>
+                </select>
+            </p>
+        
+            <p>Status: 
+                <br>
+                <select id="status" name="status" value="<?php echo $row['status']; ?>">                   
+                <option value="0">--Select Status--</option>
+                <option value="1">Not Started</option>
+                <option value="2">Scoped</option>
+                <option value="3">In Progress</option>
+                <option value="4">Implemented</option>
+                </select>
+            </p>
 
-<p>Cost: <br>
-    <select id="cost" name="cost" value="<?php echo $row['cost']; ?>">
-    <option value="0">--Select Cost--</option>
-    <option value="1">$</option>
-    <option value="2">$$</option>
-    <option value="3">$$$</option>
-    <option value="4">$$$$</option>
-    </select>
-</p>
+            <p>Cost: <br>
+                <select id="cost" name="cost" value="<?php echo $row['cost']; ?>">
+                <option value="0">--Select Cost--</option>
+                <option value="1">$</option>
+                <option value="2">$$</option>
+                <option value="3">$$$</option>
+                <option value="4">$$$$</option>
+                </select>
+            </p>
 
-<p>Complexity: <br>
-    <select id="complexity" name="complexity" value="<?php echo $row['complexity']; ?>">
-    <option value="0">--Select Complexity--</option>
-    <option value="1">Low</option>
-    <option value="2">Medium</option>
-    <option value="3">High</option>
+            <p>Complexity: 
+                <br>
+                <select id="complexity" name="complexity" value="<?php echo $row['complexity']; ?>">
+                <option value="0">--Select Complexity--</option>
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+                </select>
+            </p>
 
-    </select>
-</p>
+            <p>Impact: 
+                <br>
+                <select id="impact" name="impact" value="<?php echo $row['impact']; ?>">
+                <option value="0">--Select Impact--</option>
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+                </select>
+            </p>
+        
+            <input type="submit" name="submit" value="Save Changes">
+        </form>
 
-<p>Impact: <br>
-    <select id="impact" name="impact" value="<?php echo $row['impact']; ?>">
-    <option value="0">--Select Impact--</option>
-    <option value="1">Low</option>
-    <option value="2">Medium</option>
-    <option value="3">High</option>
-    </select>
-</p>
-
-
-  
-  <input type="submit" name="submit" value="Save Changes">
-</form>
-
-</body>
+    </body>
 </html>
