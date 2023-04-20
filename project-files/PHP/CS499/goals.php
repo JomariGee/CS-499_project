@@ -285,7 +285,7 @@
                 <li><a href="goals.php">Goals</a></li>
                 <li><a href="info.php">Info</a></li>
                 <li><a href="recommended-action.html">Recommended Action</a></li>
-                <li><a href="assessments.html">Assessment History</a></li>
+                <li><a href="assessments.php">Assessment History</a></li>
             </ul>
         </div>
 
