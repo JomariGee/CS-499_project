@@ -106,18 +106,18 @@
 ***************************************************************/  
 /* Parameters Group */ 
     .ParametersGroup {
-        width: 1304.80px;
+        width: 1800.80px;
         height: 71px;
         padding-top: 90px;
     }
 
     .ParametersRectangle {
-        width: 1150px;
+        width: 1775px;
         height: 71px;
         padding-top: 17px;
         padding-bottom: 23px;
-        padding-left: 117px;
-        padding-right: 46px;
+        padding-left: 5px;
+        padding-right: 20px;
         background-color: rgba(217, 217, 217, 1);
         border-radius: 7px;
         display: flex;
