@@ -28,11 +28,13 @@
         </div>
         
         <!-- Importation & New Goal creation -->
-        <div class="main">
+      </div class="main">
+            <a href="create_assesment.php">
             <div class="rectangle">
                 <i class="fa fa-file-circle-plus"></i> 
-                <h2>New Assessment</h2> 
+                <h2>New Assessment</h2>
             </div>
+            </a>
         </div>
     
         
