@@ -125,8 +125,8 @@
 						$str='<br>';
 					if($response){
 						while($row = mysqli_fetch_array($response)){
-							$risk.=$str;
 							$risk.=$row['risk_desc'];
+							$risk.=$str;
 						}
 					}
 				}
@@ -171,12 +171,6 @@
 				</div>
 
 			<!-- Information --> 
-
-				<!-- Title 
-				<div class="Rectangle45-detail-box">
-					<?php echo $title; ?></p>
-				</div>
-				-->
 
 				<!-- Category -->
 					<div class="Rectangle46-category-box">
@@ -230,4 +224,3 @@
         </script>
     </body>
 </html>
-
