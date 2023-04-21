@@ -38,7 +38,7 @@
             <a href="create_goal.php">
             <div class="rectangle">
                 <i class="fa fa-file-circle-plus"></i> 
-                <h2>New Goals</h2>
+                <h2>New Assessments</h2>
             </div>
             </a>
         </div>
@@ -57,26 +57,32 @@
         <!-- Parameters -->
         <div class="ParametersGroup">
             <div class="ParametersRectangle">
-                <p class=" goal">Goal</p>
-                <p class="last-assessment">Last Assessment</p>
+                <p class=" goal">Date</p>
+                <p class="last-assessment">Goal</p>
                 <p class="status">Status</p>
                 <p class="actions">Actions</p>
             </div>
         </div>
                     
-        <!-- Information Parameters -->
+        <!-- Information Parameters
+			Display: Status, goal, date -->
         <?php
             // Get a connection for the database
             require_once('mysqli_connect.php');
 
 
             // Create a query for the database
-            $query =   "SELECT goal.goalTitle AS Goal,
-                        goal.assessment_date AS LastAssessment,
-                        goal.goalID AS GoalID,
-                        status.status_desc AS Status
-                        FROM goal 
-                        INNER JOIN status ON goal.status_updateID=status.statusID";
+            $query =   "SELECT ups.stat_updateID as id, ups.update_date as Date, 
+						ups.goalID as goalID, ups.goalTitle as Goal, 
+						ups.statusID, s.status_desc as Stat
+						FROM status s 
+						RIGHT JOIN (( 
+							SELECT su.update_date, su.goalID as goalID, 
+							g.goalTitle, su.statusID, su.stat_updateID 
+							FROM status_update su 
+							LEFT JOIN goal g on su.goalID=g.goalID) 
+							AS ups) 
+						on s.statusID=ups.statusID;";		
 
 
             // If the query executed properly proceed
@@ -89,14 +95,14 @@
                         <div class="goal-data-row">';
                         
                         while($row = mysqli_fetch_array($response)){
-                            $id = $row['GoalID'];
+                            $date = $row['Date'];
                             $title = $row["Goal"];
-                            $last = $row["LastAssessment"];
-                            $status = $row["Status"];
+                            $status = $row["Stat"];
+							$id = $row["goalID"];
 
 
-                            echo '<tr><td align="center"><a href="info.php?goalID=' .$id. '">' .$title. '</a></td>
-                            <td align="center">' .$last. '</td>
+                            echo '<tr><td align="center"><a href="info.php?goalID=' .$id. '">' .$date. '</a></td>
+                            <td align="center">' .$title. '</td>
                             <td align="center">' .$status. '</td>' . '<td align="center">
                             
                                 <div class="action-item">
