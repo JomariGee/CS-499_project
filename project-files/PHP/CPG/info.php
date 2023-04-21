@@ -121,9 +121,11 @@
 					
 					$sql = "select * from risk r join goal_risk gr on r.riskID=gr.riskID where gr.goalID=$id;";
 					$response = @mysqli_query($dbc, $sql);
-					$risk="";       
+					$risk="";
+						$str='<br>';
 					if($response){
 						while($row = mysqli_fetch_array($response)){
+							$risk.=$str;
 							$risk.=$row['risk_desc'];
 						}
 					}
