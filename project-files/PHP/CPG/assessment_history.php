@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Page displays all assessments for all goals -->
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Goals </title>
+        <title> Assessment History </title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="main.css" type="text/css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -17,7 +18,7 @@
                 <div></div>
                 <div></div>
             </div>
-            <h1 class="title">Goal</h1>
+            <h1 class="title">Assessment History</h1>
         </div>
 
         <!-- Navigation bar -->
