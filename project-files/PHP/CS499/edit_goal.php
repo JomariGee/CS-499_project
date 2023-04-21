@@ -287,7 +287,7 @@
         <div class="header">
             <h1 class="title"> Edit Goal</h1>
         </div>
-
+        <!-- Submission Form --> 
         <form method="post">
             <label> Goal Title: <br></label>
             <input type="text" name="goalTitle" value="<?php echo $row['goalTitle']; ?>"><br>

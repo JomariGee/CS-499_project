@@ -1,3 +1,6 @@
+/**************************************************************
+                    Entire Page
+***************************************************************/
     body {
         margin: 0;
         padding: 0;
@@ -6,72 +9,87 @@
         flex-direction: column;
         align-items: center;
     }
-
-    .header {
-        width: 100%;
-        height: 60px;
-        background-color: #f1f1f1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-		
+    .title {
+        font-size: 40px;
     }
+    /* Header */
+        .header {
+            width: 100%;
+            height: 60px;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
 
         .header h1 {
             margin: 0;
             padding: 0;
         }
-		
-
-    .title {
-        font-size: 40px;
-    }
 
     /* Menu */
-    .hamburger-menu {
-        position: absolute;
-        left: 10px;
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        z-index: 1;
-    }
+        /* Hamburger Menu */
+            .hamburger-menu {
+                position: absolute;
+                left: 10px;
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                z-index: 1;
+            }
 
-        .hamburger-menu div {
-            width: 25px;
-            height: 3px;
-            background-color: #333;
-            margin: 5px 0;
+            .hamburger-menu div {
+                width: 25px;
+                height: 3px;
+                background-color: #333;
+                margin: 5px 0;
+            }
+        /* Navigation */
+        .nav {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: #f1f1f1;
+            width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
         }
-
-    /* Navigation */
-    .nav {
-        display: none;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #f1f1f1;
-        width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
-
         .nav ul {
             list-style: none;        
             padding: 0;
             margin: 0;
         }
-
         .nav ul li {
             padding: 10px 20px;
             border-bottom: 1px solid #ddd;
         }
-
         .nav ul li:hover {
             background-color: #ddd;
             cursor: pointer;
         }
+/**************************************************************
+                    Page Elements
+***************************************************************/
+    a {
+        text-decoration: none;
+        color:black;
+    }
+        a:visited{
+            color: black;
+        }
+    a i {
+        color: black;
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+        background-color: #888;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
 
     .main {
         display: flex;
@@ -82,84 +100,202 @@
         padding-top: 10px;
     }
 
-    /* Importing * Sorting */
-    .rectangle {
+/**************************************************************
+                    Commonalities
+***************************************************************/  
+/* Parameters Group */ 
+    .ParametersGroup {
+        width: 1304.80px;
+        height: 71px;
+        padding-top: 90px;
+    }
+
+    .ParametersRectangle {
+        width: 1150px;
+        height: 71px;
+        padding-top: 17px;
+        padding-bottom: 23px;
+        padding-left: 117px;
+        padding-right: 46px;
+        background-color: rgba(217, 217, 217, 1);
+        border-radius: 7px;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 200px;
-        height: 100px;
-        background-color: #ccc;
-        border-radius: 5px;
-        margin-right: 20px;
-    }
-
-        .rectangle h2 {
-            margin: 0;
-            padding: 0;
-        }
-
-        .rectangle .icon {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-    .icon {
-        width: 24px;
-        height: 24px;
-        background-color: #888;
-        border-radius: 50%;
-        margin-bottom: 10px;
-    }
-
-    /* Filter */
-    .FilterGroup {
-        width: 1304.80px;
-        height: 68px;
         flex-direction: row;
-        padding-top: 10px;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    .DividingLine {
-        width: 1304.80px;
-        height: 5px;
-        background-color: black;
-        border-radius: 8px;
-    }
-
-    .Spacing {
-        height: 11.50px;
-    } 
-
-    .Filter {
-        width: 100.17px;
+    .ParametersRectangle p {
         font-size: 29px;
         line-height: 100%;
         text-align: center;
         color: black;
+        flex: 1;
+    
+    }
+/**************************************************************
+                Goal Page
+***************************************************************/
+    /* Goal row */
+        .goal-data-row {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 1304.80px;
+            gap: 14px;
+            padding-top: 40px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ccc;
+        }
+    
+        .goal-data-row p {
+            text-align: center;
+            font-size: 1.25rem;
+        }
+    /* Importing & Sorting */
+        .rectangle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 100px;
+            background-color: #ccc;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+    
+            .rectangle h2 {
+                margin: 0;
+                padding: 0;
+            }
+    
+            .rectangle .icon {
+                font-size: 48px;
+                margin-bottom: 10px;
+            }
+            .rectangle .fa {
+                font-size: 36px;
+                color: #3a3939;
+            }
+    /* Parameters */
+        .goal {
+            flex-basis: 30%;
+        }
+
+        .last-assessment {
+            flex-basis: 15%;
+        }
+
+        .status {
+            flex-basis: 20%;
+        }
+
+        .goal-actions {
+            flex-basis: 15%;
+        }
+    /* Filter */
+        .Filter {
+            width: 100.17px;
+            font-size: 29px;
+            line-height: 100%;
+            text-align: center;
+            color: black;
+        }
+        .FilterGroup {
+            width: 1304.80px;
+            height: 68px;
+            flex-direction: row;
+            padding-top: 10px;
+        }
+    
+        .Filter-DividingLine {
+            width: 1304.80px;
+            height: 5px;
+            background-color: black;
+            border-radius: 8px;
+        }
+    
+        .Spacing {
+            height: 11.50px;
+        } 
+    /* PHP Code */
+        td {
+            align-items: center;
+            justify-content: space-between;
+            width: 1304.80px;
+            gap: 14px;
+            padding-top: 10px;
+            border-bottom: 3px solid #ccc;
+            text-align: center;
+            font-size: 1.25rem;
+        }
+/**************************************************************
+                Assessment Page 
+***************************************************************/
+    .assessment-date {
+        flex-basis: 39%;
+    }
+    .not-started {
+        flex-basis: 5%;  /* Might need to be zero */
+    }
+    .assessment-status {
+        flex-basis: 25%;
+    }
+    .assessment-actions {
+        flex-basis: 25%;
+    }
+    /* User Data */
+    .assessment-data-row {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 1304.80px;
+        gap: 14px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-bottom: 3px solid #ccc;
     }
 
-    /* Parameters Group */ 
-    .ParametersGroup {
-    width: 1304.80px;
-    height: 71px;
-    padding-top: 90px;
+    .assessment-data-row p {
+        text-align: center;
+        font-size: 1.25rem;
     }
 
+    .action-item {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.625rem;
+        padding-top: 50px;
+        
+    }
+
+    .action-item .fa {
+        font-size: 28px;
+    }
+    a {
+        text-decoration: none;
+    }
+        a:visited{
+            color: #303030;
+        }
+/**************************************************************
+                Info Page 
+***************************************************************/
     .Rectangle39 {
-    width: 1150px;
-    height: 71px;
-    padding-top: 17px;
-    padding-bottom: 23px;
-    padding-left: 117px;
-    padding-right: 46px;
-    background-color: rgba(217, 217, 217, 1);
-    border-radius: 7px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+        width: 1150px;
+        height: 71px;
+        padding-top: 17px;
+        padding-bottom: 23px;
+        padding-left: 117px;
+        padding-right: 46px;
+        background-color: rgba(217, 217, 217, 1);
+        border-radius: 7px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .Rectangle39 p {
@@ -168,283 +304,247 @@
         text-align: center;
         color: black;
     }
-	
-	.Rectangle40 {
-    	position: absolute;
-		width: 173px;
-		height: 50px;
-		left: 828px;
-		top: 75px;
+
+    .Rectangle40 {
+        position: absolute;
+        width: 173px;
+        height: 50px;
+        left: 828px;
+        top: 75px;
 
     }
-	
-	.Rectangle40 p {
-		font-size: 35px;
-		line-height: 100%;
+
+    .Rectangle40 p {
+        font-size: 35px;
+        line-height: 100%;
         text-align: center;
         color: black;
-		
-	}
-
-
-	.Rectangle41 {
-		position: absolute;
-		width: 201px;
-		height: 51px;
-		left: 489px;
-		top: 200px;
-
-		background: #D9D9D9;
-		border-radius: 6px;
-	}
-	
-	.Rectangle41 p {
-		font-size: 25px;
-		line-height: 100%;
-        text-align: center;
-        color: black;
-		
-	}
-	.Rectangle42 {
-		position: absolute;
-		width: 201px;
-		height: 51px;
-		left: 810px;
-		top: 200px;
-		background: #D9D9D9;
-		border-radius: 6px;
-	}
-	
-	.Rectangle42 p {
-		font-size: 25px;
-		line-height: 100%;
-        text-align: center;
-        color: black;
-		
-	}
-	.Rectangle43 {
-		position: absolute;
-		width: 201px;
-		height: 51px;
-		left: 1139px;
-		top: 200px;
-
-		background: #D9D9D9;
-		border-radius: 6px;
-	}
-	
-	.Rectangle43 p {
-		font-size: 20px;
-		line-height: 100%;
-        text-align: center;
-        color: black;
-		
-	}
-	
-	.Rectangle44 {
-	position: absolute;
-	width: 65%;
-	height: 80%;
-	left: 50%;
-	top: 65%; 
-	transform: translate(-50%, -50%);
-
-	background: #D9D9D9;
-	border-radius: 9px;
-}
-.Rectangle44 p {
-	font-size: 2vw;
-	line-height: 100%;
-	text-align: center;
-	color: black;
-}
-
-	
-.Rectangle45 {
-	position: absolute;
-	width: 50%;
-	height: 12%;
-	left: 50%;
-	top: 20%; 
-	transform: translate(-50%, -50%);
-
-	background: #D9D9D9;
-	border-radius: 9px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	
-}
-
-.Rectangle45 {
-	font-size: 3vw;
-	line-height: 100%;
-	text-align: center;
-	color: black;
-	vertical-align: center;
-}
-
-.Rectangle46{
-	position: absolute;
-	width: 40%;
-	height: 12%;
-	left: 34%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-
-	background: #D9D9D9;
-	border-radius: 9px;
-}
-
-.Rectangle46 p {
-	font-size: 2vw;
-	line-height: 100%;
-	text-align: center;
-	color: black;
-}
-
-.Rectangle47 {
-	position: absolute;
-	width: 30%;
-	height: 12%;
-	left: 71%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-
-	background: #D9D9D9;
-	border-radius: 9px;
-}
-
-.Rectangle47 p {
-	font-size: 2vw;
-	line-height: 100%;
-	text-align: center;
-	color: black;
-}
-
-.Rectangle48 {
-	position: absolute;
-	width: 20%;
-	height: 12%;
-	left: 25%;
-	top: 70%;
-	transform: translate(-50%, -50%);
-
-	background: #D9D9D9;
-	border-radius: 9px;
-}
-
-.Rectangle48 p {
-	font-size: 2vw;
-	line-height: 100%;
-	text-align: center;
-	color: black;
-}
-
-.Rectangle49 {
-	position: absolute;
-	width: 25%;
-	height: 12%;
-	left: 50%;
-	top: 70%;
-	transform: translate(-50%, -50%);
-
-	background: #D9D9D9;
-	border-radius: 9px;
-}
-
-.Rectangle49 p {
-	font-size: 2vw;
-	line-height: 100%;
-	text-align: center;
-	color: black;
-}
-
-.Rectangle50 {
-	position: absolute;
-	width: 20%;
-	height: 12%;
-	left: 75%;
-	top: 70%;
-	transform: translate(-50%, -50%);
-
-	background: #D9D9D9;
-	border-radius: 9px;
-}
-
-.Rectangle50 p {
-	font-size: 2vw;
-	line-height: 100%;
-	text-align: center;
-	color: black;
-}
-
-.Rectangle51 {
-	position: absolute;
-	width: 70%;
-	height: 90%;
-	left: 50%;
-	top: 130%;
-	transform: translate(-50%, -50%);
-
-	background: #D9D9D9;
-	border-radius: 9px;
-}
-
-.Rectangle51 p {
-	font-size: 2vw;
-	line-height: 100%;
-	text-align: center;
-	color: black;
-}
-	
-	.Rectangle52 {
-    	position: absolute;
-		width: 364px;
-		height: 42px;
-		left: 740px;
-		top: 300px;
+        
     }
-	
-	.Rectangle52 p {
-		font-size: 35px;
-		line-height: 100%;
+
+
+    .Rectangle41 {
+        position: absolute;
+        width: 201px;
+        height: 51px;
+        left: 489px;
+        top: 200px;
+
+        background: #D9D9D9;
+        border-radius: 6px;
+    }
+
+    .Rectangle41 p {
+        font-size: 25px;
+        line-height: 100%;
         text-align: center;
         color: black;
-	}
-	
+        
+    }
+    .Rectangle42 {
+        position: absolute;
+        width: 201px;
+        height: 51px;
+        left: 810px;
+        top: 200px;
+        background: #D9D9D9;
+        border-radius: 6px;
+    }
 
-    /* User Data */
-    .data-row {
-    display: inline-flex;
+    .Rectangle42 p {
+        font-size: 25px;
+        line-height: 100%;
+        text-align: center;
+        color: black;
+        
+    }
+    .Rectangle43 {
+        position: absolute;
+        width: 201px;
+        height: 51px;
+        left: 1139px;
+        top: 200px;
+
+        background: #D9D9D9;
+        border-radius: 6px;
+    }
+
+    .Rectangle43 p {
+        font-size: 20px;
+        line-height: 100%;
+        text-align: center;
+        color: black;
+        
+    }
+
+    .Rectangle44 {
+    position: absolute;
+    width: 65%;
+    height: 80%;
+    left: 50%;
+    top: 65%; 
+    transform: translate(-50%, -50%);
+
+    background: #D9D9D9;
+    border-radius: 9px;
+    }
+    .Rectangle44 p {
+    font-size: 2vw;
+    line-height: 100%;
+    text-align: center;
+    color: black;
+    }
+
+
+    .Rectangle45 {
+    position: absolute;
+    width: 50%;
+    height: 12%;
+    left: 50%;
+    top: 20%; 
+    transform: translate(-50%, -50%);
+
+    background: #D9D9D9;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    width: 1304.80px;
-    height: 54px;
-    gap: 14px;
-    padding-top: 40px;
+
     }
 
-    .data-row p {
+    .Rectangle45 {
+    font-size: 3vw;
+    line-height: 100%;
+    text-align: center;
+    color: black;
+    vertical-align: center;
+    }
+
+    .Rectangle46{
+    position: absolute;
+    width: 40%;
+    height: 12%;
+    left: 34%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background: #D9D9D9;
+    border-radius: 9px;
+    }
+
+    .Rectangle46 p {
+    font-size: 2vw;
+    line-height: 100%;
+    text-align: center;
+    color: black;
+    }
+
+    .Rectangle47 {
+    position: absolute;
+    width: 30%;
+    height: 12%;
+    left: 71%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background: #D9D9D9;
+    border-radius: 9px;
+    }
+
+    .Rectangle47 p {
+    font-size: 2vw;
+    line-height: 100%;
+    text-align: center;
+    color: black;
+    }
+
+    .Rectangle48 {
+    position: absolute;
+    width: 20%;
+    height: 12%;
+    left: 25%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+
+    background: #D9D9D9;
+    border-radius: 9px;
+    }
+
+    .Rectangle48 p {
+    font-size: 2vw;
+    line-height: 100%;
+    text-align: center;
+    color: black;
+    }
+
+    .Rectangle49 {
+    position: absolute;
+    width: 25%;
+    height: 12%;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+
+    background: #D9D9D9;
+    border-radius: 9px;
+    }
+
+    .Rectangle49 p {
+    font-size: 2vw;
+    line-height: 100%;
+    text-align: center;
+    color: black;
+    }
+
+    .Rectangle50 {
+    position: absolute;
+    width: 20%;
+    height: 12%;
+    left: 75%;
+    top: 70%;
+    transform: translate(-50%, -50%);
+
+    background: #D9D9D9;
+    border-radius: 9px;
+    }
+
+    .Rectangle50 p {
+    font-size: 2vw;
+    line-height: 100%;
+    text-align: center;
+    color: black;
+    }
+
+    .Rectangle51 {
+    position: absolute;
+    width: 70%;
+    height: 90%;
+    left: 50%;
+    top: 130%;
+    transform: translate(-50%, -50%);
+
+    background: #D9D9D9;
+    border-radius: 9px;
+    }
+
+    .Rectangle51 p {
+    font-size: 2vw;
+    line-height: 100%;
+    text-align: center;
+    color: black;
+    }
+
+    .Rectangle52 {
+        position: absolute;
+        width: 364px;
+        height: 42px;
+        left: 740px;
+        top: 300px;
+    }
+
+    .Rectangle52 p {
+        font-size: 35px;
+        line-height: 100%;
         text-align: center;
-        font-size: 1.25rem;
+        color: black;
     }
-
-    .action-item {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.625rem;
-    padding-top: 60px;
-    }
-
-    .action-item img {
-        width: 1.75rem;
-        border-radius: 0.375rem;
-    }
-.previous a,
-.next a {
-  font-size: 20px;
-  padding: 5px 10px;
-}
-.
