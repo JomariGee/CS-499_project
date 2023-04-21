@@ -10,11 +10,22 @@
     </head>
     <body>
 
-        <!-- Hamburger Menu & Title -->
-        <div class="header">
+    <div class="header">
+            <div class="hamburger-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <h1 class="title">Create New Goal</h1>
         </div>
 
+        <!-- Navigation bar -->
+        <div class="nav">
+            <ul>
+                <li><a href="goals.php">Goals</a></li>
+                <li><a href="assessments.php">Assessment History</a></li>
+            </ul>
+        </div>
         <!-- Form --> 
         <form class="form-action"action="create_goal_successful.php" method="post">
             <br><br><br>
@@ -81,11 +92,24 @@
                 <option value="3">High</option>
                 </select>
             </p>
-
             <br>
 
-            <p> <input class="submit-button" type="submit" name="submit" value="Create New Goal" /> </p>
-        </form>
+            <!-- Submit --> 
+            <p> <input class="submit-button" type="submit" name="submit" value="Create New Goal" /> 
 
+            <!-- Back Button-->
+            <form>
+            <input class ="submit-button" value="Cancel" onclick="history.go(-1)"> 
+            </form> </p>
+
+
+        </form>
+        <script>
+            $(document).ready(function() {
+                $(".hamburger-menu").click(function() {
+                    $(".nav").slideToggle("fast");
+                });
+            });
+        </script>
     </body>
 </html>

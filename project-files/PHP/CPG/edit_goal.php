@@ -53,10 +53,24 @@
     </head>
     <body>
 
-        <!-- Hamburger Menu & Title -->
-        <div class="header">
+         <!-- Hamburger Menu & Title -->
+         <div class="header">
+            <div class="hamburger-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <h1 class="title">Edit Goal</h1>
         </div>
+
+        <!-- Navigation bar -->
+        <div class="nav">
+            <ul>
+                <li><a href="goals.php">Goals</a></li>
+                <li><a href="assessments.php">Assessment History</a></li>
+            </ul>
+        </div>
+
         
         <!-- Form --> 
         <form class="form-action" method="post">
@@ -132,7 +146,20 @@
             
             <br>
 
-            <input class="submit-button" type="submit" name="submit" value="Save Changes">
+            <p> <input class="submit-button" type="submit" name="submit" value="Save Changes">
+             
+            <!-- Back Button-->
+             <form>
+            <input class ="submit-button" value="Cancel" onclick="history.go(-1)"> 
+            </form> </p>
+
         </form>
+        <script>
+            $(document).ready(function() {
+                $(".hamburger-menu").click(function() {
+                    $(".nav").slideToggle("fast");
+                });
+            });
+        </script>
     </body>
 </html>
