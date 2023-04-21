@@ -6,18 +6,15 @@
 4 = $$$$ */
 
 /*impact:
-
-0 = "none"
-1 = "low"
-2 = "medium"
-3 = "high" */
+0 = "low"
+1 = "medium"
+2 = "high" */
 
 
 /*complexity:
-0 = "none"
-1 = "low"
-2 = "medium"
-3 = "high" */
+0 = "low"
+1 = "medium"
+2 = "high" */
 
 /* Database Creation */
 CREATE DATABASE CPG;
@@ -72,58 +69,51 @@ CREATE TABLE `goal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 insert into goal (goalTitle, cost, impact, complexity, categoryID, csf, status_updateID) values 
-/*ACCOUNT SECURITY (1.0) -- checked*/
-	("Detection of Unsuccessful (Automated) Login Attempts", 1, 3, 1, 1, "PR.AC-7", 1), 
-	("Changing Default Passwords", 1, 3, 2, 1, "PR.AC-1", 1),
-	("Multi-Factor Authentication (MFA)", 2, 3, 2, 1, "PR.AC-7", 1), 
-	("Minimum Password Strength", 1, 3, 1, 1, "PR.AC-1", 1),
-	("Separating User and Privileged Accounts", 1, 3, 1, 1, "PR.AC-4", 1),
-	("Unique Credentials", 2, 2, 2, 1, "PR.AC-1", 1),
-	("Revoking Credentials for Departing Employees", 1, 2, 1, 1, "PR.AC-1", 1), 
-	
-/*DEVICE SECURITY (2.0) -- checked*/ 
-	("Hardware and Software Approval Process", 2, 3, 2, 2, "PR.IP-3", 1), 
-	("Disable Macros by Default", 1, 2, 1, 2, "PR.IP-1, PR.IP-3", 1),
-	("Asset Inventory", 2, 3, 2, 2, "ID.AM-1", 1), 
-	("Prohibit Connection of Unauthorized Devices", 3, 3, 3, 2, "PR.PT-2", 1), 
-	("Document Device Configurations", 2, 3, 2, 2, "PR.IP-1", 1), 
-	
-/*DATA SECURITY (3.0) -- checked*/
-	("Log Collection", 2, 3, 2, 3, "PR.PT-1", 1), 
-	("Secure Log Storage", 3, 3, 1, 3, "PR.PT-1", 1),
-	("Strong and Agile Encryption", 2, 3, 2, 3, "PR.DS-1, PR.DS-2", 1), 
-	("Secure Sensitive Data", 2, 3, 2, 3, "PR.DS-1, PR.DS-2, PR.DS-5", 1), 
-	
-/*GOVERNANCE AND TRAINING (4.0) -- checked*/
-	("Organizational Cybersecurity Leadership", 1, 3, 1, 4, "ID.GV-1, ID.GV-2", 1), 
-	("OT Cybersecurity Leadership", 1, 3, 1, 4, "ID.GV-1, ID.GV-2", 1), 
-	("Basic Cybersecurity Training", 1, 3, 1, 4, "PR.AT-1", 1), 
-	("OT Cybersecurity Training", 1, 3, 1, 4, "PR.AT-2, PR.AT-3, PR.AT-5", 1), 
-	("Improving IT and OT Cybersecurity Relationships", 1, 2, 1, 4, "ID.GV-2", 1), 
-	
-/*VULNERABILITY MANAGEMENT (5.0) -- checked*/
-	("Mitigating Known Vulnerabilities", 1, 3, 2, 5, "PR.IP-12, ID.RA-1, DE.CM-8, RS.MI-3", 1), 
-	("Vulnerability Disclosure/Reporting", 3, 1, 3, 5, "RS.AN-5", 1), 
-	("Deploy Security.txt Files", 1, 3, 1, 5, "RS.AN-5", 1), 
-	("No Exploitable Services on the Internet", 1, 3, 1, 5, "PR.PT-4", 1), 
-	("Limit OT Connections to Public Internet", 3, 2, 2, 5, "PR.PT-4", 1), 
-	("Third-Party Validation of Cybersecurity Control Effectiveness", 3, 3, 3, 5, "ID.RA-1, ID.RA-3", 1), 
-	
-/*SUPPLY CHAIN / THIRD PARTY (6.0) -- checked*/
-	("Vendor/Supplier Cybersecurity Requirements", 1, 3, 1, 6, "ID.SC-3", 1), 
-	("Supply Chain Incident Reporting", 1, 3, 1, 6, "ID.SC-1, ID.SC-3", 1), 
-	("Supply Chain Vulnerability Disclosure", 1, 3, 1, 6, "ID.SC-1, ID.SC-3", 1), 
-	
-/* Response and Recovery -- checked*/
-	(" Incident Reporting", 1, 3, 1, 7, "RS.CO-2, RS.CO-4", 1), 
-	("Incident Response (IR) Plans", 1, 3, 1, 7, "PR.IP-9, PR.IP-10", 1), 
-	("System Back Ups", 2, 3, 2, 7, "PR.IP-4", 1), 
-	("Document Network Topology", 2, 2, 2, 7, "PR.IP-1", 1), 
-	
-/*Other (8.0) -- checked*/
-	("Network Segmentation", 3, 3, 3, 8, "PR.AC-5, PR.PT-4, DE.CM-1", 1), 
-	("Detecting Relevant Threats and TTPs", 3, 2, 3, 8, "ID.RA-3, DE.CM-1", 1), 
-	("Email Security", 1, 2, 1, 8, "PR.DS-1, PR.DS-2, PR.DS-5", 1);
+/*ACCOUNT SECURITY (1.0)*/
+	("Detection of Unsuccessful (Automated) Login Attempts", 1, 1, 0, 1, "PR.AC-7", 1), 
+	("Changing Default Passwords", 1, 1, 1, 1, "PR.AC-1", 1),
+	("Multi-Factor Authentication (MFA)", 2, 2, 1, 1, "PR.AC-7", 1), 
+	("Minimum Password Strength", 1, 2, 0, 1, "PR.AC-1", 1),
+	("Separating User and Privileged Accounts", 1, 2, 0, 1, "PR.AC-4", 1),
+	("Unique Credentials", 2, 1, 1, 1, "PR.AC-1", 1),
+	("Revoking Credentials for Departing Employees", 1, 1, 0, 1, "PR.AC-1", 1), 
+/*DEVICE SECURITY (2.0)*/
+	("Hardware and Software Approval Process", 2, 2, 1, 2, "PR.IP-3", 1), 
+	("Disable Macros by Default", 1, 1, 0, 2, "PR.IP-1, PR.IP-3", 1),
+	("Asset Inventory", 2, 2, 1, 2, "ID.AM-1", 1), 
+	("Prohibit Connection of Unauthorized Devices", 3, 2, 2, 2, "PR.PT-2", 1), 
+	("Document Device Configurations", 2, 2, 1, 2, "PR.IP-1", 1), 
+/*DATA SECURITY (3.0)*/
+	("Log Collection", 2, 2, 1, 3, "PR.PT-1", 1), 
+	("Secure Log Storage", 3, 2, 0, 3, "PR.PT-1", 1),
+	("Strong and Agile Encryption", 2, 2, 1, 3, "PR.DS-1, PR.DS-2", 1), 
+	("Secure Sensitive Data", 2, 2, 1, 3, "PR.DS-1, PR.DS-2, PR.DS-5", 1), 
+/*GOVERNANCE AND TRAINING (4.0)*/
+	("Organizational Cybersecurity Leadership", 1, 2, 0, 4, "ID.GV-1, ID.GV-2", 1), 
+	("OT Cybersecurity Leadership", 1, 2, 0, 4, "ID.GV-1, ID.GV-2", 1), 
+	("Basic Cybersecurity Training", 1, 2, 0, 4, "PR.AT-1", 1), 
+	("OT Cybersecurity Training", 1, 2, 0, 4, "PR.AT-2, PR.AT-3, PR.AT-5", 1), 
+	("Improving IT and OT Cybersecurity Relationships", 1, 1, 0, 4, "ID.GV-2", 1), 
+/*VULNERABILITY MANAGEMENT (5.0)*/
+	("Mitigating Known Vulnerabilities", 1, 2, 1, 5, "PR.IP-12, ID.RA-1, DE.CM-8, RS.MI-3", 1), 
+	("Vulnerability Disclosure/Reporting", 3, 0, 2, 5, "RS.AN-5", 1), 
+	("Deploy Security.txt Files", 1, 2, 0, 5, "RS.AN-5", 1), 
+	("No Exploitable Services on the Internet", 1, 2, 0, 5, "PR.PT-4", 1), 
+	("Limit OT Connections to Public Internet", 3, 1, 1, 5, "PR.PT-4", 1), 
+	("Third-Party Validation of Cybersecurity Control Effectiveness", 3, 2, 2, 5, "ID.RA-1, ID.RA-3", 1), 
+/*SUPPLY CHAIN / THIRD PARTY (6.0)*/
+	("Vendor/Supplier Cybersecurity Requirements", 1, 2, 0, 6, "ID.SC-3", 1), 
+	("Supply Chain Incident Reporting", 1, 2, 0, 6, "ID.SC-1, ID.SC-3", 1), 
+	("Supply Chain Vulnerability Disclosure", 1, 2, 0, 6, "ID.SC-1, ID.SC-3", 1), 
+/* Response and Recovery */
+	(" Incident Reporting", 1, 2, 0, 7, "RS.CO-2, RS.CO-4", 1), 
+	("Incident Response (IR) Plans", 1, 2, 0, 7, "PR.IP-9, PR.IP-10", 1), 
+	("System Back Ups", 2, 2, 1, 7, "PR.IP-4", 1), 
+	("Document Network Topology", 2, 1, 1, 7, "PR.IP-1", 1), 
+/*Other (8.0)*/
+	("Network Segmentation", 3, 2, 2, 8, "PR.AC-5, PR.PT-4, DE.CM-1", 1), 
+	("Detecting Relevant Threats and TTPs", 3, 1, 2, 8, "ID.RA-3, DE.CM-1", 1), 
+	("Email Security", 1, 1, 0, 8, "PR.DS-1, PR.DS-2, PR.DS-5", 1);
 
 -- --------------------------------------------------------
 
@@ -337,16 +327,61 @@ CREATE TABLE `status_update` (
   PRIMARY KEY (stat_updateID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-insert into status_update (statusID) values (1);
-
+insert into status_update (goalID, statusID, update_date) values 
+/*ACCOUNT SECURITY (1.0) [1-7]*/
+	 (1, 0, "Default"), 
+	 (2, 0, "Default"),
+	 (3, 0, "Default"), 
+	 (4, 0, "Default"),
+	 (5, 0, "Default"), 
+	 (6, 0, "Default"), 
+	 (7, 0, "Default"), 
+/*DEVICE SECURITY (2.0) [8-12]*/
+	 (8, 0, "Default"), 
+	 (9, 0, "Default"), 
+	 (10, 0, "Default"), 
+	 (11, 0, "Default"), 
+	 (12, 0, "Default"), 
+/*DATA SECURITY (3.0) [13-16]*/
+	 (13, 0, "Default"), 
+	 (14, 0, "Default"), 
+	 (15, 0, "Default"),
+	 (16, 0, "Default"),  
+/*GOVERNANCE AND TRAINING (4.0) [17-21]*/
+	 (17, 0, "Default"), 
+	 (18, 0, "Default"), 
+	 (19, 0, "Default"), 
+	 (20, 0, "Default"), 
+	 (21, 0, "Default"), 
+/*VULNERABILITY MANAGEMENT (5.0) [22-27]*/
+	 (22, 0, "Default"), 
+	 (23, 0, "Default"), 
+	 (24, 0, "Default"), 
+	 (25, 0, "Default"), 
+	 (26, 0, "Default"), 
+	 (27, 0, "Default"), 
+/*SUPPLY CHAIN / THIRD PARTY (6.0) [28-30]*/	
+	 (28, 0, "Default"), 
+	 (29, 0, "Default"), 
+	 (30, 0, "Default"), 
+/* Response and Recovery (7.0) [31-34]*/
+	 (31, 0, "Default"), 
+	 (32, 0, "Default"), 
+	 (33, 0, "Default"), 
+	 (34, 0, "Default"), 
+/*Other (8.0) [35-37]*/
+	 (35, 0, "Default"), 
+	 (36, 0, "Default"), 
+	 (37, 0, "Default");
+	
 /* RecommendedAction Table*/
 /*create table RecommendedAction (recActionID int(11), goalID int(11), recAction_desc varchar(255), IT_desc varchar(255), OT_desc varchar(255));*/
 CREATE TABLE `recommendedaction` (
   `recActionID` int(11) NOT NULL AUTO_INCREMENT,
   `goalID` int(11) DEFAULT NULL, 
-  `recAction_desc` varchar(255) DEFAULT NULL,
-  `IT_desc` varchar(255) DEFAULT NULL,
-  `OT_desc` varchar(255) DEFAULT NULL, 
+  `recAction_desc` varchar(1500) DEFAULT NULL,
+  `IT_desc` varchar(500) DEFAULT NULL,
+  `OT_desc` varchar(500) DEFAULT NULL, 
   PRIMARY KEY (recActionID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -574,43 +609,3 @@ CREATE TABLE `notes` (
   `goalID` int(11) DEFAULT NULL, 
   PRIMARY KEY (noteID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-
-/* Change the multiple ids to start from 1 instead of 0 */
-UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '1' WHERE (`goalID` = '37');
-UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '3' WHERE (`goalID` = '36');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '3' WHERE (`goalID` = '35');
-UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '2' WHERE (`goalID` = '34');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '33');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '32');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '31');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '30');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '29');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '28');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '3' WHERE (`goalID` = '27');
-UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '2' WHERE (`goalID` = '26');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '25');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '24');
-UPDATE `cpg`.`goal` SET `impact` = '1', `complexity` = '3' WHERE (`goalID` = '23');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '22');
-UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '1' WHERE (`goalID` = '21');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '20');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '19');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '18');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '17');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '16');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '15');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '14');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '13');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '12');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '3' WHERE (`goalID` = '11');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '10');
-UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '1' WHERE (`goalID` = '9');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '8');
-UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '1' WHERE (`goalID` = '7');
-UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '2' WHERE (`goalID` = '6');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '5');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '1' WHERE (`goalID` = '4');
-UPDATE `cpg`.`goal` SET `impact` = '3', `complexity` = '2' WHERE (`goalID` = '3');
-UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '2' WHERE (`goalID` = '2');
-UPDATE `cpg`.`goal` SET `impact` = '2', `complexity` = '1' WHERE (`goalID` = '1');
