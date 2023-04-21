@@ -146,6 +146,14 @@
             </div>
             <h1 class="title"><?php echo $title; ?></h1>
         </div>
+	    
+	<!-- Navigation bar -->
+        <div class="nav">
+            <ul>
+                <li><a href="goals.php">Goals</a></li>
+                <li><a href="assessments.php">Assessment History</a></li>
+            </ul>
+        </div>
 		
         <!-- Information -->
 		<div class="main">
