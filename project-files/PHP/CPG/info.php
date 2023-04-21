@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -8,8 +9,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body>
-
-		<!-- PHP must execute first --> 
+		<!-- PHP Code --> 
 		<?php
 			// NEED TO UPDATE SO THAT DROPDOWN DOESNT SET ALL STUFF UNCHANGED TO 0!
 
@@ -148,65 +148,65 @@
         <!-- Information -->
 		<div class="main">
 
-		    <div class="Rectangle45">
-                <p>Details</p>
-            </div>
 			<!-- Navigation Actions --> 
-				<div class="previous">
-					<a href="info.php?goalID=<?php echo $previous_id ?>">
-						<i class="fas fa-arrow-circle-left"></i>Previous Goal
-					</a>
-				</div>
+				<div class="navigation-actions">
+					<div class="previous">
+						<a href="info.php?goalID=<?php echo $previous_id ?>">
+							<i class="fas fa-arrow-circle-left"></i>Previous Goal
+						</a>
+					</div>
 
-				<div class="next">
-					<a href="recommended-action.php?goalID=<?php echo $id; ?>">
-						<i class="fas fa-list-ul"></i>Recommended Action
-					</a>
-				</div>
+					<div class="recommended">
+						<a href="recommended-action.php?goalID=<?php echo $id; ?>">
+							<i class="fas fa-list-ul"></i>Recommended Action
+						</a>
+					</div>
 
-				<div class="next">
-					<a href="info.php?goalID=<?php echo $next_id ?>">
-						Next Goal<i class="fas fa-arrow-circle-right"></i>
-					</a>
+					<div class="next">
+						<a href="info.php?goalID=<?php echo $next_id ?>">
+							Next Goal<i class="fas fa-arrow-circle-right"></i>
+						</a>
 				</div>
 
 			<!-- Information --> 
 
-				<!-- Title --> 
-				<div class="Rectangle45">
+				<!-- Title 
+				<div class="Rectangle45-detail-box">
 					<?php echo $title; ?></p>
 				</div>
+				-->
 
 				<!-- Category -->
-					<div class="Rectangle46">
-						<p><b>Category:</b> <?php echo $cat; ?></p>
+					<div class="Rectangle46-category-box">
+						<p class="category-text"><b>Category:</b> <?php echo $cat; ?></p>
 					</div>
 					
 				<!-- Status -->
-					<div class="Rectangle47">
-						<p><b>Status: </b><?php echo $status; ?></p>
+					<div class="Rectangle46-status">
+					<p class="status-text"><b>Status: </b><?php echo $status; ?></p>
 					</div>
 			
 				<!-- Cost -->
-					<div class="Rectangle48">
-						<p><b>Cost:</b> <?php echo $cost; ?></p>
+					<div class="Rectangle48-cost">
+						<p class="status-cost"><b>Cost:</b> <?php echo $cost; ?></p>
 					</div>
 				
 				<!-- Complexity -->
-					<div class="Rectangle49">
-						<p><b>Complexity:</b> <?php echo $complexity; ?></p>
+					<div class="Rectangle49-complexity">
+						<p class="status-complexity"><b>Complexity:</b> <?php echo $complexity; ?></p>
 					</div>
 				
 				<!-- Impact -->
-					<div class="Rectangle50">
-						<p><b>Impact: </b><?php echo $impact; ?></p>
+					<div class="Rectangle50-impact">
+						<p class="status-impact"><b>Impact: </b><?php echo $impact; ?></p>
 					</div>
 				
 				<!-- Risks Addressed -->
-					<div class="Rectangle51">
-						<p><b>Risks Addressed:</b><br><?php echo $risk; ?></p>
+					<div class="Rectangle51-risks-addressed">
+						<p class="risks-addressed"><b>Risks Addressed:</b><br><?php echo $risk; ?></p>
 					</div>
 		</div>
+		
 		<!-- Hamburger Menu animation -->
         <script>
             $(document).ready(function() {

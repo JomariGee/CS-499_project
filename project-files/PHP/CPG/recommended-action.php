@@ -65,16 +65,17 @@
 
             ?>
 
-		<!-- Return button -->
-            <div class="main">
-                <div class="next">
+        <div class="main">
+		    <!-- Return button -->
+                <div class="return-to-info">
                     <a href="info.php?goalID=<?php echo $id; ?>"> Return to Info </a>
-            </div>
+                </div>
         
-		<!-- Action recommendation  --> 
-            <div class="Rectangle44">
-                <p><?php echo $recAct; ?></p>
-            </div>
+            <!-- Action recommendation  --> 
+                <div class="Rectangle44-action-recommend">
+                    <p><?php echo $recAct; ?></p>
+                </div>
+        </div>
 			
 		<!-- Hamburger Menu animation -->
             <script>

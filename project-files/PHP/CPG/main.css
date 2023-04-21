@@ -8,6 +8,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        background-color: #1f5d8646;
     }
     .title {
         font-size: 40px;
@@ -16,7 +17,7 @@
         .header {
             width: 100%;
             height: 60px;
-            background-color: #f1f1f1;
+            background-color: #d7e1ec;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -46,29 +47,29 @@
                 margin: 5px 0;
             }
         /* Navigation */
-        .nav {
-            display: none;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            background-color: #f1f1f1;
-            width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-        .nav ul {
-            list-style: none;        
-            padding: 0;
-            margin: 0;
-        }
-        .nav ul li {
-            padding: 10px 20px;
-            border-bottom: 1px solid #ddd;
-        }
-        .nav ul li:hover {
-            background-color: #ddd;
-            cursor: pointer;
-        }
+            .nav {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #f1f1f1;
+                width: 200px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+            .nav ul {
+                list-style: none;        
+                padding: 0;
+                margin: 0;
+            }
+            .nav ul li {
+                padding: 10px 20px;
+                border-bottom: 1px solid #ddd;
+            }
+            .nav ul li:hover {
+                background-color: #ddd;
+                cursor: pointer;
+            }
 /**************************************************************
                     Page Elements
 ***************************************************************/
@@ -141,6 +142,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: space-between;
+           
             width: 1304.80px;
             gap: 14px;
             padding-top: 40px;
@@ -223,12 +225,88 @@
         td {
             align-items: center;
             justify-content: space-between;
-            width: 1304.80px;
+            width: 800.80px;
             gap: 14px;
             padding-top: 10px;
-            border-bottom: 3px solid #ccc;
+            border-bottom: 3px solid #8f8d8d81;
             text-align: center;
             font-size: 1.25rem;
+        }
+/**************************************************************
+            Create Goal Successful + Edit Goal Successful
+***************************************************************/
+    /* Input Box */
+        .input-field {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 8px 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+
+        .input-field:focus {
+            border-color: 232324;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 4px rgba(83, 84, 85, 0.5);
+            outline: none;
+        }
+       
+        .input-group p {
+            margin: 0;
+            margin-right: 8px;
+        }
+    /* Drop-down Box */
+        select {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            cursor: pointer;
+            /* Can just delete these four things */
+            display: inline-block;
+            background: #D9D9D9;
+            padding: 10px 20px;
+            border-radius: 9px;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #232324;
+            box-shadow: 0 0 4px rgba(83, 84, 85, 0.5);
+        }
+    
+        .form-action p {
+            color: black;
+            font-size: 20px; 
+            padding-bottom: 10px;
+            
+        }
+
+    /* Submission button */
+        .submit-button {
+            background-color: #94b4d1;
+            border: none;
+            border-radius: 4px;
+            color: black;
+            cursor: pointer;
+            font-size: 17px;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.15s ease-in-out;
+        }
+        
+        .submit-button:hover {
+            background-color: #a09a9a;
+        }
+          
+        .submit-button:focus {
+            outline: none;
+            box-shadow: 0 0 4px rgba(17, 17, 17, 0.5);
         }
 /**************************************************************
                 Assessment Page 
@@ -237,7 +315,7 @@
         flex-basis: 39%;
     }
     .not-started {
-        flex-basis: 5%;  /* Might need to be zero */
+        flex-basis: 5%;  
     }
     .assessment-status {
         flex-basis: 25%;
@@ -254,7 +332,7 @@
         gap: 14px;
         padding-top: 5px;
         padding-bottom: 5px;
-        border-bottom: 3px solid #ccc;
+        border-bottom: 3px solid #8f8d8d81;
     }
 
     .assessment-data-row p {
@@ -281,270 +359,365 @@
             color: #303030;
         }
 /**************************************************************
+                Recommended Action Page 
+***************************************************************/
+    /** Return button */
+        .return-to-info {
+            display: inline-block;
+            background: #D9D9D9;
+            padding: 10px 20px;
+            border-radius: 9px;
+            margin-top: 620px;
+        }
+        .return-to-info a{
+            font-size: 21px;
+            line-height: 100%;
+            text-align: center;
+            color: black;
+        }
+        /** Action box **/
+            .Rectangle44-action-recommend {
+                position: absolute;
+                width: auto;
+                min-width: 250px; 
+                height: auto;
+                padding: 10px 20px; 
+                left: 50%;
+                top: 400px; 
+                transform: translate(-50%, -50%);
+                background: #D9D9D9;
+                border-radius: 9px;
+            }
+            .Rectangle44-action-recommend p {
+                font-size: 2vw;
+                line-height: 100%;
+                text-align: center;
+                color: black;
+            }
+            .risks-addressed-text {
+                font-size: 1rem; 
+                line-height: 1.2;
+                text-align: center;
+                color: black;
+            }
+
+/**************************************************************
                 Info Page 
 ***************************************************************/
-    .Rectangle39 {
-        width: 1150px;
-        height: 71px;
-        padding-top: 17px;
-        padding-bottom: 23px;
-        padding-left: 117px;
-        padding-right: 46px;
-        background-color: rgba(217, 217, 217, 1);
-        border-radius: 7px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .Rectangle39 p {
-        font-size: 29px;
-        line-height: 100%;
-        text-align: center;
-        color: black;
-    }
-
-    .Rectangle40 {
-        position: absolute;
-        width: 173px;
-        height: 50px;
-        left: 828px;
-        top: 75px;
-
-    }
-
-    .Rectangle40 p {
-        font-size: 35px;
-        line-height: 100%;
-        text-align: center;
-        color: black;
+    /* Navigation Actions*/
+        .navigation-actions a{
+            font-size: 21px;
+            line-height: 100%;
+            text-align: center;
+            color: black;
+        }
+        .next {
+            display: inline-block;
+            background: #D9D9D9;
+            padding: 10px 20px;
+            border-radius: 9px;
+            margin-bottom: 10px;
+            margin-right: 100px;
+            margin-left: 70px; 
+            text-align: center;
+            margin-top: 820px;
+        }
+        .next i {
+            padding-left: 10px;
+            color: #202020;
+        }
         
-    }
-
-
-    .Rectangle41 {
-        position: absolute;
-        width: 201px;
-        height: 51px;
-        left: 489px;
-        top: 200px;
-
-        background: #D9D9D9;
-        border-radius: 6px;
-    }
-
-    .Rectangle41 p {
-        font-size: 25px;
-        line-height: 100%;
-        text-align: center;
-        color: black;
+        .recommended {
+            display: inline-block;
+            background: #D9D9D9;
+            padding: 10px 20px;
+            border-radius: 9px;
+            margin-bottom: 10px;
+            margin-right: 100px; 
+            margin-left: 70px;
+            text-align: center;
+            margin-top: 820px;
+        }
+        .recommended i {
+            padding-right: 10px;
+            color: #202020;
+        }
         
-    }
-    .Rectangle42 {
-        position: absolute;
-        width: 201px;
-        height: 51px;
-        left: 810px;
-        top: 200px;
-        background: #D9D9D9;
-        border-radius: 6px;
-    }
+        .previous {
+            display: inline-block;
+            background: #D9D9D9;
+            padding: 10px 20px;
+            border-radius: 9px;
+            margin-bottom: 10px;
+            margin-right: 100px; 
+            margin-left: 70px;
+            text-align: center;
+            margin-top: 820px;
+        }
+        .previous i {
+            padding-right: 10px;
+            color: #202020;
+        }
+    /* Rectangle Hell */
+        .Rectangle39 {
+            width: 1150px;
+            height: 71px;
+            padding-top: 17px;
+            padding-bottom: 23px;
+            padding-left: 117px;
+            padding-right: 46px;
+            background-color: rgba(217, 217, 217, 1);
+            border-radius: 7px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+            .Rectangle39 p {
+                font-size: 29px;
+                line-height: 100%;
+                text-align: center;
+                color: black;
+            }
 
-    .Rectangle42 p {
-        font-size: 25px;
-        line-height: 100%;
-        text-align: center;
-        color: black;
+        .Rectangle40 {
+            position: absolute;
+            width: 173px;
+            height: 50px;
+            left: 828px;
+            top: 75px;
+
+        }
+            .Rectangle40 p {
+                font-size: 35px;
+                line-height: 100%;
+                text-align: center;
+                color: black;
+                
+            }
+        .Rectangle41 {
+            position: absolute;
+            width: 201px;
+            height: 51px;
+            left: 489px;
+            top: 200px;
+
+            background: #D9D9D9;
+            border-radius: 6px;
+        }
+            .Rectangle41 p {
+                font-size: 25px;
+                line-height: 100%;
+                text-align: center;
+                color: black;
+                
+            }
+        .Rectangle42 {
+            position: absolute;
+            width: 201px;
+            height: 51px;
+            left: 810px;
+            top: 200px;
+            background: #D9D9D9;
+            border-radius: 6px;
+        }
+            .Rectangle42 p {
+                font-size: 25px;
+                line-height: 100%;
+                text-align: center;
+                color: black;
+                
+            }
+        .Rectangle43 {
+            position: absolute;
+            width: 201px;
+            height: 51px;
+            left: 1139px;
+            top: 200px;
+
+            background: #D9D9D9;
+            border-radius: 6px;
+        }
+        .Rectangle43 p {
+                font-size: 20px;
+                line-height: 100%;
+                text-align: center;
+                color: black;
+                
+            }
+
+        .Rectangle45-detail-box {
+            position: absolute;
+            width: 50%;
+            height: 12%;
+            left: 50%;
+            top: 20%; 
+            transform: translate(-50%, -50%);
+
+            background: #D9D9D9;
+            border-radius: 9px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .Rectangle45-detail-box {
+            font-size: 3vw;
+            line-height: 100%;
+            text-align: center;
+            color: black;
+            vertical-align: center;
+        }
+
+        .Rectangle46-category-box {
+            position: absolute;
+            width: auto; 
+            min-width: 150px; 
+            height: auto; 
+            padding: 10px 20px; 
+            left: 34%;
+            top: 200px;
+            transform: translate(-50%, -50%);
+            background: #D9D9D9;
+            border-radius: 9px;
+        }
         
-    }
-    .Rectangle43 {
-        position: absolute;
-        width: 201px;
-        height: 51px;
-        left: 1139px;
-        top: 200px;
+            .category-text {
+                font-size: 1rem; 
+                line-height: 1.2;
+                text-align: center;
+                color: black;
+            }
 
-        background: #D9D9D9;
-        border-radius: 6px;
-    }
+            .Rectangle46-category-box p {
+                font-size: 2vw;
+                line-height: 100%;
+                text-align: center;
+                color: black;
+            }
+        .Rectangle46-status {
+            position: absolute;
+            width: auto; 
+            min-width: 150px; 
+            height: auto; 
+            padding: 10px 20px; 
+            left: 71%;
+            top: 200px;
+            transform: translate(-50%, -50%);
+            background: #D9D9D9;
+            border-radius: 9px;
+        }
+            .status-text {
+                font-size: 1rem; 
+                line-height: 1.2;
+                text-align: center;
+                color: black;
+            }
+            .Rectangle46-status p {
+                font-size: 2vw;
+                line-height: 100%;
+                text-align: center;
+                color: black;
+            }
 
-    .Rectangle43 p {
-        font-size: 20px;
-        line-height: 100%;
-        text-align: center;
-        color: black;
+        .Rectangle48-cost {
+            position: absolute;
+            width: auto; 
+            min-width: 150px; 
+            height: auto; 
+            padding: 10px 20px; 
+            left: 25%;
+            top: 400px;
+            transform: translate(-50%, -50%);
+            background: #D9D9D9;
+            border-radius: 9px;
+        }
         
-    }
+            .cost-text {
+                font-size: 1rem; 
+                line-height: 1.2;
+                text-align: center;
+                color: black;
+            }
+            .Rectangle48-cost p {
+                font-size: 2vw;
+                line-height: 100%;
+                text-align: center;
+                color: black;
+            }
 
-    .Rectangle44 {
-    position: absolute;
-    width: 65%;
-    height: 80%;
-    left: 50%;
-    top: 65%; 
-    transform: translate(-50%, -50%);
+        .Rectangle49-complexity {
+            position: absolute;
+            width: auto; 
+            min-width: 150px; 
+            height: auto; 
+            padding: 10px 20px; 
+            left: 50%;
+            top: 400px;
+            transform: translate(-50%, -50%);
+            background: #D9D9D9;
+            border-radius: 9px;
+        }
+            .complexity-text {
+                font-size: 1rem; 
+                line-height: 1.2;
+                text-align: center;
+                color: black;
+            }
+                .Rectangle49-complexity p {
+                    font-size: 2vw;
+                    line-height: 100%;
+                    text-align: center;
+                    color: black;
+                }
 
-    background: #D9D9D9;
-    border-radius: 9px;
-    }
-    .Rectangle44 p {
-    font-size: 2vw;
-    line-height: 100%;
-    text-align: center;
-    color: black;
-    }
+        .Rectangle50-impact {
+            position: absolute;
+            width: auto; 
+            min-width: 150px; 
+            height: auto; 
+            padding: 10px 20px; 
+            left: 75%;
+            top: 400px;
+            transform: translate(-50%, -50%);
+            background: #D9D9D9;
+            border-radius: 9px;
+        }
+            .impact-text {
+                font-size: 1rem; 
+                line-height: 1.2;
+                text-align: center;
+                color: black;
+            }
+            .Rectangle50-impact p {
+                font-size: 2vw;
+                line-height: 100%;
+                text-align: center;
+                color: black;
+            }
 
-
-    .Rectangle45 {
-    position: absolute;
-    width: 50%;
-    height: 12%;
-    left: 50%;
-    top: 20%; 
-    transform: translate(-50%, -50%);
-
-    background: #D9D9D9;
-    border-radius: 9px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    }
-
-    .Rectangle45 {
-    font-size: 3vw;
-    line-height: 100%;
-    text-align: center;
-    color: black;
-    vertical-align: center;
-    }
-
-    .Rectangle46{
-    position: absolute;
-    width: 40%;
-    height: 12%;
-    left: 34%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    background: #D9D9D9;
-    border-radius: 9px;
-    }
-
-    .Rectangle46 p {
-    font-size: 2vw;
-    line-height: 100%;
-    text-align: center;
-    color: black;
-    }
-
-    .Rectangle47 {
-    position: absolute;
-    width: 30%;
-    height: 12%;
-    left: 71%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    background: #D9D9D9;
-    border-radius: 9px;
-    }
-
-    .Rectangle47 p {
-    font-size: 2vw;
-    line-height: 100%;
-    text-align: center;
-    color: black;
-    }
-
-    .Rectangle48 {
-    position: absolute;
-    width: 20%;
-    height: 12%;
-    left: 25%;
-    top: 70%;
-    transform: translate(-50%, -50%);
-
-    background: #D9D9D9;
-    border-radius: 9px;
-    }
-
-    .Rectangle48 p {
-    font-size: 2vw;
-    line-height: 100%;
-    text-align: center;
-    color: black;
-    }
-
-    .Rectangle49 {
-    position: absolute;
-    width: 25%;
-    height: 12%;
-    left: 50%;
-    top: 70%;
-    transform: translate(-50%, -50%);
-
-    background: #D9D9D9;
-    border-radius: 9px;
-    }
-
-    .Rectangle49 p {
-    font-size: 2vw;
-    line-height: 100%;
-    text-align: center;
-    color: black;
-    }
-
-    .Rectangle50 {
-    position: absolute;
-    width: 20%;
-    height: 12%;
-    left: 75%;
-    top: 70%;
-    transform: translate(-50%, -50%);
-
-    background: #D9D9D9;
-    border-radius: 9px;
-    }
-
-    .Rectangle50 p {
-    font-size: 2vw;
-    line-height: 100%;
-    text-align: center;
-    color: black;
-    }
-
-    .Rectangle51 {
-    position: absolute;
-    width: 70%;
-    height: 90%;
-    left: 50%;
-    top: 130%;
-    transform: translate(-50%, -50%);
-
-    background: #D9D9D9;
-    border-radius: 9px;
-    }
-
-    .Rectangle51 p {
-    font-size: 2vw;
-    line-height: 100%;
-    text-align: center;
-    color: black;
-    }
-
-    .Rectangle52 {
-        position: absolute;
-        width: 364px;
-        height: 42px;
-        left: 740px;
-        top: 300px;
-    }
-
-    .Rectangle52 p {
-        font-size: 35px;
-        line-height: 100%;
-        text-align: center;
-        color: black;
-    }
+        .Rectangle51-risks-addressed {
+            position: absolute;
+            width: auto; 
+            min-width: 250px; 
+            height: auto; 
+            padding: 10px 20px; 
+            left: 50%;
+            top: 690px;
+            transform: translate(-50%, -50%);
+            background: #D9D9D9;
+            border-radius: 9px;
+        }
+            .risks-addressed-text {
+                font-size: 1rem; 
+                line-height: 1.2;
+                text-align: center;
+                color: black;
+            }
+            .Rectangle51-risks-addressed p {
+                font-size: 2vw;
+                line-height: 100%;
+                text-align: center;
+                color: black;
+            }

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Goals </title>
+        <title> Create Goal </title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="main.css" type="text/css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -16,11 +16,12 @@
         </div>
 
         <!-- Form --> 
-        <form action="create_goal_successful.php" method="post">
+        <form class="form-action"action="create_goal_successful.php" method="post">
+            <br><br><br>
             
             <!-- Title --> 
             <p>Title: 
-                <br><input type="text" name="goalTitle" size="30" value="" />
+                <br><input class="input-field" type="text" name="goalTitle" size="30" value="" />
             </p>
 
             <!-- Category --> 
@@ -81,7 +82,9 @@
                 </select>
             </p>
 
-            <p><input type="submit" name="submit" value="Create New Goal" /></p>
+            <br>
+
+            <p> <input class="submit-button" type="submit" name="submit" value="Create New Goal" /> </p>
         </form>
 
     </body>

@@ -103,7 +103,7 @@
             <h1 class="title">Create New Goal</h1>
         </div>
 
-        <!-- Forum --> 
+        <!-- Form --> 
         <form action="create_goal_successful.php" method="post">
             <!-- Title --> 
             <p>Title: 
