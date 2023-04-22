@@ -196,7 +196,8 @@
         .goal-actions {
             flex-basis: 15%;
         }
-    /* Filter */
+
+        /* Filter */
         .Filter {
             width: 100.17px;
             font-size: 29px;
@@ -208,7 +209,8 @@
             width: 1304.80px;
             height: 68px;
             flex-direction: row;
-            padding-top: 10px;
+            padding-top: 20px;
+            padding-bottom: 160px;
         }
     
         .Filter-DividingLine {
@@ -221,7 +223,27 @@
         .Spacing {
             height: 11.50px;
         } 
+
+        .filter-form{
+            width: 1304.80px;
+            display:flex;
+            justify-content: center;
+        }
+        .filter-form select {
+            width: 100%;
+            max-width: 100%;
+        }
+        .filter-form-column {
+            width: 30%;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+
     /* PHP Code */
+        table {
+            width: 1304.80px;
+        }
         td {
             align-items: center;
             justify-content: space-between;
