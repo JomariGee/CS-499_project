@@ -1,5 +1,5 @@
 /**************************************************************
-                    Entire Page
+         #052637           Entire Page    light blue -#1f5d8646 ;  Top(#D7E1EC button- 94b4d1
 ***************************************************************/
     body {
         margin: 0;
@@ -8,16 +8,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #1f5d8646;
+        background-color: #FAFAFA; 
     }
     .title {
         font-size: 40px;
+        color: white;
     }
     /* Header */
         .header {
             width: 100%;
             height: 60px;
-            background-color: #d7e1ec;
+            background-color: #052637;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -43,7 +44,7 @@
             .hamburger-menu div {
                 width: 25px;
                 height: 3px;
-                background-color: #333;
+                background-color: white;
                 margin: 5px 0;
             }
         /* Navigation */
@@ -52,7 +53,7 @@
                 position: absolute;
                 top: 60px;
                 left: 0;
-                background-color: #f1f1f1;
+                background-color: white;
                 width: 200px;
                 box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
                 z-index: 1;
@@ -106,19 +107,19 @@
 ***************************************************************/  
 /* Parameters Group */ 
     .ParametersGroup {
-        width: 1304.80px;
+        width: 1800.80px;
         height: 71px;
         padding-top: 90px;
     }
 
     .ParametersRectangle {
-        width: 1150px;
+        width: 1304.80px;
         height: 71px;
         padding-top: 17px;
         padding-bottom: 23px;
-        padding-left: 117px;
-        padding-right: 46px;
-        background-color: rgba(217, 217, 217, 1);
+        padding-left: 5px;
+        padding-right: 20px;
+        background-color: #367190;
         border-radius: 7px;
         display: flex;
         flex-direction: row;
@@ -130,7 +131,7 @@
         font-size: 29px;
         line-height: 100%;
         text-align: center;
-        color: black;
+        color: white;
         flex: 1;
     
     }
@@ -196,7 +197,8 @@
         .goal-actions {
             flex-basis: 15%;
         }
-    /* Filter */
+
+        /* Filter */
         .Filter {
             width: 100.17px;
             font-size: 29px;
@@ -208,20 +210,41 @@
             width: 1304.80px;
             height: 68px;
             flex-direction: row;
-            padding-top: 10px;
+            padding-top: 20px;
+            padding-bottom: 160px;
         }
     
         .Filter-DividingLine {
             width: 1304.80px;
             height: 5px;
-            background-color: black;
+            background-color: #a5a1a1;
             border-radius: 8px;
         }
     
         .Spacing {
             height: 11.50px;
         } 
+
+        .filter-form{
+            width: 1304.80px;
+            display:flex;
+            justify-content: center;
+        }
+        .filter-form select {
+            width: 100%;
+            max-width: 100%;
+        }
+        .filter-form-column {
+            width: 30%;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+
     /* PHP Code */
+        table {
+            width: 1304.80px;
+        }
         td {
             align-items: center;
             justify-content: space-between;
@@ -288,10 +311,10 @@
 
     /* Submission button */
         .submit-button {
-            background-color: #94b4d1;
+            background-color: #0a638d;
             border: none;
             border-radius: 4px;
-            color: black;
+            color: white;
             cursor: pointer;
             font-size: 17px;
             padding: 8px 16px;
@@ -301,7 +324,7 @@
         }
         
         .submit-button:hover {
-            background-color: #a09a9a;
+            background-color: #07435f;
         }
           
         .submit-button:focus {
@@ -383,7 +406,7 @@
                 height: auto;
                 padding: 10px 20px; 
                 left: 50%;
-                top: 400px; 
+                top: 450px; 
                 transform: translate(-50%, -50%);
                 background: #D9D9D9;
                 border-radius: 9px;
@@ -420,7 +443,7 @@
             margin-right: 100px;
             margin-left: 70px; 
             text-align: center;
-            margin-top: 820px;
+            margin-top: 10px;
         }
         .next i {
             padding-left: 10px;
@@ -436,7 +459,7 @@
             margin-right: 100px; 
             margin-left: 70px;
             text-align: center;
-            margin-top: 820px;
+            margin-top: 10px;
         }
         .recommended i {
             padding-right: 10px;
@@ -452,7 +475,7 @@
             margin-right: 100px; 
             margin-left: 70px;
             text-align: center;
-            margin-top: 820px;
+            margin-top: 10px;
         }
         .previous i {
             padding-right: 10px;
@@ -577,7 +600,7 @@
             height: auto; 
             padding: 10px 20px; 
             left: 34%;
-            top: 200px;
+            top: 240px;
             transform: translate(-50%, -50%);
             background: #D9D9D9;
             border-radius: 9px;
@@ -603,7 +626,7 @@
             height: auto; 
             padding: 10px 20px; 
             left: 71%;
-            top: 200px;
+            top: 240px;
             transform: translate(-50%, -50%);
             background: #D9D9D9;
             border-radius: 9px;
@@ -628,7 +651,7 @@
             height: auto; 
             padding: 10px 20px; 
             left: 25%;
-            top: 400px;
+            top: 450px;
             transform: translate(-50%, -50%);
             background: #D9D9D9;
             border-radius: 9px;
@@ -654,7 +677,7 @@
             height: auto; 
             padding: 10px 20px; 
             left: 50%;
-            top: 400px;
+            top: 450px;
             transform: translate(-50%, -50%);
             background: #D9D9D9;
             border-radius: 9px;
@@ -679,7 +702,7 @@
             height: auto; 
             padding: 10px 20px; 
             left: 75%;
-            top: 400px;
+            top: 450px;
             transform: translate(-50%, -50%);
             background: #D9D9D9;
             border-radius: 9px;
@@ -704,7 +727,7 @@
             height: auto; 
             padding: 10px 20px; 
             left: 50%;
-            top: 690px;
+            top: 840px;
             transform: translate(-50%, -50%);
             background: #D9D9D9;
             border-radius: 9px;
@@ -720,4 +743,10 @@
                 line-height: 150%;
                 text-align: center;
                 color: black;
+            }
+            .risk-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
             }

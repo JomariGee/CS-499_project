@@ -331,55 +331,56 @@ CREATE TABLE `status_update` (
   `statusID` int(11) DEFAULT NULL, 
   `goalID` int(11) DEFAULT NULL,
   `update_date` date DEFAULT NULL,
+  `goal_newest` BIT DEFAULT NULL,
   PRIMARY KEY (stat_updateID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-insert into status_update (goalID, statusID, update_date, goal_newest) values 
+insert into status_update (goalID, statusID, update_date) values 
 /*ACCOUNT SECURITY (1.0) [1-7]*/
-	 (1, 1, "Default", 1), 
-	 (2, 1, "Default", 1),
-	 (3, 1, "Default", 1), 
-	 (4, 1, "Default", 1),
-	 (5, 1, "Default", 1), 
-	 (6, 1, "Default", 1), 
-	 (7, 1, "Default", 1), 
+	 (1, 1, "Default"), 
+	 (2, 1, "Default"),
+	 (3, 1, "Default"), 
+	 (4, 1, "Default"),
+	 (5, 1, "Default"), 
+	 (6, 1, "Default"), 
+	 (7, 1, "Default"), 
 /*DEVICE SECURITY (2.0) [8-12]*/
-	 (8, 1, "Default", 1), 
-	 (9, 1, "Default", 1), 
-	 (10, 1, "Default", 1), 
-	 (11, 1, "Default", 1), 
-	 (12, 1, "Default", 1), 
+	 (8, 1, "Default"), 
+	 (9, 1, "Default"), 
+	 (10, 1, "Default"), 
+	 (11, 1, "Default"), 
+	 (12, 1, "Default"), 
 /*DATA SECURITY (3.0) [13-16]*/
-	 (13, 1, "Default", 1), 
-	 (14, 1, "Default", 1), 
-	 (15, 1, "Default", 1),
-	 (16, 1, "Default", 1),  
+	 (13, 1, "Default"), 
+	 (14, 1, "Default"), 
+	 (15, 1, "Default"),
+	 (16, 1, "Default"),  
 /*GOVERNANCE AND TRAINING (4.0) [17-21]*/
-	 (17, 1, "Default", 1), 
-	 (18, 1, "Default", 1), 
-	 (19, 1, "Default", 1), 
-	 (20, 1, "Default", 1), 
-	 (21, 1, "Default", 1), 
+	 (17, 1, "Default"), 
+	 (18, 1, "Default"), 
+	 (19, 1, "Default"), 
+	 (20, 1, "Default"), 
+	 (21, 1, "Default"), 
 /*VULNERABILITY MANAGEMENT (5.0) [22-27]*/
-	 (22, 1, "Default", 1), 
-	 (23, 1, "Default", 1), 
-	 (24, 1, "Default", 1), 
-	 (25, 1, "Default", 1), 
-	 (26, 1, "Default", 1), 
-	 (27, 1, "Default", 1), 
+	 (22, 1, "Default"), 
+	 (23, 1, "Default"), 
+	 (24, 1, "Default"), 
+	 (25, 1, "Default"), 
+	 (26, 1, "Default"), 
+	 (27, 1, "Default"), 
 /*SUPPLY CHAIN / THIRD PARTY (6.0) [28-30]*/	
-	 (28, 1, "Default", 1), 
-	 (29, 1, "Default", 1), 
-	 (30, 1, "Default", 1), 
+	 (28, 1, "Default"), 
+	 (29, 1, "Default"), 
+	 (30, 1, "Default"), 
 /* Response and Recovery (7.0) [31-34]*/
-	 (31, 1, "Default", 1), 
-	 (32, 1, "Default", 1), 
-	 (33, 1, "Default", 1), 
-	 (34, 1, "Default", 1), 
+	 (31, 1, "Default"), 
+	 (32, 1, "Default"), 
+	 (33, 1, "Default"), 
+	 (34, 1, "Default"), 
 /*Other (8.0) [35-37]*/
-	 (35, 1, "Default", 1), 
-	 (36, 1, "Default", 1), 
-	 (37, 1, "Default", 1);
+	 (35, 1, "Default"), 
+	 (36, 1, "Default"), 
+	 (37, 1, "Default");
 	
 /* RecommendedAction Table*/
 /*create table RecommendedAction (recActionID int(11), goalID int(11), recAction_desc varchar(255), IT_desc varchar(255), OT_desc varchar(255));*/

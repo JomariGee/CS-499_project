@@ -151,7 +151,7 @@
         <div class="nav">
             <ul>
                 <li><a href="goals.php">Goals</a></li>
-                <li><a href="assessments.php">Assessment History</a></li>
+                <li><a href="assessment_history.php">Assessment History</a></li>
             </ul>
         </div>
 		
@@ -206,13 +206,16 @@
 					</div>
 				
 				<!-- Risks Addressed -->
+				<div class="risk-container">
 					<div class="Rectangle51-risks-addressed">
 						<p class="risks-addressed"><b>Risks Addressed:</b><br><?php echo $risk; ?></p>
 					</div>
+				</div>
 		</div>
 		
-		<!-- Hamburger Menu animation -->
+		<!-- JS code-->
         <script>
+			// Hamburger Menu animation
             $(document).ready(function() {
                 $(".hamburger-menu").click(function() {
                     $(".nav").slideToggle("fast");
