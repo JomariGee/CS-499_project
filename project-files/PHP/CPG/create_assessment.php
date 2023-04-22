@@ -23,13 +23,13 @@
         <div class="nav">
             <ul>
                 <li><a href="goals.php">Goals</a></li>
-                <li><a href="assessments.php">Assessment History</a></li>
+                <li><a href="assessment_history.php">Assessment History</a></li>
             </ul>
         </div>
         <br><br><br>
 
 
-   <form class="form-action"action="assesment_created.php" method="post">
+   <form class="form-action"action="assessment_created.php" method="post">
             <br><br><br>
 
         
