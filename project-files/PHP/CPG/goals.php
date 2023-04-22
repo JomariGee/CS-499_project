@@ -47,15 +47,14 @@ store create date vs assessment date with the goals.
             </div>
 
             <a href="create_goal.php">
-            <div class="rectangle">
-                <i class="fa fa-file-circle-plus"></i> 
-                <h2>New Goals</h2>
-            </div>
+                <div class="rectangle">
+                    <i class="fa fa-file-circle-plus"></i> 
+                    <h2>New Goals</h2>
+                </div>
             </a>
         </div>
     
         <!-- Filters -->
-
         <div class="FilterGroup">
             <div class="Spacing"></div>
             <div class="Filter-DividingLine"></div>
@@ -65,69 +64,68 @@ store create date vs assessment date with the goals.
                 <p class="Filter"><br>Filter:</p>
 
                 <div class="filter-form-column">
+                    <select id="category" name="category">                      
+                        <option value="0">--Select Category--</option>
+                        <option value="1">Account Security</option>
+                        <option value="2">Device Security</option>
+                        <option value="3">Data Security</option>
+                        <option value="4">Governance and Training</option>
+                        <option value="5">Vulnerability Management</option>
+                        <option value="6">Supply Chain / Third Party</option>
+                        <option value="7">Response and Recovery</option>
+                        <option value="8">Other</option>
+                    </select>
+                    &nbsp;
+                    
+                    <select id="status" name="status">                      
+                        <option value="0">--Select Status--</option>
+                        <option value="1">Not Started</option>
+                        <option value="2">Scoped</option>
+                        <option value="3">In Progress</option>
+                        <option value="4">Implemented</option>
+                    </select>
+                    &nbsp;
 
-                <select id="category" name="category">                      
-                <option value="0">--Select Category--</option>
-                <option value="1">Account Security</option>
-                <option value="2">Device Security</option>
-                <option value="3">Data Security</option>
-                <option value="4">Governance and Training</option>
-                <option value="5">Vulnerability Management</option>
-                <option value="6">Supply Chain / Third Party</option>
-                <option value="7">Response and Recovery</option>
-                <option value="8">Other</option>
-                </select>
-                &nbsp;
-                <select id="status" name="status">                      
-                <option value="0">--Select Status--</option>
-                <option value="1">Not Started</option>
-                <option value="2">Scoped</option>
-                <option value="3">In Progress</option>
-                <option value="4">Implemented</option>
-                </select>
-                &nbsp;
-                <select id="cost" name="cost"> 
-                <option value="0">--Select Cost--</option>
-                <option value="1">$</option>
-                <option value="2">$$</option>
-                <option value="3">$$$</option>
-                <option value="4">$$$$</option>
-                </select>
-
+                    <select id="cost" name="cost"> 
+                        <option value="0">--Select Cost--</option>
+                        <option value="1">$</option>
+                        <option value="2">$$</option>
+                        <option value="3">$$$</option>
+                        <option value="4">$$$$</option>
+                    </select>
                 </div>
 
 
                 <div class="filter-form-column">
+                    <select id="complexity" name="complexity"> 
+                        <option value="0">--Select Complexity--</option>
+                        <option value="1">Low</option>
+                        <option value="2">Medium</option>
+                        <option value="3">High</option>
+                    </select>
+                    &nbsp;
 
-                <select id="complexity" name="complexity"> 
-                <option value="0">--Select Complexity--</option>
-                <option value="1">Low</option>
-                <option value="2">Medium</option>
-                <option value="3">High</option>
-                </select>
-                &nbsp;
-                <select id="impact" name="impact"> 
-                <option value="0">--Select Impact--</option>
-                <option value="1">Low</option>
-                <option value="2">Medium</option>
-                <option value="3">High</option>
-                </select>
-                &nbsp;
-                <select id="date" name="date"> 
-                <option value="0">--Select Date--</option>
-                <option value="1">Last 3 Months</option>
-                <option value="2">Last 6 Months</option>
-                <option value="3">Last Year</option>
-                <option value="4">Over a Year</option>
-                </select>
-
-            </div>
+                    <select id="impact" name="impact"> 
+                        <option value="0">--Select Impact--</option>
+                        <option value="1">Low</option>
+                        <option value="2">Medium</option>
+                        <option value="3">High</option>
+                    </select>
+                    &nbsp;
+                    
+                    <select id="date" name="date"> 
+                        <option value="0">--Select Date--</option>
+                        <option value="1">Last 3 Months</option>
+                        <option value="2">Last 6 Months</option>
+                        <option value="3">Last Year</option>
+                        <option value="4">Over a Year</option>
+                    </select>
+                </div>
 
             <p class="Filter">
                 <br><button type="submit" input class="submit-button">Apply Filter</button>
             </p>
         </form>
-
 
             <div class="Spacing"></div>
             <div class="Filter-DividingLine"></div>
