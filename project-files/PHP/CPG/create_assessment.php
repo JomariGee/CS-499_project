@@ -29,7 +29,7 @@
         <br><br><br>
 
 
-   <form class="form-action"action="assessment_created.php" method="post">
+   <form class="form-action"action="create_assessment_successful.php" method="post">
             <br><br><br>
 
 			<!--Choose Goal-->
@@ -103,7 +103,7 @@
 
             <!--- Date Selection -->
             <p>Date:
-            <input type="date" id="assessment_date">
+            <input type="date" id="assessment_date" value="<?php echo date('Y-m-d'); ?>" />
             <p>
 
 
