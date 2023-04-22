@@ -1,3 +1,14 @@
+<!-- 
+
+Need to do:
+    - date filter after figuring it out
+    - import (maybe)
+
+After date filter is done need to decide where to 
+store create date vs assessment date with the goals.
+
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
