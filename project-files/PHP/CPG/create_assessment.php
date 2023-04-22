@@ -34,7 +34,7 @@
 
 			<!--Choose Goal-->
 			<p>Goal: <br>
-                <select id="goalTitle" name="goalTitle">   
+                <select id="goalNum" name="goalNum">   
 					<option value="0">--Select Goal--</option>
 				<!-- LOOP FOR EACH GOAL -->
 					<?php
