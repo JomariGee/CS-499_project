@@ -32,19 +32,72 @@
    <form class="form-action"action="assessment_created.php" method="post">
             <br><br><br>
 
-        
-            <p>Title of Goal:
-                <br><input class="input-field" type="text" name="goalTitle" size="30" value="" />
-            <p>
+			<!--Choose Goal-->
+			<p>Goal: <br>
+                <select id="goalTitle" name="goalTitle">   
+					<option value="0">--Select Goal--</option>
+				<!-- LOOP FOR EACH GOAL -->
+					<?php
+						// NEED TO UPDATE SO THAT DROPDOWN DOESNT SET ALL STUFF UNCHANGED TO 0!
+
+						// Connect to the database
+						require_once('mysqli_connect.php');
+
+						// Retrieve all goals and ids
+						$sql = "SELECT g.goalID, g.goalTitle 
+							FROM goal g;";
+
+
+						$response = mysqli_query($dbc, $sql);
+						if($response){
+							while($row = mysqli_fetch_assoc($response)){
+								$title = $row['goalTitle'];
+								$id = $row['goalID']; ?>
+						
+								<option value= "<?php echo $id; ?>"> <?php echo $title;?> </option>
+					<?php	}
+						}else {
+							// Log the error to a file or send it to a logging service
+							error_log(mysqli_error($dbc));
+						}
+						// Close connection to the database
+						//mysqli_close($dbc);
+					?>
+                </select>
+            </p>
+			
 
             <!-- Choose Status -->
             <p>Status: <br>
                 <select id="status" name="status">                      
                 <option value="0">--Select Status--</option>
-                <option value="1">Not Started</option>
-                <option value="2">Scoped</option>
-                <option value="3">In Progress</option>
-                <option value="4">Implemented</option>
+					<!-- LOOP FOR EACH Status -->
+					<?php
+						// NEED TO UPDATE SO THAT DROPDOWN DOESNT SET ALL STUFF UNCHANGED TO 0!
+
+						// Connect to the database
+						//require_once('mysqli_connect.php');
+
+						// Retrieve all goals and ids
+						$sql = "SELECT s.statusID, s.status_desc 
+							FROM status s;";
+
+
+						$response = mysqli_query($dbc, $sql);
+						if($response){
+							while($row = mysqli_fetch_assoc($response)){
+								$stat = $row['status_desc'];
+								$id = $row['statusID']; ?>
+						
+								<option value= "<?php echo $id; ?>"> <?php echo $stat;?> </option>
+					<?php	}
+						}else {
+							// Log the error to a file or send it to a logging service
+							error_log(mysqli_error($dbc));
+						}
+						// Close connection to the database
+						//mysqli_close($dbc);
+					?>
                 </select>
             </p>
 
@@ -59,7 +112,7 @@
                 <br><input class="input-field" type="text" name="note_desc" size="30" value="" />
             <p>
 
-            <p> <input class="submit-button" type="submit" name="submit" value="Create New Assesment" /> </p>
+            <p> <input class="submit-button" type="submit" name="submit" value="Create New Assessment" /> </p>
         </form>
      
    <!-- PHP database code --> 
