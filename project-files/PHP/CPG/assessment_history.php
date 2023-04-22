@@ -31,38 +31,24 @@
 
         <!-- Importation & New Goal creation -->
         <div class="main">
-            <div class="rectangle">
-                <i class="fa fa-file-import"></i> 
-                <h2>Import</h2>
-            </div>
+            
             <a href="create_assessment.php">
             <div class="rectangle">
                 <i class="fa fa-file-circle-plus"></i> 
-                <h2>New Assessments</h2>
+                <h2>New Assessment</h2>
             </div>
             </a>
         </div>
-    
-        <!-- Filters -->
-        <div class="FilterGroup">
-            <div class="Spacing"></div>
-            <div class="Filter-DividingLine"></div>
-            <div class="Spacing"></div>
-            <p class="Filter">Filters:</p>
-
-            <div class="Spacing"></div>
-            <div class="Filter-DividingLine"></div>
-        </div>
+	    
+	    <br><br>
 
         <!-- Parameters -->
-        <div class="ParametersGroup">
             <div class="ParametersRectangle">
                 <p class=" goal">Date</p>
                 <p class="last-assessment">Goal</p>
                 <p class="status">Status</p>
                 <p class="actions">Actions</p>
             </div>
-        </div>
                     
         <!-- Information Parameters
 			Display: Status, goal, date -->
@@ -92,7 +78,7 @@
                     if($response){
                         echo '<table align="center"
                         cellspacing="0" cellpadding="8">
-                        <div class="goal-data-row">';
+                        ';
                         
                         while($row = mysqli_fetch_array($response)){
                             $date = $row['Date'];
@@ -101,30 +87,30 @@
 							$id = $row["goalID"];
 
 
-                            echo '<tr><td align="center"><a href="info.php?goalID=' .$id. '">' .$date. '</a></td>
+                            echo '<tr><td align="center"><a href="assessments.php?goalID=' .$id. '">' .$date. '</a></td>
                             <td align="center">' .$title. '</td>
                             <td align="center">' .$status. '</td>' . '<td align="center">
                             
                                 <div class="action-item">
-                                    <a href="edit_goal.php?goalID=' . $id . '">
+                                    <a href="">
                                         <i class="fa fa-pen-to-square"></i> 
                                         <p>Edit</p>
-                                    </a>
+                                   </a>
                                 </div>
 
                                 
                                 &nbsp;&nbsp;&nbsp;
 
                                 <div class="action-item">
-                                    <a href="delete_goal.php?goalID=' . $id . '">
+                                 <a href="">
                                         <i class="fa fa-trash"></i> 
                                         <p>Remove</p>
-                                    </a>
+                                  </a>  
                                 </div>
                     
                                 &nbsp;&nbsp;&nbsp;
                                 <div class="action-item">
-                                <a href="export_goal.php?goalID=' . $id . '">
+                                <a href="">
                                     <i class="fa fa-download"></i> 
                                     <p>Export</p>
                                     </a>
