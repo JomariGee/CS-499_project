@@ -151,7 +151,7 @@
         <div class="nav">
             <ul>
                 <li><a href="goals.php">Goals</a></li>
-                <li><a href="assessments.php">Assessment History</a></li>
+                <li><a href="assessment_history.php">Assessment History</a></li>
             </ul>
         </div>
 		
