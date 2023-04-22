@@ -64,7 +64,7 @@ CREATE TABLE `goal` (
   `complexity` int(11) DEFAULT NULL,
   `categoryID` int(11) DEFAULT NULL,
   `csf` varchar(255) DEFAULT NULL,
-  `assessment_date` varchar(50) DEFAULT NULL, 
+  `assessment_date` date DEFAULT NULL, 
   PRIMARY KEY (goalID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
