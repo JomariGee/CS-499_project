@@ -58,7 +58,7 @@ insert into category (category_desc) values ("Account Security"), ("Device Secur
 CREATE TABLE `goal` (
   `goalID` int(11) NOT NULL AUTO_INCREMENT,
   `goalTitle` varchar(255) DEFAULT NULL,
-  `status_updateID` int(11) DEFAULT NULL,
+  `statusID` int(11) DEFAULT NULL,
   `cost` int(11) DEFAULT NULL,
   `impact` int(11) DEFAULT NULL,
   `complexity` int(11) DEFAULT NULL,
