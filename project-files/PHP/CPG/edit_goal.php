@@ -8,7 +8,7 @@
     if ($response) {
     $row = mysqli_fetch_assoc($response);
     if (isset($_POST['submit'])) {
-        $today = date("m/d/y");
+        $today = date("Y/m/d");
 
         // Get the updated values or use existing values if input fields are empty
         $goalTitle = isset($_POST['goalTitle']) && $_POST['goalTitle'] !== '' ? $_POST['goalTitle'] : $row['goalTitle'];
