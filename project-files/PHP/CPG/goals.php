@@ -1,11 +1,7 @@
 <!-- 
 
 Need to do:
-    - date filter after figuring it out
-    - import (maybe)
-
-After date filter is done need to decide where to 
-store create date vs assessment date with the goals.
+    - import
 
  -->
 
@@ -147,12 +143,43 @@ store create date vs assessment date with the goals.
             // Get a connection for the database
             require_once('mysqli_connect.php');
 
+            //band-aid for filter warnings :^( idk how else to fix
+            error_reporting(E_ERROR | E_PARSE);
+
             $category = isset($_GET['category']) ? intval($_GET['category']) : 0;
             $status = isset($_GET['status']) ? intval($_GET['status']) : 0;
             $cost = isset($_GET['cost']) ? intval($_GET['cost']) : 0;
             $complexity = isset($_GET['complexity']) ? intval($_GET['complexity']) : 0;
             $impact = isset($_GET['impact']) ? intval($_GET['impact']) : 0;
             $date = isset($_GET['date']) ? intval($_GET['date']) : 0;
+
+            // Get the current date
+            $current_date = date('Y-m-d');
+
+            // Filter by last 3 months
+            if ($_GET['date'] == '1') {
+                $start_date = date('Y-m-d', strtotime('-3 months', strtotime($current_date)));
+                $end_date = $current_date;
+            }
+
+            // Filter by last 6 months
+            elseif ($_GET['date'] == '2') {
+                $start_date = date('Y-m-d', strtotime('-6 months', strtotime($current_date)));
+                $end_date = $current_date;
+            }
+
+            // Filter by last year
+            elseif ($_GET['date'] == '3') {
+                $start_date = date('Y-m-d', strtotime('-1 year', strtotime($current_date)));
+                $end_date = $current_date;
+            }
+
+            // Filter by over a year
+            elseif ($_GET['date'] == '4') {
+            $start_date = '1900-01-01';
+            $end_date = date('Y-m-d', strtotime('-1 year', strtotime($start_date)));
+            }
+        
 
 
             // Create a query for the database
@@ -162,7 +189,7 @@ store create date vs assessment date with the goals.
                         status.status_desc AS Status
                         FROM goal 
                         INNER JOIN status ON goal.status_updateID=status.statusID";
-
+        
             if ($category !== 0) {
                   $query .= " AND goal.categoryID=$category";
             }
@@ -178,6 +205,10 @@ store create date vs assessment date with the goals.
             if ($impact !== 0) {
                 $query .= " AND goal.impact=$impact";
             }
+            if ($date !== 0) {
+                $query .= " WHERE assessment_date BETWEEN '$start_date' AND '$end_date'";
+            }
+        
 
 
             // If the query executed properly proceed
