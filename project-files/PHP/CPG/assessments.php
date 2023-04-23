@@ -42,7 +42,7 @@ Need to update query so that it prints the assessments correctly
                 <div></div>
                 <div></div>
             </div>
-            <h1 class="title">Assessments For: <?php  echo $title; ?></h1>
+            <p class="title"><?php  echo $title; ?></p>
         </div>
 
         <!-- Navigation bar -->
