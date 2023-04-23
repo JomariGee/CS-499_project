@@ -173,7 +173,12 @@
                 </select>
             </p>
 
-            <p> <input class="submit-button" input type="submit" name="submit" value="Create New Goal" /> </p>
-        </form>
+            <!-- Submit --> 
+            <p> <input class="submit-button" type="submit" name="submit" value="Create New Goal" /> 
+
+            <!-- Back Button-->
+            <form>
+            <input class ="submit-button" value="Cancel" onclick="history.go(-1)"> 
+            </form> </p>
     </body>
 </html>
