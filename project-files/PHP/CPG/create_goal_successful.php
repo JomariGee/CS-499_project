@@ -6,7 +6,7 @@
     // prepare the data for insertion
     $goalTitle;
     $category = null;
-    $status;
+    $status = 1;
     $cost = null;
     $complexity = null;
     $impact = null;
@@ -31,13 +31,6 @@
             $category = null;
         }
 
-        if(isset($_POST['status']) && !empty($_POST['status'])){
-            $status = $_POST['status'];
-        }else{
-            // instead of null, set the default status to "Not Started"
-            $status = 1;
-        }
-
         if(isset($_POST['cost']) && !empty($_POST['cost'])){
             $cost = $_POST['cost'];
         }else{
@@ -60,7 +53,7 @@
 
         if(empty($data_missing)){
             require_once('mysqli_connect.php');
-            $query = "INSERT INTO goal (goalTitle, categoryID, status_updateID, cost, complexity, impact, assessment_date) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            $query = "INSERT INTO goal (goalTitle, categoryID, statusID, cost, complexity, impact, assessment_date) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
             $stmt = mysqli_prepare($dbc, $query);
 
@@ -123,18 +116,6 @@
                 <option value="6">Supply Chain / Third Party</option>
                 <option value="7">Response and Recovery</option>
                 <option value="8">Other</option>
-                </select>
-            </p>
-
-            <!-- Status --> 
-            <p>Status: 
-                <br>
-                <select id="status" name="status">                      
-                <option value="0">--Select Status--</option>
-                <option value="1">Not Started</option>
-                <option value="2">Scoped</option>
-                <option value="3">In Progress</option>
-                <option value="4">Implemented</option>
                 </select>
             </p>
             
