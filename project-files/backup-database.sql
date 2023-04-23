@@ -68,7 +68,7 @@ CREATE TABLE `goal` (
   PRIMARY KEY (goalID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-insert into goal (goalTitle, cost, impact, complexity, categoryID, csf, status_updateID) values 
+insert into goal (goalTitle, cost, impact, complexity, categoryID, csf, statusID) values 
 /*ACCOUNT SECURITY (1.0) -- checked*/
 	("Detection of Unsuccessful (Automated) Login Attempts", 1, 3, 1, 1, "PR.AC-7", 1), 
 	("Changing Default Passwords", 1, 3, 2, 1, "PR.AC-1", 1),
