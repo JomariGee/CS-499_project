@@ -11,11 +11,6 @@
     <body>
         <!-- Hamburger Menu & Title -->
         <div class="header">
-            <div class="hamburger-menu">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
             <h1 class="title">Create New Assessment</h1>
         </div>
 
