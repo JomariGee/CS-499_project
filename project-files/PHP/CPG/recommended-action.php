@@ -43,7 +43,7 @@
 
 
                 // PRINT THE INFORMATION
-                $sql = "SELECT recAction_desc FROM recommendedaction 
+                $sql = "SELECT recAction_desc, OT_desc, IT_desc FROM recommendedaction 
                         WHERE goalID = $id";
 
 
@@ -53,6 +53,9 @@
                     $row = mysqli_fetch_assoc($response);
                     if (!empty($row)) {
                         $recAct = $row['recAction_desc'];
+                        $it_info = $row['IT_desc'];
+                       $ot_info = $row['OT_desc'];
+
                     }
                     else {
                         // handle the case where $row is empty
@@ -66,16 +69,36 @@
             ?>
 
         <div class="main">
+            
+            <!-- Action recommendation  --> 
+            <div class="">
+                    <p><?php echo $recAct; ?></p>
+                </div>
+            </div>
+
+                <!-- IT info  -->
+            <div class="">
+                    <p><?php echo $it_info; ?></p>
+                </div>
+            </div>
+
+                <!--  OT info  -->
+            <div class="">
+                    <p><?php echo $ot_info; ?></p>
+                </div>
+            </div>
+
+        <!-- reference link --> 
+        <div class="">
+                    <p><?php echo $ot_info; ?></p>
+                </div>
+            </div>
+
 		    <!-- Return button -->
                 <div class="return-to-info">
                     <a href="info.php?goalID=<?php echo $id; ?>"> Return to Info </a>
                 </div>
-        
-            <!-- Action recommendation  --> 
-                <div class="Rectangle44-action-recommend">
-                    <p><?php echo $recAct; ?></p>
-                </div>
-        </div>
+            </div>
 			
 		<!-- Hamburger Menu animation -->
             <script>
