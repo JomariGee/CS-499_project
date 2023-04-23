@@ -70,7 +70,7 @@
 
         <div class="main">
             
-            <!-- Action recommendation  --> 
+              <!-- Action recommendation  --> 
             <div class= "Rectangle44-action-recommend">
                     <p><?php echo $recAct; ?></p>
                 </div>

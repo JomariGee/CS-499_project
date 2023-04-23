@@ -100,7 +100,7 @@
 
             <!-- Back Button-->
             <form>
-            <input class ="submit-button" value="Cancel" onclick="history.go(-1)"> 
+                <input class="submit-button-cancel" value="Cancel" onclick="history.go(-1)"> 
             </form> </p>
 
 

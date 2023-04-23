@@ -33,7 +33,7 @@
         <div class="main">
             
             <a href="create_assessment.php">
-            <div class="rectangle">
+            <div class="rectangle-history">
                 <i class="fa fa-file-circle-plus"></i> 
                 <h2>New Assessment</h2>
             </div>

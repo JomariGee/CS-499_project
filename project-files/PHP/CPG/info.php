@@ -187,7 +187,7 @@
 					
 				<!-- Status -->
 					<div class="Rectangle46-status">
-					<p class="status-text"><b>Status: </b><?php echo $status; ?></p>
+						<p class="status-text"><b>Status: </b><?php echo $status; ?></p>
 					</div>
 			
 				<!-- Cost -->

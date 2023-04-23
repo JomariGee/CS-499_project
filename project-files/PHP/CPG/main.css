@@ -1,5 +1,5 @@
 /**************************************************************
-         #052637           Entire Page    light blue -#1f5d8646 ;  Top(#D7E1EC button- 94b4d1
+               Entire Page    
 ***************************************************************/
     body {
         margin: 0;
@@ -24,11 +24,10 @@
             align-items: center;
             position: relative;
         }
-
-        .header h1 {
-            margin: 0;
-            padding: 0;
-        }
+            .header h1 {
+                margin: 0;
+                padding: 0;
+            }
 
     /* Menu */
         /* Hamburger Menu */
@@ -40,13 +39,12 @@
                 cursor: pointer;
                 z-index: 1;
             }
-
-            .hamburger-menu div {
-                width: 25px;
-                height: 3px;
-                background-color: white;
-                margin: 5px 0;
-            }
+                .hamburger-menu div {
+                    width: 25px;
+                    height: 3px;
+                    background-color: white;
+                    margin: 5px 0;
+                }
         /* Navigation */
             .nav {
                 display: none;
@@ -58,19 +56,19 @@
                 box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
                 z-index: 1;
             }
-            .nav ul {
-                list-style: none;        
-                padding: 0;
-                margin: 0;
-            }
-            .nav ul li {
-                padding: 10px 20px;
-                border-bottom: 1px solid #ddd;
-            }
-            .nav ul li:hover {
-                background-color: #ddd;
-                cursor: pointer;
-            }
+                .nav ul {
+                    list-style: none;        
+                    padding: 0;
+                    margin: 0;
+                }
+                .nav ul li {
+                    padding: 10px 20px;
+                    border-bottom: 1px solid #ddd;
+                }
+                .nav ul li:hover {
+                    background-color: #ddd;
+                    cursor: pointer;
+                }
 /**************************************************************
                     Page Elements
 ***************************************************************/
@@ -126,15 +124,14 @@
         align-items: center;
         justify-content: space-between;
     }
-
-    .ParametersRectangle p {
-        font-size: 29px;
-        line-height: 100%;
-        text-align: center;
-        color: white;
-        flex: 1;
-    
-    }
+        .ParametersRectangle p {
+            font-size: 29px;
+            line-height: 100%;
+            text-align: center;
+            color: white;
+            flex: 1;
+        
+        }
 /**************************************************************
                 Goal Page
 ***************************************************************/
@@ -150,11 +147,10 @@
             padding-bottom: 15px;
             border-bottom: 3px solid #ccc;
         }
-    
-        .goal-data-row p {
-            text-align: center;
-            font-size: 1.25rem;
-        }
+            .goal-data-row p {
+                text-align: center;
+                font-size: 1.25rem;
+            }
     /* Importing & Sorting */
         .rectangle {
             display: flex;
@@ -163,23 +159,27 @@
             justify-content: center;
             width: 200px;
             height: 100px;
-            background-color: #ccc;
+            background-color: #8bb8df;
             border-radius: 5px;
             margin-right: 20px;
         }
-    
+            .rectangle:hover{
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                background-color: #6f90ad;
+            }
             .rectangle h2 {
                 margin: 0;
                 padding: 0;
+                color: #141414;
             }
-    
             .rectangle .icon {
                 font-size: 48px;
                 margin-bottom: 10px;
             }
             .rectangle .fa {
                 font-size: 36px;
-                color: #3a3939;
+                color: #141414;
             }
     /* Parameters */
         .goal {
@@ -216,7 +216,7 @@
     
         .Filter-DividingLine {
             width: 1304.80px;
-            height: 5px;
+            height: 1px;
             background-color: #a5a1a1;
             border-radius: 8px;
         }
@@ -230,16 +230,15 @@
             display:flex;
             justify-content: center;
         }
-        .filter-form select {
-            width: 100%;
-            max-width: 100%;
-        }
-        .filter-form-column {
-            width: 30%;
-            padding-left: 30px;
-            padding-right: 30px;
-        }
-
+            .filter-form select {
+                width: 100%;
+                max-width: 100%;
+            }
+            .filter-form-column {
+                width: 30%;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
 
     /* PHP Code */
         table {
@@ -269,17 +268,15 @@
             box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
             transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
         }
-
-        .input-field:focus {
-            border-color: 232324;
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 4px rgba(83, 84, 85, 0.5);
-            outline: none;
-        }
-       
-        .input-group p {
-            margin: 0;
-            margin-right: 8px;
-        }
+            .input-field:focus {
+                border-color: 232324;
+                box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 4px rgba(83, 84, 85, 0.5);
+                outline: none;
+            }
+            .input-group p {
+                margin: 0;
+                margin-right: 8px;
+            }
     /* Drop-down Box */
         select {
             width: 300px;
@@ -289,18 +286,15 @@
             border-radius: 4px;
             background-color: #fff;
             cursor: pointer;
-            /* Can just delete these four things */
             display: inline-block;
-            background: #D9D9D9;
             padding: 10px 20px;
             border-radius: 9px;
         }
-
-        select:focus {
-            outline: none;
-            border-color: #232324;
-            box-shadow: 0 0 4px rgba(83, 84, 85, 0.5);
-        }
+            select:focus {
+                outline: none;
+                border-color: #232324;
+                box-shadow: 0 0 4px rgba(83, 84, 85, 0.5);
+            }
     
         .form-action p {
             color: black;
@@ -308,7 +302,29 @@
             padding-bottom: 10px;
             
         }
-
+    /* Cancel button */
+        .submit-button-cancel {
+            background-color: #8d0e0a;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            font-size: 17px;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.15s ease-in-out;
+            width: 100px;
+            margin-right: 10px;
+            
+        }
+            .submit-button-cancel:hover {
+                background-color: #660b08;
+            }
+            .submit-button-cancel:focus {
+                outline: none;
+                box-shadow: 0 0 4px rgba(17, 17, 17, 0.5);
+            }
     /* Submission button */
         .submit-button {
             background-color: #0a638d;
@@ -321,12 +337,11 @@
             text-align: center;
             text-decoration: none;
             transition: background-color 0.15s ease-in-out;
+            margin-right: 10px;
         }
-        
         .submit-button:hover {
             background-color: #07435f;
         }
-          
         .submit-button:focus {
             outline: none;
             box-shadow: 0 0 4px rgba(17, 17, 17, 0.5);
@@ -382,22 +397,118 @@
             color: #303030;
         }
 /**************************************************************
+                Assessment  History Page 
+***************************************************************/
+    .rectangle-history {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 220px;
+        height: 100px;
+        background-color: #8bb8df;
+        border-radius: 5px;
+        margin-right: 20px;
+        margin-bottom: 25px;
+    }
+        .rectangle-history:hover{
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #6f90ad;
+        }
+        .rectangle-history h2 {
+            margin: 0;
+            padding: 0;
+            color: #141414;
+        }
+        .rectangle-history .icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .rectangle-history .fa {
+            font-size: 36px;
+            color: #141414;
+        }
+/**************************************************************
+                Create New Assessment Page 
+***************************************************************/
+        .create-assessment {
+            margin-top: 160px;
+        }
+      
+        /* Date Picker */
+            .date-container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+                .date-container label {
+                    font-size: 19px;
+                    line-height: 100%;
+                    text-align: center;
+                    color: black;
+                    
+                }
+            .datepicker {
+                background-color: white;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+                padding: 4px 8px;
+                color: #333;
+                appearance: none;
+                -webkit-appearance: none; 
+                -moz-appearance: none; 
+            }
+                .datepicker:focus {
+                    outline: none;
+                    border-color: #252627;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                }
+        
+        /* Notes */
+            .input-field-notes {
+                box-sizing: border-box;
+                width: 100%;
+                padding: 8px 12px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+                transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    
+            }
+                .input-field-notes:focus {
+                    outline: none;
+                    border-color: #252627;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                }
+                .input-group-notes p {
+                    margin: 0;
+                    margin-right: 8px;
+                }
+/**************************************************************
                 Recommended Action Page 
 ***************************************************************/
     /** Return button */
         .return-to-info {
             display: inline-block;
-            background: #D9D9D9;
+            background: #8bb8df;
             padding: 10px 20px;
             border-radius: 9px;
             margin-top: 620px;
         }
-        .return-to-info a{
-            font-size: 21px;
-            line-height: 100%;
-            text-align: center;
-            color: black;
-        }
+            .return-to-info:hover{
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                background-color: #6f90ad;
+            }
+            .return-to-info a{
+                font-size: 21px;
+                line-height: 100%;
+                text-align: center;
+                color: black;
+            }
         /** Action box **/
             .Rectangle44-action-recommend {
                 position: absolute;
@@ -408,7 +519,7 @@
                 left: 50%;
                 top: 450px; 
                 transform: translate(-50%, -50%);
-                background: #D9D9D9;
+                background: #D0E9FF;
                 border-radius: 9px;
             }
             .Rectangle44-action-recommend p {
@@ -416,6 +527,8 @@
                 line-height: 100%;
                 text-align: center;
                 color: black;
+                letter-spacing: 0.9px;
+                line-height: 1.2;
             }
             .risks-addressed-text {
                 font-size: 1rem; 
@@ -436,7 +549,7 @@
         }
         .next {
             display: inline-block;
-            background: #D9D9D9;
+            background: #8bb8df;
             padding: 10px 20px;
             border-radius: 9px;
             margin-bottom: 10px;
@@ -445,14 +558,18 @@
             text-align: center;
             margin-top: 10px;
         }
-        .next i {
-            padding-left: 10px;
-            color: #202020;
-        }
+            .next:hover{
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            .next i {
+                padding-left: 10px;
+                color: #202020;
+            }
         
         .recommended {
             display: inline-block;
-            background: #D9D9D9;
+            background: #9fbbd4;
             padding: 10px 20px;
             border-radius: 9px;
             margin-bottom: 10px;
@@ -461,14 +578,18 @@
             text-align: center;
             margin-top: 10px;
         }
-        .recommended i {
-            padding-right: 10px;
-            color: #202020;
-        }
+            .recommended:hover{
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            .recommended i {
+                padding-right: 10px;
+                color: #202020;
+            }
         
         .previous {
             display: inline-block;
-            background: #D9D9D9;
+            background: #8bb8df;
             padding: 10px 20px;
             border-radius: 9px;
             margin-bottom: 10px;
@@ -477,10 +598,14 @@
             text-align: center;
             margin-top: 10px;
         }
-        .previous i {
-            padding-right: 10px;
-            color: #202020;
-        }
+            .previous:hover{
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            .previous i {
+                padding-right: 10px;
+                color: #202020;
+            }
     /* Rectangle Hell */
         .Rectangle39 {
             width: 1150px;
@@ -602,7 +727,7 @@
             left: 34%;
             top: 240px;
             transform: translate(-50%, -50%);
-            background: #D9D9D9;
+            background: #D0E9FF;
             border-radius: 9px;
         }
         
@@ -628,7 +753,7 @@
             left: 71%;
             top: 240px;
             transform: translate(-50%, -50%);
-            background: #D9D9D9;
+            background: #D0E9FF;
             border-radius: 9px;
         }
             .status-text {
@@ -653,7 +778,7 @@
             left: 25%;
             top: 450px;
             transform: translate(-50%, -50%);
-            background: #D9D9D9;
+            background: #D0E9FF;
             border-radius: 9px;
         }
         
@@ -679,7 +804,7 @@
             left: 50%;
             top: 450px;
             transform: translate(-50%, -50%);
-            background: #D9D9D9;
+            background: #D0E9FF;
             border-radius: 9px;
         }
             .complexity-text {
@@ -704,7 +829,7 @@
             left: 75%;
             top: 450px;
             transform: translate(-50%, -50%);
-            background: #D9D9D9;
+            background: #D0E9FF;
             border-radius: 9px;
         }
             .impact-text {
@@ -729,7 +854,7 @@
             left: 50%;
             top: 840px;
             transform: translate(-50%, -50%);
-            background: #D9D9D9;
+            background: #D0E9FF;
             border-radius: 9px;
         }
             .risks-addressed-text {
