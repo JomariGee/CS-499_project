@@ -50,7 +50,7 @@
                 </select>
             </p>
 
-            <!-- Status --> 
+            <!-- Status --
             <p>Status: <br>
                 <select id="status" name="status">                      
                 <option value="0">--Select Status--</option>
@@ -60,6 +60,7 @@
                 <option value="4">Implemented</option>
                 </select>
             </p>
+			-->
             
             <!-- Cost --> 
             <p>Cost: <br>
