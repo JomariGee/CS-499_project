@@ -26,11 +26,10 @@
                 <li><a href="assessment_history.php">Assessment History</a></li>
             </ul>
         </div>
-        <br><br><br>
+        <br><br>
 
 
    <form class="form-action"action="create_assessment_successful.php" method="post">
-            <br><br><br>
 
 			<!--Choose Goal-->
 			<p>Goal: <br>
@@ -60,8 +59,7 @@
 							// Log the error to a file or send it to a logging service
 							error_log(mysqli_error($dbc));
 						}
-						// Close connection to the database
-						//mysqli_close($dbc);
+						
 					?>
                 </select>
             </p>
@@ -73,16 +71,9 @@
                 <option value="0">--Select Status--</option>
 					<!-- LOOP FOR EACH Status -->
 					<?php
-						// NEED TO UPDATE SO THAT DROPDOWN DOESNT SET ALL STUFF UNCHANGED TO 0!
-
-						// Connect to the database
-						//require_once('mysqli_connect.php');
-
-						// Retrieve all goals and ids
 						$sql = "SELECT s.statusID, s.status_desc 
 							FROM status s;";
-
-
+			
 						$response = mysqli_query($dbc, $sql);
 						if($response){
 							while($row = mysqli_fetch_assoc($response)){
@@ -96,7 +87,7 @@
 							error_log(mysqli_error($dbc));
 						}
 						// Close connection to the database
-						//mysqli_close($dbc);
+						mysqli_close($dbc);
 					?>
                 </select>
             </p>
@@ -112,18 +103,13 @@
                 <br><input class="input-field" type="text" name="note_desc" size="30" value="" />
             <p>
 
-            <p> <input class="submit-button" type="submit" name="submit" value="Create New Assessment" /> </p>
-        </form>
-     
-   <!-- PHP database code --> 
-   
-   <?php
-            // Get a connection for the database
-            require_once('mysqli_connect.php');
+                    <!-- Submit --> 
+            <p> <input class="submit-button" type="submit" name="submit" value="Create New Assessment" /> 
 
-            // Close connection to the database
-            mysqli_close($dbc);
-        ?> 
+            <!-- Back Button-->
+            <form>
+            <input class ="submit-button" value="Cancel" onclick="history.go(-1)"> 
+            </form> </p>
 
         <script>
             $(document).ready(function() {
