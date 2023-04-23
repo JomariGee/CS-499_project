@@ -10,12 +10,12 @@
     $cost = null;
     $complexity = null;
     $impact = null;
-    $today = date("m/d/y");  
+    $today;  
 
     if(isset($_POST['submit'])){
         // create array
         $data_missing = array();
-
+        $today = date("Y-m-d");
         // add the Goal Title but make the input required
         if(empty($_POST['goalTitle'])){
             // if missing, add to the array
@@ -107,7 +107,7 @@
         <form action="create_goal_successful.php" method="post">
             <!-- Title --> 
             <p>Title: 
-                <br><input type="text" name="goalTitle" size="30" value="" />
+                <br><input class ="input-field" input type="text" name="goalTitle" size="30" value="" />
             </p>
 
             <!-- Category --> 
@@ -173,7 +173,7 @@
                 </select>
             </p>
 
-            <p> <input type="submit" name="submit" value="Create New Goal" /> </p>
+            <p> <input class="submit-button" input type="submit" name="submit" value="Create New Goal" /> </p>
         </form>
     </body>
 </html>
