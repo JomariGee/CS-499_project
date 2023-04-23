@@ -71,29 +71,10 @@
         <div class="main">
             
             <!-- Action recommendation  --> 
-            <div class="">
+            <div class= "Rectangle44-action-recommend">
                     <p><?php echo $recAct; ?></p>
                 </div>
             </div>
-
-                <!-- IT info  -->
-            <div class="">
-                    <p><?php echo $it_info; ?></p>
-                </div>
-            </div>
-
-                <!--  OT info  -->
-            <div class="">
-                    <p><?php echo $ot_info; ?></p>
-                </div>
-            </div>
-
-        <!-- reference link --> 
-        <div class="">
-                    <p><?php echo $ot_info; ?></p>
-                </div>
-            </div>
-
 		    <!-- Return button -->
                 <div class="return-to-info">
                     <a href="info.php?goalID=<?php echo $id; ?>"> Return to Info </a>
