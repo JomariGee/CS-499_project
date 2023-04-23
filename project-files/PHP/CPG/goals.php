@@ -37,10 +37,6 @@ Need to do:
 
         <!-- Importation & New Goal creation -->
         <div class="main">
-            <div class="rectangle">
-                <i class="fa fa-file-import"></i> 
-                <h2>Import</h2>
-            </div>
 
             <a href="create_goal.php">
                 <div class="rectangle">
