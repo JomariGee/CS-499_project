@@ -84,9 +84,13 @@ $newest=1;
 			}
 
         if(empty($data_missing)){
+			// insert new update
 			require_once('mysqli_connect.php');
             $query = "INSERT INTO status_update (goalID, statusID, update_date, goal_newest) 
 						values ($goalNum, $status, '$assessment_date', $newest); ";
+			// update goal info		
+			require_once('mysqli_connect.php');
+            $query = "UPDATE goal SET assessment_date = '$assessment_date', statusID = $status WHERE goalID=$goalNum; ";
 			if(!empty($_POST['note_desc'])){
 				$sql="INSERT INTO notes (note_desc, goalID) 
 						values ('$note', $goalNum);";
