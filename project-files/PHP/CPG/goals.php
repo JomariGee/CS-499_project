@@ -180,27 +180,66 @@ Need to do:
 
 
             // Create a query for the database
-            $query =   "SELECT goal.goalTitle AS Goal,
-                        goal.assessment_date AS LastAssessment,
-                        goal.goalID AS GoalID,
-                        status.status_desc AS Status
-                        FROM goal 
-                        INNER JOIN status ON goal.status_updateID=status.statusID";
-        
+            $query =   "SELECT goal.goalID as GoalID, goal.goalTitle as Goal, s1.status_desc as Status, s1.update_date as LastAssessment, s1.stat_updateID 
+						FROM goal  
+						LEFT JOIN (
+							( SELECT su.goalID, su.stat_updateID, s.status_desc, su.update_date, su.statusID  
+								FROM status s 
+								RIGHT JOIN status_update su 
+								on s.statusID=su.statusID 
+								where su.goal_newest)
+							as s1 ) 
+						on goal.goalID=s1.goalID";
+			$filter;
             if ($category !== 0) {
-                  $query .= " AND goal.categoryID=$category";
+				if ($filter == 0){
+					$query .= " WHERE ";
+					$filter=1;
+				}
+				else{
+                  $query .= " AND ";
+				}
+				 $query .= " goal.categoryID=$category";
             }
             if ($status !== 0) {
-                $query .= " AND goal.status_updateID=$status";
+				if ($filter == 0){
+					$query .= " WHERE ";
+					$filter=1;
+				}
+				else{
+                  $query .= " AND ";
+				}
+                $query .= " s1.statusID=$status";
             }
             if ($cost !== 0) {
-                $query .= " AND goal.cost=$cost";
+				if ($filter == 0){
+					$query .= " WHERE ";
+					$filter=1;
+				}
+				else{
+                  $query .= " AND ";
+				}
+                $query .= " goal.cost=$cost";
             }
             if ($complexity !== 0) {
-                $query .= " AND goal.complexity=$complexity";
+				if ($filter == 0){
+					$query .= " WHERE ";
+					$filter=1;
+				}
+				else{
+                  $query .= " AND ";
+				}
+                $query .= " goal.complexity=$complexity";
             }
             if ($impact !== 0) {
-                $query .= " AND goal.impact=$impact";
+				if ($filter == 0){
+					$query .= " WHERE ";
+					$filter=1;
+				}
+				else{
+                  $query .= " AND ";
+				}
+                $query .= " goal.impact=$impact";
             }
             if ($date !== 0) {
                 $query .= " WHERE assessment_date BETWEEN '$start_date' AND '$end_date'";
