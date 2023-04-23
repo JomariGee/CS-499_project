@@ -13,78 +13,98 @@
     $status;
     $assessment_date;  
     $note;
+$newest=1;
 
     if(isset($_POST['submit'])){
         // create array
         $data_missing = array();
 
         // Goal
-        // add the Goal Title but make the input required
+		// add the Goal Title but make the input required
         if(empty($_POST['goalNum'])){
             // if missing, add to the array
             $data_missing[] = 'goalNum';
         }else{
             $goalNum = ($_POST['goalNum']);
         }
-    }
+
         // with the rest of the options, they are able to be left unchanged
+		// find most recent update for goal
+		require_once('mysqli_connect.php');
 
-        //Status
-        if(isset($_POST['status']) && !empty($_POST['status'])){
-            $status = $_POST['status'];
-            $newest_status = 1;
-            
-        }else{              
-            // Connect to the database
-            require_once('mysqli_connect.php');
+		// UPDATE goal_newest value
+		$sql = "SELECT su1.stat_updateID as oldStatUpID, su1.statusID as oldStatID, su1.goalID as suGoal 
+			FROM status_update su1 
+			LEFT JOIN ( 
+				(SELECT su.stat_updateID, su.goalID, su.goal_newest 
+					FROM status_update su 
+					where su.goalID=$goalNum) 
+				as su2 ) 
+			on su1.stat_updateID=su2.stat_updateID 
+			where su2.goal_newest=1;";
 
-            // Retrieve all goals and ids
-            $sql = "SELECT g.goalID, su.stat_updateID, su.statusID 
-                        FROM goal g 
-                        LEFT JOIN status_update su 
-                        on g.status_updateID=su.stat_updateID where g.goalID=$goalNum;";
+		$response = mysqli_query($dbc, $sql);
+			if($response){
+				$row = mysqli_fetch_assoc($response);
+				$old_newest_update=$row['oldStatUpID'];
+				$old_status=$row['oldStatID'];
+				
+				//Status
+				// update old stat_updateID
+				if(isset($_POST['status']) && !empty($_POST['status'])){
+					$status = $_POST['status'];
+				}else{				
+					$status=$old_status;
+				}
+				
+				require_once('mysqli_connect.php');
+				$query = "UPDATE status_update SET goal_newest = 0 WHERE stat_updateID=$old_newest_update; ";
+				if (mysqli_query($dbc, $query)){
+					
+				}
+				
+				
+			}else {
+				// Log the error to a file or send it to a logging service
+				error_log(mysqli_error($dbc));
+			}
+		
+		
+			//Assessment Date
+			if(isset($_POST['assessment_date']) && !empty($_POST['assessment_date'])){
+				$assessment_date = $_POST['assessment_date'];
+			}else{
+				// instead of null, set the date to today
+				$assessment_date = date("Y-m-d");
+			}
 
-            $response = mysqli_query($dbc, $sql);
-            if($response){
-                $status = $row['statusID'];
-            }
-            $newest_status = 0;
-        }
-        
-        //Assessment Date
-        if(isset($_POST['assessment_date']) && !empty($_POST['assessment_date'])){
-            $assessment_date = $_POST['assessment_date'];
-        }else{
-            // instead of null, set the date to today
-            $assessment_date = date("Y-m-d");
-        }
-
-        if(isset($_POST['note_desc']) && !empty($_POST['note_desc'])){
-            $note = ($_POST['note_desc']);
-            echo $note;
-        }
+			if(isset($_POST['note_desc']) && !empty($_POST['note_desc'])){
+				$note = ($_POST['note_desc']);
+				echo $note;
+			}
 
         if(empty($data_missing)){
-    require_once('mysqli_connect.php');
-    $query = "INSERT INTO status_update (goalID, statusID, update_date) 
-                values ($goalNum, $status, '$assessment_date'); ";
-    if(!empty($_POST['note_desc'])){
-        $sql="INSERT INTO notes (note_desc, goalID) 
-                values ('$note', $goalNum);";
-        mysqli_query($dbc, $sql);
-    }
+			require_once('mysqli_connect.php');
+            $query = "INSERT INTO status_update (goalID, statusID, update_date, goal_newest) 
+						values ($goalNum, $status, '$assessment_date', $newest); ";
+			if(!empty($_POST['note_desc'])){
+				$sql="INSERT INTO notes (note_desc, goalID) 
+						values ('$note', $goalNum);";
+				mysqli_query($dbc, $sql);
+			}
 
-    
-    if (mysqli_query($dbc, $query)) {
-        header('Location:assessment_history.php');
-    } else {
-        echo '<br /><br /><b>Please fill out the goal and status fields!</b><br /><br />';
+			
+			if (mysqli_query($dbc, $query)) {
+				echo "<script language='javascript'>window.alert('New record created successfully');window.location='create_assessment.php';</script>";
+				
+			}else {
+				echo "Error: " . $query . "<br>" . $conn->error;
+			}
+			mysqli_close($dbc);
+        } else {
+            echo '<br /><br /><b>You need to enter the Title!</b><br /><br />';
+        }
     }
-} else {
-    echo '<br /><br /><b>Please fill out the goal and status fields!</b><br /><br />';
-}
-
-    
 ?>
 
 <!DOCTYPE html>
