@@ -68,59 +68,59 @@ CREATE TABLE `goal` (
   PRIMARY KEY (goalID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-insert into goal (goalTitle, cost, impact, complexity, categoryID, csf, statusID) values 
+insert into goal (goalTitle, cost, impact, complexity, categoryID, csf, statusID, assessment_date) values 
 /*ACCOUNT SECURITY (1.0) -- checked*/
-	("Detection of Unsuccessful (Automated) Login Attempts", 1, 3, 1, 1, "PR.AC-7", 1), 
-	("Changing Default Passwords", 1, 3, 2, 1, "PR.AC-1", 1),
-	("Multi-Factor Authentication (MFA)", 2, 3, 2, 1, "PR.AC-7", 1), 
-	("Minimum Password Strength", 1, 3, 1, 1, "PR.AC-1", 1),
-	("Separating User and Privileged Accounts", 1, 3, 1, 1, "PR.AC-4", 1),
-	("Unique Credentials", 2, 2, 2, 1, "PR.AC-1", 1),
-	("Revoking Credentials for Departing Employees", 1, 2, 1, 1, "PR.AC-1", 1), 
+	("Detection of Unsuccessful (Automated) Login Attempts", 1, 3, 1, 1, "PR.AC-7", 1, "DEFAULT"), 
+	("Changing Default Passwords", 1, 3, 2, 1, "PR.AC-1", 1, "DEFAULT"),
+	("Multi-Factor Authentication (MFA)", 2, 3, 2, 1, "PR.AC-7", 1, "DEFAULT"), 
+	("Minimum Password Strength", 1, 3, 1, 1, "PR.AC-1", 1, "DEFAULT"),
+	("Separating User and Privileged Accounts", 1, 3, 1, 1, "PR.AC-4", 1, "DEFAULT"),
+	("Unique Credentials", 2, 2, 2, 1, "PR.AC-1", 1, "DEFAULT"),
+	("Revoking Credentials for Departing Employees", 1, 2, 1, 1, "PR.AC-1", 1, "DEFAULT"), 
 	
 /*DEVICE SECURITY (2.0) -- checked*/ 
-	("Hardware and Software Approval Process", 2, 3, 2, 2, "PR.IP-3", 1), 
-	("Disable Macros by Default", 1, 2, 1, 2, "PR.IP-1, PR.IP-3", 1),
-	("Asset Inventory", 2, 3, 2, 2, "ID.AM-1", 1), 
-	("Prohibit Connection of Unauthorized Devices", 3, 3, 3, 2, "PR.PT-2", 1), 
-	("Document Device Configurations", 2, 3, 2, 2, "PR.IP-1", 1), 
+	("Hardware and Software Approval Process", 2, 3, 2, 2, "PR.IP-3", 1, "DEFAULT"), 
+	("Disable Macros by Default", 1, 2, 1, 2, "PR.IP-1, PR.IP-3", 1, "DEFAULT"),
+	("Asset Inventory", 2, 3, 2, 2, "ID.AM-1", 1, "DEFAULT"), 
+	("Prohibit Connection of Unauthorized Devices", 3, 3, 3, 2, "PR.PT-2", 1, "DEFAULT"), 
+	("Document Device Configurations", 2, 3, 2, 2, "PR.IP-1", 1, "DEFAULT"), 
 	
 /*DATA SECURITY (3.0) -- checked*/
-	("Log Collection", 2, 3, 2, 3, "PR.PT-1", 1), 
-	("Secure Log Storage", 3, 3, 1, 3, "PR.PT-1", 1),
-	("Strong and Agile Encryption", 2, 3, 2, 3, "PR.DS-1, PR.DS-2", 1), 
-	("Secure Sensitive Data", 2, 3, 2, 3, "PR.DS-1, PR.DS-2, PR.DS-5", 1), 
+	("Log Collection", 2, 3, 2, 3, "PR.PT-1", 1, "DEFAULT"), 
+	("Secure Log Storage", 3, 3, 1, 3, "PR.PT-1", 1, "DEFAULT"),
+	("Strong and Agile Encryption", 2, 3, 2, 3, "PR.DS-1, PR.DS-2", 1, "DEFAULT"), 
+	("Secure Sensitive Data", 2, 3, 2, 3, "PR.DS-1, PR.DS-2, PR.DS-5", 1, "DEFAULT"), 
 	
 /*GOVERNANCE AND TRAINING (4.0) -- checked*/
-	("Organizational Cybersecurity Leadership", 1, 3, 1, 4, "ID.GV-1, ID.GV-2", 1), 
-	("OT Cybersecurity Leadership", 1, 3, 1, 4, "ID.GV-1, ID.GV-2", 1), 
-	("Basic Cybersecurity Training", 1, 3, 1, 4, "PR.AT-1", 1), 
-	("OT Cybersecurity Training", 1, 3, 1, 4, "PR.AT-2, PR.AT-3, PR.AT-5", 1), 
-	("Improving IT and OT Cybersecurity Relationships", 1, 2, 1, 4, "ID.GV-2", 1), 
+	("Organizational Cybersecurity Leadership", 1, 3, 1, 4, "ID.GV-1, ID.GV-2", 1, "DEFAULT"), 
+	("OT Cybersecurity Leadership", 1, 3, 1, 4, "ID.GV-1, ID.GV-2", 1, "DEFAULT"), 
+	("Basic Cybersecurity Training", 1, 3, 1, 4, "PR.AT-1", 1, "DEFAULT"), 
+	("OT Cybersecurity Training", 1, 3, 1, 4, "PR.AT-2, PR.AT-3, PR.AT-5", 1, "DEFAULT"), 
+	("Improving IT and OT Cybersecurity Relationships", 1, 2, 1, 4, "ID.GV-2", 1, "DEFAULT"), 
 	
 /*VULNERABILITY MANAGEMENT (5.0) -- checked*/
-	("Mitigating Known Vulnerabilities", 1, 3, 2, 5, "PR.IP-12, ID.RA-1, DE.CM-8, RS.MI-3", 1), 
-	("Vulnerability Disclosure/Reporting", 3, 1, 3, 5, "RS.AN-5", 1), 
-	("Deploy Security.txt Files", 1, 3, 1, 5, "RS.AN-5", 1), 
-	("No Exploitable Services on the Internet", 1, 3, 1, 5, "PR.PT-4", 1), 
-	("Limit OT Connections to Public Internet", 3, 2, 2, 5, "PR.PT-4", 1), 
-	("Third-Party Validation of Cybersecurity Control Effectiveness", 3, 3, 3, 5, "ID.RA-1, ID.RA-3", 1), 
+	("Mitigating Known Vulnerabilities", 1, 3, 2, 5, "PR.IP-12, ID.RA-1, DE.CM-8, RS.MI-3", 1, "DEFAULT"), 
+	("Vulnerability Disclosure/Reporting", 3, 1, 3, 5, "RS.AN-5", 1, "DEFAULT"), 
+	("Deploy Security.txt Files", 1, 3, 1, 5, "RS.AN-5", 1, "DEFAULT"), 
+	("No Exploitable Services on the Internet", 1, 3, 1, 5, "PR.PT-4", 1, "DEFAULT"), 
+	("Limit OT Connections to Public Internet", 3, 2, 2, 5, "PR.PT-4", 1, "DEFAULT"), 
+	("Third-Party Validation of Cybersecurity Control Effectiveness", 3, 3, 3, 5, "ID.RA-1, ID.RA-3", 1, "DEFAULT"), 
 	
 /*SUPPLY CHAIN / THIRD PARTY (6.0) -- checked*/
-	("Vendor/Supplier Cybersecurity Requirements", 1, 3, 1, 6, "ID.SC-3", 1), 
-	("Supply Chain Incident Reporting", 1, 3, 1, 6, "ID.SC-1, ID.SC-3", 1), 
-	("Supply Chain Vulnerability Disclosure", 1, 3, 1, 6, "ID.SC-1, ID.SC-3", 1), 
+	("Vendor/Supplier Cybersecurity Requirements", 1, 3, 1, 6, "ID.SC-3", 1, "DEFAULT"), 
+	("Supply Chain Incident Reporting", 1, 3, 1, 6, "ID.SC-1, ID.SC-3", 1, "DEFAULT"), 
+	("Supply Chain Vulnerability Disclosure", 1, 3, 1, 6, "ID.SC-1, ID.SC-3", 1, "DEFAULT"), 
 	
 /* Response and Recovery -- checked*/
-	(" Incident Reporting", 1, 3, 1, 7, "RS.CO-2, RS.CO-4", 1), 
-	("Incident Response (IR) Plans", 1, 3, 1, 7, "PR.IP-9, PR.IP-10", 1), 
-	("System Back Ups", 2, 3, 2, 7, "PR.IP-4", 1), 
-	("Document Network Topology", 2, 2, 2, 7, "PR.IP-1", 1), 
+	(" Incident Reporting", 1, 3, 1, 7, "RS.CO-2, RS.CO-4", 1, "DEFAULT"), 
+	("Incident Response (IR) Plans", 1, 3, 1, 7, "PR.IP-9, PR.IP-10", 1, "DEFAULT"), 
+	("System Back Ups", 2, 3, 2, 7, "PR.IP-4", 1, "DEFAULT"), 
+	("Document Network Topology", 2, 2, 2, 7, "PR.IP-1", 1, "DEFAULT"), 
 	
 /*Other (8.0) -- checked*/
-	("Network Segmentation", 3, 3, 3, 8, "PR.AC-5, PR.PT-4, DE.CM-1", 1), 
-	("Detecting Relevant Threats and TTPs", 3, 2, 3, 8, "ID.RA-3, DE.CM-1", 1), 
-	("Email Security", 1, 2, 1, 8, "PR.DS-1, PR.DS-2, PR.DS-5", 1);
+	("Network Segmentation", 3, 3, 3, 8, "PR.AC-5, PR.PT-4, DE.CM-1", 1, "DEFAULT"), 
+	("Detecting Relevant Threats and TTPs", 3, 2, 3, 8, "ID.RA-3, DE.CM-1", 1, "DEFAULT"), 
+	("Email Security", 1, 2, 1, 8, "PR.DS-1, PR.DS-2, PR.DS-5", 1, "DEFAULT");
 
 -- --------------------------------------------------------
 
