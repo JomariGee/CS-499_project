@@ -9,8 +9,13 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body>
-        <!-- Hamburger Menu & Title -->
-        <div class="header">
+       <!-- Hamburger Menu & Title -->
+         <div class="header">
+            <div class="hamburger-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <h1 class="title">Create New Assessment</h1>
         </div>
 
@@ -22,7 +27,6 @@
             </ul>
         </div>
         <br><br>
-
 
    <form class="form-action"action="create_assessment_successful.php" method="post">
 
