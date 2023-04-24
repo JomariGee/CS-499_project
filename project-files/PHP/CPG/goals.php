@@ -223,10 +223,18 @@ Need to do:
                             $last = $row["LastAssessment"];
                             $status = $row["Status"];
 
-
+							if ($status == "Not Started")
+								$status_color="GREY";
+							elseif ($status == "Scoped")
+								$status_color="#FDDA0D";
+							elseif ($status == "In Progress") 
+								$status_color="ORANGE";
+							elseif ($status == "Implemented")
+								$status_color="GREEN";
+                            
                             echo '<tr><td align="center"><a href="info.php?goalID=' .$id. '">' .$title. '</a></td>
                             <td align="center">' .$last. '</td>
-                            <td align="center">' .$status. '</td>' . '<td align="center">
+                            <td align="center"><font color=' .$status_color. '>' .$status. '</font></td>' . '<td align="center">
                             
                                 <div class="action-item">
                                     <a href="edit_goal.php?goalID=' . $id . '">
