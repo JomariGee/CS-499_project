@@ -90,7 +90,7 @@
 					$cost = $row['cost'];
 					$impact = $row['impact'];
 					$complexity = $row['complexity'];
-					$status = $row['StatUpdate'];
+					$status = $row['status'];
 					
 
 					if ($cost == 1)
