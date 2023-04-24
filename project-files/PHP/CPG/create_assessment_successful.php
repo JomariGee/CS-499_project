@@ -88,6 +88,7 @@ $newest=1;
 			require_once('mysqli_connect.php');
             $query = "INSERT INTO status_update (goalID, statusID, update_date, goal_newest) 
 						values ($goalNum, $status, '$assessment_date', $newest); ";
+			mysqli_query($dbc, $query);
 			// update goal info		
 			require_once('mysqli_connect.php');
             $query = "UPDATE goal SET assessment_date = '$assessment_date', statusID = $status WHERE goalID=$goalNum; ";
