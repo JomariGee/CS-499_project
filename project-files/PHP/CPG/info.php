@@ -119,7 +119,15 @@
 					elseif ($complexity == 3)
 						$complexity = "High";
 					
-					
+					if ($status == "Not Started")
+						$status_color="GREY";
+					elseif ($status == "Scoped")
+						$status_color="#FDDA0D";
+					elseif ($status == "In Progress") 
+						$status_color="ORANGE";
+					elseif ($status == "Implemented")
+						$status_color="GREEN";
+									
 					
 					$sql = "select * from risk r join goal_risk gr on r.riskID=gr.riskID where gr.goalID=$id;";
 					$response = @mysqli_query($dbc, $sql);
@@ -189,7 +197,7 @@
 					
 				<!-- Status -->
 					<div class="Rectangle46-status">
-						<p class="status-text"><b>Status: </b><?php echo $status; ?></p>
+						<p class="status-text"><b>Status: </b><FONT COLOR=<?php echo $status_color; ?>> <?php echo $status; ?></FONT></p>
 					</div>
 			
 				<!-- Cost -->
