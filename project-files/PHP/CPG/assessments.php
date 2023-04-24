@@ -49,7 +49,7 @@ Need to update query so that it prints the assessments correctly
         <div class="nav">
             <ul>
                 <li><a href="goals.php">Goals</a></li>
-                <li><a href="assessment_history.php">Assessments</a></li>
+                <li><a href="assessment_history.php">Assessment History</a></li>
             </ul>
         </div>
 
