@@ -727,7 +727,7 @@
             left: 34%;
             top: 240px;
             transform: translate(-50%, -50%);
-            background: #D0E9FF;
+            /*background: #D0E9FF;*/
             border-radius: 9px;
         }
         
@@ -753,7 +753,7 @@
             left: 71%;
             top: 240px;
             transform: translate(-50%, -50%);
-            background: #D0E9FF;
+            /*background: #D0E9FF;*/
             border-radius: 9px;
         }
             .status-text {
@@ -778,7 +778,7 @@
             left: 25%;
             top: 450px;
             transform: translate(-50%, -50%);
-            background: #D0E9FF;
+            /*background: #D0E9FF;*/
             border-radius: 9px;
         }
         
@@ -804,7 +804,7 @@
             left: 50%;
             top: 450px;
             transform: translate(-50%, -50%);
-            background: #D0E9FF;
+            /*background: #D0E9FF;*/
             border-radius: 9px;
         }
             .complexity-text {
@@ -829,7 +829,7 @@
             left: 75%;
             top: 450px;
             transform: translate(-50%, -50%);
-            background: #D0E9FF;
+            /*background: #D0E9FF;*/
             border-radius: 9px;
         }
             .impact-text {
@@ -854,7 +854,7 @@
             left: 50%;
             top: 840px;
             transform: translate(-50%, -50%);
-            background: #D0E9FF;
+            /*background: #D0E9FF;*/
             border-radius: 9px;
         }
             .risks-addressed-text {
