@@ -84,12 +84,21 @@
                             $date = $row['Date'];
                             $title = $row["Goal"];
                             $status = $row["Stat"];
-							$id = $row["goalID"];
+			    $id = $row["goalID"];
+				
 
+				if ($status == "Not Started")
+					$status_color="GREY";
+				elseif ($status == "Scoped")
+					$status_color="#FDDA0D";
+				elseif ($status == "In Progress") 
+					$status_color="ORANGE";
+				elseif ($status == "Implemented")
+					$status_color="GREEN";
 
                             echo '<tr><td align="center"><a href="assessments.php?goalID=' .$id. '">' .$date. '</a></td>
                             <td align="center">' .$title. '</td>
-                            <td align="center">' .$status. '</td>' . '<td align="center">
+                            <td align="center"><font color=' .$status_color. '>' .$status. '</font></td>' . '<td align="center">
                             
                                 <div class="action-item">
                                     <a href="">
