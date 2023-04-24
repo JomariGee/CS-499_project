@@ -68,15 +68,17 @@
 						
 
 				// PRINT THE INFORMATION
-				$sql = "SELECT * FROM status_update su 
-						RIGHT JOIN (
-							SELECT g.goalID AS GoalID, g.goalTitle AS Title, c.category_desc AS Cat, 
-							g.status_updateID, g.cost, g.impact, g.complexity, s.status_desc AS StatUpdate
-							FROM goal g 
-							LEFT JOIN category c ON g.categoryID = c.categoryID 
-							LEFT JOIN status s ON g.status_updateID = s.statusID
-						) AS gc ON su.stat_updateID = gc.StatUpdate 
-						WHERE gc.goalID = $id";
+				$sql = "
+				select gs.goalTitle as Title, gs.cost as cost, gs.impact as impact, gs.complexity as complexity, gs.status_desc as status, c.category_desc as Cat 
+					from category c 
+					right join ( 
+					(select g.goalID, g.goalTitle, g.categoryID, g.cost, g.impact, g.complexity, s.status_desc 
+					from status s 
+						right join goal g 
+						on g.statusID=s.statusID) 
+					as gs) 
+				on gs.categoryID=c.categoryID 
+				where gs.goalID=$id;";
 
 
 				$response = mysqli_query($dbc, $sql);
