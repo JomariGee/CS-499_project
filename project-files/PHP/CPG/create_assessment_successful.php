@@ -86,8 +86,8 @@ $newest=1;
         if(empty($data_missing)){
 			// insert new update
 			require_once('mysqli_connect.php');
-            $query = "INSERT INTO status_update (goalID, statusID, update_date, goal_newest) 
-						values ($goalNum, $status, '$assessment_date', $newest); ";
+            $query = "INSERT INTO status_update (goalID, statusID, update_date, goal_newest, notes) 
+						values ($goalNum, $status, '$assessment_date', $newest, '$note'); ";
 			mysqli_query($dbc, $query);
 			// update goal info		
 			require_once('mysqli_connect.php');
@@ -100,14 +100,14 @@ $newest=1;
 
 			
 			if (mysqli_query($dbc, $query)) {
-				echo "<script language='javascript'>window.alert('New record created successfully');window.location='create_assessment.php';</script>";
+				header('Location:assessment_history.php');
 				
 			}else {
 				echo "Error: " . $query . "<br>" . $conn->error;
 			}
 			mysqli_close($dbc);
         } else {
-            echo '<br /><br /><b>You need to enter the Title!</b><br /><br />';
+            echo '<br /><br /><b>You need to select a goal!</b><br /><br />';
         }
     }
 ?>
