@@ -1,11 +1,3 @@
-<!--
-
-Need to update query so that it prints the assessments correctly
-
--->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <!-- Page displays assessments for specific goals -->
@@ -74,26 +66,25 @@ Need to update query so that it prints the assessments correctly
               ups.stat_updateID AS id, 
               ups.update_date AS Date, 
               ups.goalID AS goalID, 
-              ups.goalTitle AS Goal, 
+              g.goalTitle AS Goal, 
               ups.statusID, 
               s.status_desc AS Stat, 
-              n.note_desc AS Note
+              ups.notes AS Note
           FROM 
               status s 
               RIGHT JOIN (
                   SELECT 
                       su.update_date, 
                       su.goalID AS goalID, 
-                      g.goalTitle, 
                       su.statusID, 
-                      su.stat_updateID 
+                      su.stat_updateID, 
+                      su.notes 
                   FROM 
-                      status_update su 
-                      LEFT JOIN goal g ON su.goalID = g.goalID
+                      status_update su
               ) AS ups ON s.statusID = ups.statusID 
-              LEFT JOIN notes n ON ups.goalID = n.goalID
+              LEFT JOIN goal g ON ups.goalID = g.goalID
           WHERE 
-              ups.goalID = $id"; 
+              ups.goalID = $id";
 
 
     // If the query executed properly proceed
@@ -107,19 +98,9 @@ Need to update query so that it prints the assessments correctly
         echo '<tbody>';
         
         while($row = mysqli_fetch_array($response)){
-	        $status= $row['Stat'];
-                if ($status == "Not Started")
-	                $status_color="GREY";
-	        elseif ($status == "Scoped")
-		        $status_color="#FDDA0D";
-		elseif ($status == "In Progress") 
-			$status_color="ORANGE";
-		elseif ($status == "Implemented")
-			$status_color="GREEN";
-                
             echo '<tr>';
             echo '<td>' . $row['Date'] . '</td>';
-            echo '<td><font color=' .$status_color. '>' .$status. '</font></td>';
+            echo '<td>' . $row['Stat'] . '</td>';
             echo '<td>' . $row['Note'] . '</td>';
             echo '</tr>';
         }
