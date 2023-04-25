@@ -92,38 +92,32 @@
 					$status = $row['status'];
 					
 
-					if ($cost == 1){
-						$cost = "<FONT COLOR='GREEN'>$</FONT><FONT COLOR='#E5E4E2'>$$$</FONT>";
-					}elseif ($cost == 2){
-						$cost = "<FONT COLOR='GREEN'>$$</FONT><FONT COLOR='#E5E4E2'>$$</FONT>";
-					}elseif ($cost == 3){
-						$cost = "<FONT COLOR='GREEN'>$$$</FONT><FONT COLOR='#E5E4E2'>$</FONT>";
-					}elseif ($cost == 4){
-						$cost = "<FONT COLOR='GREEN'>$$$$</FONT>";
-					}
-						
-						
-					if ($impact == 1){
-						$impact_color="RED";
-						$impact = "Low";
-					}elseif ($impact == 2){
-						$impact_color="#988558";
-						$impact = "Medium";
-					}elseif ($impact == 3){
-						$impact_color="GREEN";
-						$impact = "High";
-					}
+					if ($cost == 1)
+						$cost = "$";
+					elseif ($cost == 2)
+						$cost = "$$";
+					elseif ($cost == 3)
+						$cost = "$$$";
+					elseif ($cost == 4)
+						$cost = "$$$$";
 					
 						
-					if ($complexity == 1){
-						$complexity_color="GREEN";
+						
+					if ($impact == 1)
+						$impact = "Low";
+					elseif ($impact == 2)
+						$impact = "Medium";
+					elseif ($impact == 3)
+						$impact = "High";
+					
+						
+					if ($complexity == 1)
 						$complexity = "Low";
 					elseif ($complexity == 2)
-						$complexity_color="#988558";
 						$complexity = "Medium";
 					elseif ($complexity == 3)
-						$complexity_color="RED";
 						$complexity = "High";
+					
 					
 					
 					$sql = "select * from risk r join goal_risk gr on r.riskID=gr.riskID where gr.goalID=$id;";
@@ -204,12 +198,12 @@
 				
 				<!-- Complexity -->
 					<div class="Rectangle49-complexity">
-						<p class="status-complexity"><b>Complexity:</b><FONT COLOR=<?php echo $complexity_color; ?>> <?php echo $complexity; ?></FONT></p>
+						<p class="status-complexity"><b>Complexity:</b> <?php echo $complexity; ?></p>
 					</div>
 				
 				<!-- Impact -->
 					<div class="Rectangle50-impact">
-						<p class="status-impact"><b>Impact: </b><FONT COLOR=<?php echo $impact_color; ?>><?php echo $impact; ?></FONT></p>
+						<p class="status-impact"><b>Impact: </b><?php echo $impact; ?></p>
 					</div>
 				
 				<!-- Risks Addressed -->
