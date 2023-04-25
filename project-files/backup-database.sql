@@ -332,6 +332,7 @@ CREATE TABLE `status_update` (
   `goalID` int(11) DEFAULT NULL,
   `update_date` date DEFAULT NULL,
   `goal_newest` BIT DEFAULT NULL,
+  `notes` varchar(500) DEFAULT NULL,
   PRIMARY KEY (stat_updateID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -609,11 +610,3 @@ CREATE TABLE `files` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-/* Notes Table */
-/*create table UpdateNotes (noteID int(11), note_desc varchar(255), goalID int(11));*/
-CREATE TABLE `notes` (
-  `noteID` int(11) NOT NULL AUTO_INCREMENT,
-  `note_desc` varchar(255) DEFAULT NULL,
-  `goalID` int(11) DEFAULT NULL, 
-  PRIMARY KEY (noteID)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
