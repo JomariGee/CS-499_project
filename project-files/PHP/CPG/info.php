@@ -154,7 +154,9 @@
         <!-- Hamburger Menu & Title -->
         <div class="header">
             <div class="hamburger-menu">
-       
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
             <h1 class="title"><?php echo $title; ?></h1>
         </div>
