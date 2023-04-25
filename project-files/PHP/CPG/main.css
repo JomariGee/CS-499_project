@@ -573,7 +573,7 @@
             padding: 10px 20px;
             border-radius: 9px;
             margin-bottom: 10px;
-            margin-right: 100px; 
+            margin-right: 20px; 
             margin-left: 70px;
             text-align: center;
             margin-top: 10px;
@@ -586,7 +586,27 @@
                 padding-right: 10px;
                 color: #202020;
             }
-        
+			
+		.assessments {
+            display: inline-block;
+            background: #9fbbd4;
+            padding: 10px 20px;
+            border-radius: 9px;
+            margin-bottom: 10px;
+            margin-right: 100px; 
+            margin-left: 20px;
+            text-align: center;
+            margin-top: 10px;
+        }
+            .assessments:hover{
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            .assessments i {
+                padding-right: 10px;
+                color: #202020;
+            }  
+
         .previous {
             display: inline-block;
             background: #8bb8df;
