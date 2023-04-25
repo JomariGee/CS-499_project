@@ -1,8 +1,8 @@
-        
 <!-- PHP must be at top --> 
 <?php
     //PHP that creates a new goal and generates new goal ID
 
+require_once('mysqli_connect.php');
     // prepare the data for insertion
     $goalTitle;
     $category = null;
@@ -11,7 +11,8 @@
     $complexity = null;
     $impact = null;
     $today;  
-
+    $recAction_desc = null;
+    $risk_desc = null;
     if(isset($_POST['submit'])){
         // create array
         $data_missing = array();
@@ -49,26 +50,68 @@
             $impact = null;
         }
 
+        if (empty($_POST['recAct'])) {
+            $recAction_desc = null;
+        } else {
+            $recAction_desc = $_POST['recAct'];
+        }
 
 
-        if(empty($data_missing)){
-            require_once('mysqli_connect.php');
-            $query = "INSERT INTO goal (goalTitle, categoryID, statusID, cost, complexity, impact, assessment_date) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-            $stmt = mysqli_prepare($dbc, $query);
 
-            mysqli_stmt_bind_param($stmt, 'sssssss', $goalTitle, $category, $status, $cost, $complexity, $impact, $today);
-            mysqli_stmt_execute($stmt);
-            $affected_rows = mysqli_stmt_affected_rows($stmt);
-            if($affected_rows == 1){
-                header('Location:goals.php');
-                exit;
-                mysqli_stmt_close($stmt);
-                mysqli_close($dbc);
+    if(empty($data_missing)){
+        
+        // INSERT INTO the goal table
+        $goal_query = "INSERT INTO goal (goalTitle, categoryID, statusID, cost, complexity, impact, assessment_date) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $goal_stmt = mysqli_prepare($dbc, $goal_query);
+        mysqli_stmt_bind_param($goal_stmt, 'sssssss', $goalTitle, $category, $status, $cost, $complexity, $impact, $today);
+        mysqli_stmt_execute($goal_stmt);
+        $goal_id = mysqli_insert_id($dbc); // get the auto-incremented goal ID
+        
+        // INSERT INTO the risk table
+         if (!empty($_POST['risk'])) {
+            $risk_desc = $_POST['risk'];
+            $risk_query = "INSERT INTO risk (risk_desc) VALUES (?)";
+            $risk_stmt = mysqli_prepare($dbc, $risk_query);
+            mysqli_stmt_bind_param($risk_stmt, 's', $risk_desc);
+            mysqli_stmt_execute($risk_stmt);
+            $risk_id = mysqli_insert_id($dbc);
+
+            $goal_risk_query = "INSERT INTO goal_risk (goalID, riskID) VALUES (?, ?)";
+            $goal_risk_stmt_insert = mysqli_prepare($dbc, $goal_risk_query);
+            mysqli_stmt_bind_param($goal_risk_stmt_insert, 'ss', $goal_id, $risk_id);
+            mysqli_stmt_execute($goal_risk_stmt_insert);
+            $goal_risk_id = mysqli_insert_id($dbc);
+        }
+
+        
+        // INSERT INTO the recommended_action table
+        if (!empty($_POST['recAct'])) {
+            $recAction_desc = $_POST['recAct'];
+            $rec_query = "INSERT INTO recommendedaction (recAction_desc, goalID) VALUES (?, ?)";
+            $rec_stmt_insert = mysqli_prepare($dbc, $rec_query);
+            mysqli_stmt_bind_param($rec_stmt_insert, 'ss', $recAction_desc, $goal_id);
+            mysqli_stmt_execute($rec_stmt_insert);
+            $rec_id = mysqli_insert_id($dbc);
+        }
+        
+        mysqli_stmt_close($goal_stmt);
+
+        if (isset($risk_stmt)) {
+            mysqli_stmt_close($risk_stmt);
+        }
+
+        
+        if (isset($rec_stmt_insert)) {
+            mysqli_stmt_close($rec_stmt_insert);
+        }
+
+        
+        header('Location:goals.php');
+        exit;
                 } else {
-                echo 'Error Occurred<br />';
+                echo '<br /><br /><b>You need to enter the Title!</b><br /><br />';
                 echo mysqli_error($dbc);
-                mysqli_stmt_close($stmt);
                 mysqli_close($dbc);
             }
         } else {
@@ -76,7 +119,7 @@
             echo '<br /><br /><b>You need to enter the Title!</b><br /><br />';
 
         }
-    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -154,12 +197,20 @@
                 </select>
             </p>
 
+            <p>Risks Addressed: <br>
+                <input class ="input-field" input type="text" name="risk" size="30" value="" />
+            </p>
+
+            <p>Recommended Action: 
+                <br><input class ="input-field" input type="text" name="recAct" size="30" value="" />
+            </p>
+
             <!-- Submit --> 
             <p> <input class="submit-button" type="submit" name="submit" value="Create New Goal" /> 
 
             <!-- Back Button-->
             <form>
-            <input class ="submit-button" value="Cancel" onclick="history.go(-1)"> 
+            <input class="submit-button-cancel" value="Cancel" onclick="history.go(-1)"> 
             </form> </p>
     </body>
 </html>
