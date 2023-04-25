@@ -185,6 +185,12 @@
 							<i class="fas fa-list-ul"></i>Recommended Action
 						</a>
 					</div>
+					
+					<div class="assessments">
+						<a href="assessments.php?goalID=<?php echo $id; ?>">
+							<i class="fas fa-list-ul"></i>Assessments
+						</a>
+					</div>
 
 					<div class="next">
 						<a href="info.php?goalID=<?php echo $next_id ?>">
