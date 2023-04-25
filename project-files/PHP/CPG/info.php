@@ -58,25 +58,26 @@
 
 
 					// RECOMMENDED ACTION
-					$recAct_sql =  "SELECT recAction_desc, IT_desc, OT_desc FROM recommendedaction
-						WHERE goalID = $id";
+					$recAct_sql = "SELECT recAction_desc, IT_desc, OT_desc FROM recommendedaction WHERE goalID = $id";
 					$recAct_response = mysqli_query($dbc, $recAct_sql);
 					if ($recAct_response) {
-						$row = mysqli_fetch_assoc($recAct_response);
-						$recommendedaction = $row['recAction_desc'];
+  						$row = mysqli_fetch_assoc($recAct_response);
+  						$recommendedaction = isset($row['recAction_desc']) ? $row['recAction_desc'] : '';
 					}
 						
 
 				// PRINT THE INFORMATION
-				$sql = "SELECT * FROM status_update su 
-						RIGHT JOIN (
-							SELECT g.goalID AS GoalID, g.goalTitle AS Title, c.category_desc AS Cat, 
-							g.status_updateID, g.cost, g.impact, g.complexity, s.status_desc AS StatUpdate
-							FROM goal g 
-							LEFT JOIN category c ON g.categoryID = c.categoryID 
-							LEFT JOIN status s ON g.status_updateID = s.statusID
-						) AS gc ON su.stat_updateID = gc.StatUpdate 
-						WHERE gc.goalID = $id";
+				$sql = "
+				select gs.goalTitle as Title, gs.cost as cost, gs.impact as impact, gs.complexity as complexity, gs.status_desc as status, c.category_desc as Cat 
+					from category c 
+					right join ( 
+					(select g.goalID, g.goalTitle, g.categoryID, g.cost, g.impact, g.complexity, s.status_desc 
+					from status s 
+						right join goal g 
+						on g.statusID=s.statusID) 
+					as gs) 
+				on gs.categoryID=c.categoryID 
+				where gs.goalID=$id;";
 
 
 				$response = mysqli_query($dbc, $sql);
@@ -88,7 +89,7 @@
 					$cost = $row['cost'];
 					$impact = $row['impact'];
 					$complexity = $row['complexity'];
-					$status = $row['StatUpdate'];
+					$status = $row['status'];
 					
 
 					if ($cost == 1)
@@ -99,7 +100,6 @@
 						$cost = "$$$";
 					elseif ($cost == 4)
 						$cost = "$$$$";
-					
 						
 						
 					if ($impact == 1)
@@ -116,7 +116,6 @@
 						$complexity = "Medium";
 					elseif ($complexity == 3)
 						$complexity = "High";
-					
 					
 					
 					$sql = "select * from risk r join goal_risk gr on r.riskID=gr.riskID where gr.goalID=$id;";
@@ -152,7 +151,6 @@
             <ul>
                 <li><a href="goals.php">Goals</a></li>
                 <li><a href="assessment_history.php">Assessment History</a></li>
-				<li><a href="create_assessment.php">Create New Assessment</a></li>
             </ul>
         </div>
 		
@@ -188,7 +186,7 @@
 					
 				<!-- Status -->
 					<div class="Rectangle46-status">
-					<p class="status-text"><b>Status: </b><?php echo $status; ?></p>
+						<p class="status-text"><b>Status: </b><?php echo $status; ?></p>
 					</div>
 			
 				<!-- Cost -->
