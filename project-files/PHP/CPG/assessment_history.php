@@ -39,8 +39,8 @@
             </div>
             </a>
         </div>
-	    
-	    <br><br>
+        
+        <br><br>
 
         <!-- Parameters -->
             <div class="ParametersRectangle">
@@ -51,7 +51,7 @@
             </div>
                     
         <!-- Information Parameters
-			Display: Status, goal, date -->
+            Display: Status, goal, date -->
         <?php
             // Get a connection for the database
             require_once('mysqli_connect.php');
@@ -59,16 +59,16 @@
 
             // Create a query for the database
             $query =   "SELECT ups.stat_updateID as id, ups.update_date as Date, 
-						ups.goalID as goalID, ups.goalTitle as Goal, 
-						ups.statusID, s.status_desc as Stat
-						FROM status s 
-						RIGHT JOIN (( 
-							SELECT su.update_date, su.goalID as goalID, 
-							g.goalTitle, su.statusID, su.stat_updateID 
-							FROM status_update su 
-							LEFT JOIN goal g on su.goalID=g.goalID) 
-							AS ups) 
-						on s.statusID=ups.statusID;";		
+                        ups.goalID as goalID, ups.goalTitle as Goal, 
+                        ups.statusID, s.status_desc as Stat
+                        FROM status s 
+                        RIGHT JOIN (( 
+                            SELECT su.update_date, su.goalID as goalID, 
+                            g.goalTitle, su.statusID, su.stat_updateID 
+                            FROM status_update su 
+                            LEFT JOIN goal g on su.goalID=g.goalID) 
+                            AS ups) 
+                        on s.statusID=ups.statusID;";       
 
 
             // If the query executed properly proceed
@@ -84,17 +84,18 @@
                             $date = $row['Date'];
                             $title = $row["Goal"];
                             $status = $row["Stat"];
-			    $id = $row["goalID"];
-				
+                            $id = $row["goalID"];
+                            $stat_id = $row["id"];
+                
 
-				if ($status == "Not Started")
-					$status_color="GREY";
-				elseif ($status == "Scoped")
-					$status_color="#FDDA0D";
-				elseif ($status == "In Progress") 
-					$status_color="ORANGE";
-				elseif ($status == "Implemented")
-					$status_color="GREEN";
+                if ($status == "Not Started")
+                    $status_color="GREY";
+                elseif ($status == "Scoped")
+                    $status_color="#FDDA0D";
+                elseif ($status == "In Progress") 
+                    $status_color="ORANGE";
+                elseif ($status == "Implemented")
+                    $status_color="GREEN";
 
                             echo '<tr><td align="center">' .$date. '</td>
                             <td align="center"><a href="assessments.php?goalID=' .$id. '">' .$title. '</a></td>
@@ -111,7 +112,7 @@
                                 &nbsp;&nbsp;&nbsp;
 
                                 <div class="action-item">
-                                 <a href="">
+                                 <a href="delete_assessment.php?assessmentID=' . $stat_id . '">
                                         <i class="fa fa-trash"></i> 
                                         <p>Remove</p>
                                   </a>  
@@ -154,4 +155,3 @@
         </script>
     </body>
 </html>
-
