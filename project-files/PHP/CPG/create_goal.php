@@ -24,6 +24,7 @@
             <ul>
                 <li><a href="goals.php">Goals</a></li>
                 <li><a href="assessments.php">Assessment History</a></li>
+		<li><a href="create_assessment.php">Create New Assessment</a></li>
             </ul>
         </div>
         <!-- Form --> 
