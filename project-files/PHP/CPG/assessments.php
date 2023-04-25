@@ -128,6 +128,10 @@
     <a href="assessment_history.php">
     <button type="submit" input class="submit-button">Return to Assessment History</button>
     </a>
+<br>
+	<a href="info.php?goalID=<?php echo $id; ?>">
+    		<button type="submit" input class="submit-button">Return to Goal Information</button>
+    	</a>
 
         <!-- Hamburger Menu animation -->
         <script>
