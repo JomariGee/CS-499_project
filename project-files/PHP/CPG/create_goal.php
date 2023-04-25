@@ -23,8 +23,7 @@
         <div class="nav">
             <ul>
                 <li><a href="goals.php">Goals</a></li>
-                <li><a href="assessments_history.php">Assessment History</a></li>
-                <li><a href="create_assessment.php">Create New Assessment</a></li>
+                <li><a href="assessments.php">Assessment History</a></li>
             </ul>
         </div>
         <!-- Form --> 
@@ -94,7 +93,14 @@
                 <option value="3">High</option>
                 </select>
             </p>
-            <br>
+            
+            <p>Risks Addressed: <br>
+                <input class ="input-field" input type="text" name="risk" size="30" value="" />
+            </p>
+
+            <p>Recommended Action: 
+                <br><input class ="input-field" input type="text" name="recAct" size="30" value="" />
+            </p>
 
             <!-- Submit --> 
             <p> <input class="submit-button" type="submit" name="submit" value="Create New Goal" /> 
@@ -112,6 +118,21 @@
                     $(".nav").slideToggle("fast");
                 });
             });
+
+            const multiSelectWithoutCtrl = ( elemSelector ) => {
+  let options = [].slice.call(document.querySelectorAll(`${elemSelector} option`));
+  options.forEach(function (element) {
+      element.addEventListener("mousedown", 
+          function (e) {
+              e.preventDefault();
+              element.parentElement.focus();
+              this.selected = !this.selected;
+              return false;
+          }, false );
+  });
+}
+
+multiSelectWithoutCtrl('#dd');
         </script>
     </body>
 </html>
