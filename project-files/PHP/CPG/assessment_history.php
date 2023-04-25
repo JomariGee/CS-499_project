@@ -96,8 +96,8 @@
 				elseif ($status == "Implemented")
 					$status_color="GREEN";
 
-                            echo '<tr><td align="center"><a href="assessments.php?goalID=' .$id. '">' .$date. '</a></td>
-                            <td align="center">' .$title. '</td>
+                            echo '<tr><td align="center">' .$date. '</td>
+                            <td align="center"><a href="assessments.php?goalID=' .$id. '">' .$title. '</a></td>
                             <td align="center"><font color=' .$status_color. '>' .$status. '</font></td>' . '<td align="center">
                             
                                 <div class="action-item">
