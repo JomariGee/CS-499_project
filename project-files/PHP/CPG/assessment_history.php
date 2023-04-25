@@ -85,7 +85,7 @@
                             $title = $row["Goal"];
                             $status = $row["Stat"];
                             $id = $row["goalID"];
-                            $stat_id = $row["id"];
+                            $Updateid = $row["id"];
                 
 
                 if ($status == "Not Started")
@@ -98,12 +98,13 @@
                     $status_color="GREEN";
 
                             echo '<tr><td align="center">' .$date. '</td>
-                            <td align="center">' .$title. '</a></td>
+                            <td align="center"><a href="assessments.php?goalID=' .$id. '">' .$title. '</a></td>
                             <td align="center"><font color=' .$status_color. '>' .$status. '</font></td>' . '<td align="center">
                             
                                 <div class="action-item">
                                     <a href="edit_assessment.php?stat_updateID=' . $updateID . '">
                                         <i class="fa fa-pen-to-square"></i> 
+										
                                         <p>Edit</p>
                                    </a>
                                 </div>
