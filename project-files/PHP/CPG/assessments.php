@@ -98,9 +98,19 @@
         echo '<tbody>';
         
         while($row = mysqli_fetch_array($response)){
+            $status= $row['Stat'];
+                if ($status == "Not Started")
+	                $status_color="GREY";
+	        elseif ($status == "Scoped")
+		        $status_color="#FDDA0D";
+		elseif ($status == "In Progress") 
+			$status_color="ORANGE";
+		elseif ($status == "Implemented")
+			$status_color="GREEN";
+                
             echo '<tr>';
             echo '<td>' . $row['Date'] . '</td>';
-            echo '<td>' . $row['Stat'] . '</td>';
+            echo '<td><font color=' .$status_color. '>' .$status. '</font></td>';
             echo '<td>' . $row['Note'] . '</td>';
             echo '</tr>';
         }
