@@ -102,7 +102,7 @@
                             <td align="center"><font color=' .$status_color. '>' .$status. '</font></td>' . '<td align="center">
                             
                                 <div class="action-item">
-                                    <a href="">
+                                    <a href="edit_assessment.php?stat_updateID=' . $updateID . '">
                                         <i class="fa fa-pen-to-square"></i> 
                                         <p>Edit</p>
                                    </a>
