@@ -25,6 +25,7 @@
                 <ul>
                     <li><a href="goals.php">Goals</a></li>
                     <li><a href="assessment_history.php">Assessment History</a></li>
+                    <li><a href="create_assessment.php">Create New Assessment</a></li>
                 </ul>
             </div>
 
@@ -67,10 +68,9 @@
                 }
 
             ?>
-
         <div class="main">
             
-              <!-- Action recommendation  --> 
+            <!-- Action recommendation  --> 
             <div class= "Rectangle44-action-recommend">
                     <p><?php echo $recAct; ?></p>
                 </div>

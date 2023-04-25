@@ -50,6 +50,7 @@ Need to update query so that it prints the assessments correctly
             <ul>
                 <li><a href="goals.php">Goals</a></li>
                 <li><a href="assessment_history.php">Assessment History</a></li>
+                <li><a href="create_assessment.php">Create New Assessment</a></li>
             </ul>
         </div>
 

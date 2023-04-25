@@ -68,17 +68,15 @@
 						
 
 				// PRINT THE INFORMATION
-				$sql = "
-				select gs.goalTitle as Title, gs.cost as cost, gs.impact as impact, gs.complexity as complexity, gs.status_desc as status, c.category_desc as Cat 
-					from category c 
-					right join ( 
-					(select g.goalID, g.goalTitle, g.categoryID, g.cost, g.impact, g.complexity, s.status_desc 
-					from status s 
-						right join goal g 
-						on g.statusID=s.statusID) 
-					as gs) 
-				on gs.categoryID=c.categoryID 
-				where gs.goalID=$id;";
+				$sql = "SELECT * FROM status_update su 
+						RIGHT JOIN (
+							SELECT g.goalID AS GoalID, g.goalTitle AS Title, c.category_desc AS Cat, 
+							g.status_updateID, g.cost, g.impact, g.complexity, s.status_desc AS StatUpdate
+							FROM goal g 
+							LEFT JOIN category c ON g.categoryID = c.categoryID 
+							LEFT JOIN status s ON g.status_updateID = s.statusID
+						) AS gc ON su.stat_updateID = gc.StatUpdate 
+						WHERE gc.goalID = $id";
 
 
 				$response = mysqli_query($dbc, $sql);
@@ -90,53 +88,36 @@
 					$cost = $row['cost'];
 					$impact = $row['impact'];
 					$complexity = $row['complexity'];
-					$status = $row['status'];
+					$status = $row['StatUpdate'];
 					
 
-					if ($cost == 1){
-						$cost = "<FONT COLOR='GREEN'>$</FONT><FONT COLOR='#E5E4E2'>$$$</FONT>";
-					}elseif ($cost == 2){
-						$cost = "<FONT COLOR='GREEN'>$$</FONT><FONT COLOR='#E5E4E2'>$$</FONT>";
-					}elseif ($cost == 3){
-						$cost = "<FONT COLOR='GREEN'>$$$</FONT><FONT COLOR='#E5E4E2'>$</FONT>";
-					}elseif ($cost == 4){
-						$cost = "<FONT COLOR='GREEN'>$$$$</FONT>";
-					}
+					if ($cost == 1)
+						$cost = "$";
+					elseif ($cost == 2)
+						$cost = "$$";
+					elseif ($cost == 3)
+						$cost = "$$$";
+					elseif ($cost == 4)
+						$cost = "$$$$";
 					
 						
 						
-					if ($impact == 1){
-						$impact_color="RED";
+					if ($impact == 1)
 						$impact = "Low";
-					}elseif ($impact == 2){
-						$impact_color="#988558";
+					elseif ($impact == 2)
 						$impact = "Medium";
-					}elseif ($impact == 3){
-						$impact_color="GREEN";
+					elseif ($impact == 3)
 						$impact = "High";
-					}
 					
 						
-					if ($complexity == 1){
-						$complexity_color="GREEN";
+					if ($complexity == 1)
 						$complexity = "Low";
-					}elseif ($complexity == 2){
-						$complexity_color="#988558";
+					elseif ($complexity == 2)
 						$complexity = "Medium";
-					}elseif ($complexity == 3){
-						$complexity_color="RED";
+					elseif ($complexity == 3)
 						$complexity = "High";
-					}
 					
-					if ($status == "Not Started")
-						$status_color="GREY";
-					elseif ($status == "Scoped")
-						$status_color="#FDDA0D";
-					elseif ($status == "In Progress") 
-						$status_color="ORANGE";
-					elseif ($status == "Implemented")
-						$status_color="GREEN";
-									
+					
 					
 					$sql = "select * from risk r join goal_risk gr on r.riskID=gr.riskID where gr.goalID=$id;";
 					$response = @mysqli_query($dbc, $sql);
@@ -171,6 +152,7 @@
             <ul>
                 <li><a href="goals.php">Goals</a></li>
                 <li><a href="assessment_history.php">Assessment History</a></li>
+				<li><a href="create_assessment.php">Create New Assessment</a></li>
             </ul>
         </div>
 		
@@ -206,7 +188,7 @@
 					
 				<!-- Status -->
 					<div class="Rectangle46-status">
-						<p class="status-text"><b>Status: </b><FONT COLOR=<?php echo $status_color; ?>> <?php echo $status; ?></FONT></p>
+					<p class="status-text"><b>Status: </b><?php echo $status; ?></p>
 					</div>
 			
 				<!-- Cost -->
@@ -216,12 +198,12 @@
 				
 				<!-- Complexity -->
 					<div class="Rectangle49-complexity">
-						<p class="status-complexity"><b>Complexity:</b><FONT COLOR=<?php echo $complexity_color; ?>> <?php echo $complexity; ?></FONT></p>
+						<p class="status-complexity"><b>Complexity:</b> <?php echo $complexity; ?></p>
 					</div>
 				
 				<!-- Impact -->
 					<div class="Rectangle50-impact">
-						<p class="status-impact"><b>Impact: </b><FONT COLOR=<?php echo $impact_color; ?>><?php echo $impact; ?></FONT></p>
+						<p class="status-impact"><b>Impact: </b><?php echo $impact; ?></p>
 					</div>
 				
 				<!-- Risks Addressed -->
