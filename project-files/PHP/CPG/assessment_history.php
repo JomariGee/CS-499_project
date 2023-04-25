@@ -98,7 +98,7 @@
                     $status_color="GREEN";
 
                             echo '<tr><td align="center">' .$date. '</td>
-                            <td align="center"><a href="assessments.php?goalID=' .$id. '">' .$title. '</a></td>
+                            <td align="center">' .$title. '</a></td>
                             <td align="center"><font color=' .$status_color. '>' .$status. '</font></td>' . '<td align="center">
                             
                                 <div class="action-item">
@@ -120,9 +120,9 @@
                     
                                 &nbsp;&nbsp;&nbsp;
                                 <div class="action-item">
-                                <a href="">
-                                    <i class="fa fa-download"></i> 
-                                    <p>Export</p>
+                                <a href="assessments.php?goalID=' .$id. '">
+                                    <i class="fa fa-eye"></i> 
+                                    <p>View</p>
                                     </a>
                                 </div>
                                 
