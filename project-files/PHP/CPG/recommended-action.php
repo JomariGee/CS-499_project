@@ -55,11 +55,11 @@
                     if (!empty($row)) {
                         $recAct = $row['recAction_desc'];
                         $it_info = $row['IT_desc'];
-                       $ot_info = $row['OT_desc'];
+                        $ot_info = $row['OT_desc'];
 
                     }
                     else {
-                        // handle the case where $row is empty
+                        $recAct = '';
                     }
                 }
                 else {
