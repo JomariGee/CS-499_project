@@ -78,43 +78,56 @@
                 }
 
             ?>
+		<!-- Return button -->
+            <div class="return-to-info">
+				<a href="info.php?goalID=<?php echo $id; ?>"> Return to Info </a>
+			</div>
+
         <div class="main">
-            
-            <!-- Action recommendation  --> 
-            <div class="">
-                    <p><?php echo $recAct; ?></p>
-                </div>
-            </div>
-
+            <!--Recommended Action-->
+		<div class="Rectangle44-action-recommend">
+			<p class="recommended-action">
+			<b>Recommended Action:</b><br>
+			&nbsp; &nbsp;&nbsp;<?php echo $recAct; ?></p>
+		</div>
+					
                 <!-- IT info  -->
-            <div class="">
-                    <p><?php echo $it_info; ?></p>
-                </div>
-            </div>
+		<?php 
+			if ($ot_info){
+				echo '
+					<div class="Rectangle-it">
+					<p class="it-action">
+						<b>IT:</b><br>
+						&nbsp; &nbsp;&nbsp; '.$it_info.'</p>
+					</div>
+				';
+			}
 
-                <!--  OT info  -->
-            <div class="">
-                    <p><?php echo $ot_info; ?></p>
-                </div>
-            </div>
 
-                <!-- Reference title  -->
-            <div class="">
-                    <p><?php echo $ref_Title; ?></p>
-                </div>
-            </div>
-
-		<!-- Reference link  -->
-            <div class="">
-                    <p><?php echo $ref_link; ?></p>
-                </div>
-            </div>
-
-		    <!-- Return button -->
-                <div class="return-to-info">
-                    <a href="info.php?goalID=<?php echo $id; ?>"> Return to Info </a>
-                </div>
-            </div>
+                //  OT info
+			if ($ot_info){
+				echo '
+					<div class="Rectangle-ot">
+					<p class="ot-action">
+						<b>OT:</b><br>
+						&nbsp; &nbsp;&nbsp; '.$ot_info.'</p>
+					</div>
+				';
+			}
+				
+				
+			if ($ref_Title){
+				echo '
+					<div class="Rectangle-resources">
+						<p class="resources">
+							<b>Resources:</b><br>
+							<a href="'.$ref_link.'">
+							'.$ref_Title.'</p>
+							</a>
+						</div>
+				';
+			}
+		?>
 			
 		<!-- Hamburger Menu animation -->
             <script>
