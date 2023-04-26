@@ -549,56 +549,62 @@ insert into ref (ref_Title, ref_link) values
 	 ("CISA Binding Operational Directive", "https://www.cisa.gov/news-events/directives/binding-operational-directive-18-01");
 	 
 /*Reference Instances*/	 
-create table ReferenceInstances (refInstancesID int(11), goalID int(11), referencesID int(11));
-insert into ReferenceInstances (refInstancesID, goalID, referencesID) values 
+CREATE TABLE `ReferenceInstances` (
+	`refInstancesID` int(11) NOT NULL AUTO_INCREMENT, 
+	`goalID` int(11) DEFAULT NULL, 
+	`referencesID` int(11) DEFAULT NULL, 
+	PRIMARY KEY (refInstancesID)
+	)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+	
+insert into ReferenceInstances (goalID, referencesID) values 
 /*ACCOUNT SECURITY (1.0)*/
-	 (1, 2, 1), 
-	 (2, 3, 1),
-	 (3, 4, 1),
-	 (4, 4, 2),
+	 (2, 1), 
+	 (3, 1),
+	 (4, 1),
+	 (4, 2),
 /*DEVICE SECURITY (2.0) [7-11]*/
-	 (5, 10, 3),
-	 (6, 10, 4), 
-	 (7, 10, 5), 
-	 (8, 10, 6), 
+	 (10, 3),
+	 (10, 4), 
+	 (10, 5), 
+	 (10, 6), 
 /*DATA SECURITY (3.0) [12-5]*/
-	 (9, 13, 6), 
-	 (10, 14, 6), 
-	 (11, 15, 6), 
+	 (13, 6), 
+	 (14, 6), 
+	 (15, 6), 
 /*GOVERNANCE AND TRAINING (4.0) [16-20]*/
-	 (12, 19, 7), 
-	 (13, 20, 8), 
+	 (19, 7), 
+	 (20, 8), 
 /*VULNERABILITY MANAGEMENT (5.0) [21-26]*/
-	 (14, 22, 9), 
-	 (15, 22, 3), 
-	 (16, 22 ,4), 
-	 (17, 23, 10),
-	 (18, 23, 11), 
-	 (19, 23, 12), 
-	 (20, 23, 13), 
-	 (21, 24, 14), 
-	 (22, 25, 3), 
-	 (23, 25, 4),
-	 (24, 25, 5), 
-	 (25, 25, 15), 
-	 (26, 25, 16),
-	 (27, 26, 3), 
-	 (28, 26, 4), 
-	 (29, 26, 5), 
-	 (30, 26, 15),
-	 (31, 27, 15),
-	 (32, 27, 16), 
-	 (33, 27, 17), 
-	 (34, 27, 18), 
+	 (22, 9), 
+	 (22, 3), 
+	 (22 ,4), 
+	 (23, 10),
+	 (23, 11), 
+	 (23, 12), 
+	 (23, 13), 
+	 (24, 14), 
+	 (25, 3), 
+	 (25, 4),
+	 (25, 5), 
+	 (25, 15), 
+	 (25, 16),
+	 (26, 3), 
+	 (26, 4), 
+	 (26, 5), 
+	 (26, 15),
+	 (27, 15),
+	 (27, 16), 
+	 (27, 17), 
+	 (27, 18), 
 /* Response and Recovery (7.0) [30-33]*/
-	 (35, 31, 19), 
-	 (36, 31, 20), 
-	 (37, 32, 17), 
-	 (38, 32, 18), 
-	 (39, 34, 6), 
+	 (31, 19), 
+	 (31, 20), 
+	 (32, 17), 
+	 (32, 18), 
+	 (34, 6), 
 /*Other (8.0) [34-36]*/
-	 (40, 35, 6), 
-	 (41, 37, 21);
+	 (35, 6), 
+	 (37, 21);
 
 /* Files Table*/
 /*create table UpdateFiles (fileID int(11), fileLocation varchar(255), goalID int(11));*/
