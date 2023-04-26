@@ -132,13 +132,13 @@ Need to do:
 
         </div>
 
-        /*<!-- Parameters -->
+        <!-- Parameters --
             <div class="ParametersRectangle">
                 <p class=" goal">Goal</p>
                 <p class="last-assessment">Last Assessment</p>
                 <p class="status">Status</p>
                 <p class="actions">Actions</p>
-            </div>*/
+            </div>-->
         
                     
         <!-- Information Parameters -->
