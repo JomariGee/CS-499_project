@@ -132,13 +132,13 @@ Need to do:
 
         </div>
 
-        <!-- Parameters -->
+        /*<!-- Parameters -->
             <div class="ParametersRectangle">
                 <p class=" goal">Goal</p>
                 <p class="last-assessment">Last Assessment</p>
                 <p class="status">Status</p>
                 <p class="actions">Actions</p>
-            </div>
+            </div>*/
         
                     
         <!-- Information Parameters -->
@@ -223,6 +223,12 @@ Need to do:
                         cellspacing="0" cellpadding="0">
                         ';
                         
+			echo '<tr>
+				<th bgcolor="#a5a1a1" style="font-size:30px" height="pixels | 150%">Goal</th>
+				<th style="font-size:30px">Last Assessment</th>
+				<th style="font-size:30px">Status</th>
+			</tr>';
+			    
                         while($row = mysqli_fetch_array($response)){
                             $id = $row['GoalID'];
                             $title = $row["Goal"];
