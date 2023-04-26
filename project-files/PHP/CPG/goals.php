@@ -223,11 +223,13 @@ Need to do:
                         cellspacing="0" cellpadding="0">
                         ';
                         
-			echo '<tr>
-				<th bgcolor="#a5a1a1" style="font-size:30px" height="pixels | 150%">Goal</th>
-				<th style="font-size:30px">Last Assessment</th>
-				<th style="font-size:30px">Status</th>
-			</tr>';
+			echo '
+				<tr>
+					<th bgcolor="#4682B4" style="color:white; font-size:30px" height="75px">Goal</th>
+					<th bgcolor="#4682B4" style="color:white; font-size:30px" height="75px">Last Assessment</th>
+					<th bgcolor="#4682B4" style="color:white; font-size:30px" height="75px">Status</th>
+					<th bgcolor="#4682B4" style="color:white; font-size:30px" height="75px"></th>
+				</tr>';
 			    
                         while($row = mysqli_fetch_array($response)){
                             $id = $row['GoalID'];
