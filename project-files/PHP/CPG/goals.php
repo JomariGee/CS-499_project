@@ -238,9 +238,9 @@ Need to do:
 							elseif ($status == "Implemented")
 								$status_color="GREEN";
                             
-                            echo '<tr><td align="center">' .$title. '</a></td>
-                            <td align="center">' .$last. '</td>
-                            <td align="center"><font color=' .$status_color. '>' .$status. '</font></td>' . '<td align="center">
+                            echo '<tr><td align="center" style="font-size:25px">' .$title. '</a></td>
+                            <td align="center" style="font-size:25px">' .$last. '</td>
+                            <td align="center" style="font-size:25px"><font color=' .$status_color. '>' .$status. '</font></td>' . '<td align="center">
                             
                                 <div class="action-item">
                                     <a href="edit_goal.php?goalID=' . $id . '">
