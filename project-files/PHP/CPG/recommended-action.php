@@ -43,11 +43,11 @@
 
                 // PRINT THE INFORMATION
                 $sql = "SELECT ra.recAction_desc, ra.OT_desc, ra.IT_desc, r.ref_Title, r.ref_link 
-FROM recommendedaction ra 
-LEFT JOIN referenceinstances ri ON ra.goalID = ri.goalID 
-LEFT JOIN ref r ON ri.referencesID = r.referencesID 
-WHERE ra.goalID = $id;
-";
+			FROM recommendedaction ra 
+			LEFT JOIN referenceinstances ri ON ra.goalID = ri.goalID 
+			LEFT JOIN ref r ON ri.referencesID = r.referencesID 
+			WHERE ra.goalID = $id;
+			";
         
 
 
