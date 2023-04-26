@@ -15,7 +15,7 @@
         $category = ($_POST['category']) && $_POST['category'] !== '' ? $_POST['category'] : $row['categoryID'];
 
         
-        $status = ($_POST['status']) && $_POST['status'] !== '' ? $_POST['status'] : $row['status_updateID'];
+        $status = ($_POST['status']) && $_POST['status'] !== '' ? $_POST['status'] : $row['statusID'];
 
         $cost = ($_POST['cost']) && $_POST['cost'] !== '' ? $_POST['cost'] : $row['cost'];
         $complexity =($_POST['complexity']) && $_POST['complexity'] !== '' ? $_POST['complexity'] : $row['complexity'];
@@ -24,7 +24,7 @@
 
         // Update the record in the database
         $sql = "UPDATE goal 
-                SET goalTitle='$goalTitle', categoryID='$category', status_updateID='$status', cost='$cost',   
+                SET goalTitle='$goalTitle', categoryID='$category', statusID='$status', cost='$cost',   
                         complexity='$complexity', impact='$impact', assessment_date='$today'
                 WHERE goalID='$id'";
         mysqli_query($dbc, $sql);
