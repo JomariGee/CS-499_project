@@ -38,6 +38,12 @@ Need to do:
 
         <!-- Importation & New Goal creation -->
         <div class="main">
+            <a href="export_goal.php">
+            <div class="rectangle">
+                <i class="fa fa-file-export"></i> 
+                <h2>Export All</h2>
+            </div>
+        </a>
 
             <a href="create_goal.php">
                 <div class="rectangle">
@@ -232,7 +238,7 @@ Need to do:
 							elseif ($status == "Implemented")
 								$status_color="GREEN";
                             
-                            echo '<tr><td align="center"><a href="info.php?goalID=' .$id. '">' .$title. '</a></td>
+                            echo '<tr><td align="center">' .$title. '</a></td>
                             <td align="center">' .$last. '</td>
                             <td align="center"><font color=' .$status_color. '>' .$status. '</font></td>' . '<td align="center">
                             
@@ -255,9 +261,9 @@ Need to do:
                     
                                 &nbsp;&nbsp;&nbsp;
                                 <div class="action-item">
-                                <a href="export_goal.php?goalID=' . $id . '">
-                                    <i class="fa fa-download"></i> 
-                                    <p>Export</p>
+                                <a href="info.php?goalID=' .$id. '">
+                                    <i class="fa fa-eye"></i> 
+                                    <p>View</p>
                                     </a>
                                 </div>
                                 
