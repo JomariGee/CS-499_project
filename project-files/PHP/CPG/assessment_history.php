@@ -48,13 +48,13 @@
         
         <br><br>
 
-        <!-- Parameters -->
+        <!-- Parameters --
             <div class="ParametersRectangle">
                 <p class=" goal">Date</p>
                 <p class="last-assessment">Goal</p>
                 <p class="status">Status</p>
                 <p class="actions">Actions</p>
-            </div>
+            </div>-->
                     
         <!-- Information Parameters
             Display: Status, goal, date -->
@@ -83,8 +83,15 @@
                                 
                     if($response){
                         echo '<table align="center"
-                        cellspacing="0" cellpadding="8">
-                        ';
+                        cellspacing="0" cellpadding="8">';
+						
+						echo '
+						<tr>
+							<th bgcolor="#4682B4" style="color:white; font-size:30px" height="75px">Date</th>
+							<th bgcolor="#4682B4" style="color:white; font-size:30px" height="75px">Goal</th>
+							<th bgcolor="#4682B4" style="color:white; font-size:30px" height="75px">Status</th>
+							<th bgcolor="#4682B4" style="color:white; font-size:30px" height="75px"></th>
+						  </tr>';
                         
                         while($row = mysqli_fetch_array($response)){
                             $date = $row['Date'];
