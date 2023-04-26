@@ -1,7 +1,7 @@
 <?php
     // Connect to the database
     require_once('mysqli_connect.php');
-    $id = $_GET['stat_updateID'];
+    $id = $_GET['assessmentID'];
     $sql = "SELECT * FROM status_update WHERE stat_updateID = $id";
     $response = mysqli_query($dbc, $sql);
 
