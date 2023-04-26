@@ -96,7 +96,20 @@
 					// Assign default color to $complexity_color if it's null
 					$complexity_color = $complexity_color ?? "#000000";
 					
+					// Assign default color to $complexity_color if it's null
+					$status_color = $status_color ?? "#000000";
+					
+					
+					if ($status == "Not Started")
+						$status_color="GREY";
+					elseif ($status == "Scoped")
+						$status_color="#FDDA0D";
+					elseif ($status == "In Progress") 
+						$status_color="ORANGE";
+					elseif ($status == "Implemented")
+						$status_color="GREEN";
 
+					
 					if ($cost == 1){
 						$cost = "<FONT COLOR='GREEN'>$</FONT><FONT COLOR='#E5E4E2'>$$$</FONT>";
 					}elseif ($cost == 2){
@@ -200,7 +213,7 @@
 					
 				<!-- Status -->
 					<div class="Rectangle46-status">
-						<p class="status-text"><b>Status: </b><?php echo $status; ?></p>
+						<p class="status-text"><b>Status: </b><FONT COLOR=<?php echo $status_color; ?>><?php echo $status; ?></FONT></p>
 					</div>
 			
 				<!-- Cost -->
