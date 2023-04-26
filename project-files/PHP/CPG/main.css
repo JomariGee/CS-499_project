@@ -492,11 +492,13 @@
 ***************************************************************/
     /** Return button */
         .return-to-info {
-            display: inline-block;
+            position: absolute;
+			right: 150px;
             background: #8bb8df;
             padding: 10px 20px;
             border-radius: 9px;
-            margin-top: 620px;
+            margin-top: 100px;
+
         }
             .return-to-info:hover{
                 transform: scale(1.05);
@@ -509,23 +511,24 @@
                 text-align: center;
                 color: black;
             }
+
         /** Action box **/
             .Rectangle44-action-recommend {
                 position: absolute;
-                width: auto;
+                width: 1450px;
                 min-width: 250px; 
                 height: auto;
                 padding: 10px 20px; 
                 left: 50%;
-                top: 450px; 
+                top: 250px; 
                 transform: translate(-50%, -50%);
-                background: #D0E9FF;
+                /*background: #D0E9FF;*/
                 border-radius: 9px;
             }
             .Rectangle44-action-recommend p {
-                font-size: 2vw;
+                font-size: 20px;
                 line-height: 100%;
-                text-align: center;
+                text-align: left;
                 color: black;
                 letter-spacing: 0.9px;
                 line-height: 1.2;
@@ -534,6 +537,91 @@
                 font-size: 1rem; 
                 line-height: 1.2;
                 text-align: center;
+                color: black;
+            }
+
+        .Rectangle-resources {
+            position: absolute;
+            width: auto; 
+            min-width: 250px; 
+            height: auto; 
+            padding: 10px 20px; 
+            left: 50%;
+            top: 700px;
+            transform: translate(-50%, -50%);
+            /*background: #D0E9FF;*/
+            border-radius: 9px;
+        }
+            .resources-text {
+                font-size: 20px; 
+                line-height: 1.2;
+                text-align: center;
+                color: black;
+            }
+            .Rectangle-resources p {
+                font-size: 2vw;
+                line-height: 150%;
+                text-align: center;
+                color: black;
+            }
+            /*.resource-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            }*/
+			
+            .Rectangle-it {
+                position: relative;
+                width: 1450px;
+                min-width: 250px; 
+                height: auto;
+                padding: 10px 20px; 
+                left: 50%;
+                top: 350px; 
+                transform: translate(-50%, -50%);
+                /*background: #D0E9FF;*/
+                border-radius: 9px;
+            }
+            .Rectangle-it p {
+                font-size: 20px;
+                line-height: 100%;
+                text-align: left;
+                color: black;
+                letter-spacing: 0.9px;
+                line-height: 1.2;
+            }
+            .it-text {
+                font-size: 1rem; 
+                line-height: 1.2;
+                text-align: left;
+                color: black;
+            }
+			
+            .Rectangle-ot {
+                position: absolute;
+                width: 1450px;
+                min-width: 250px; 
+                height: auto;
+                padding: 10px 20px; 
+                left: 50%;
+                top: 550px; 
+                transform: translate(-50%, -50%);
+                /*background: #D0E9FF;*/
+                border-radius: 9px;
+            }
+            .Rectangle-ot p {
+                font-size: 20px;
+                line-height: 100%;
+                text-align: left;
+                color: black;
+                letter-spacing: 0.9px;
+                line-height: 1.2;
+            }
+            .it-text {
+                font-size: 1rem; 
+                line-height: 1.2;
+                text-align: left;
                 color: black;
             }
 
@@ -872,7 +960,7 @@
             height: auto; 
             padding: 10px 20px; 
             left: 50%;
-            top: 840px;
+            top: 725px;
             transform: translate(-50%, -50%);
             /*background: #D0E9FF;*/
             border-radius: 9px;
