@@ -31,9 +31,15 @@
 
         <!-- Importation & New Goal creation -->
         <div class="main">
+            <a href="export_assessment.php">
+            <div class="rectangle">
+                <i class="fa fa-file-export"></i> 
+                <h2>Export All</h2>
+            </div>
+        </a>
             
             <a href="create_assessment.php">
-            <div class="rectangle-history">
+            <div class="rectangle">
                 <i class="fa fa-file-circle-plus"></i> 
                 <h2>New Assessment</h2>
             </div>
@@ -85,7 +91,7 @@
                             $title = $row["Goal"];
                             $status = $row["Stat"];
                             $id = $row["goalID"];
-                            $Updateid = $row["id"];
+                            $stat_id = $row["id"];
                 
 
                 if ($status == "Not Started")
@@ -98,13 +104,13 @@
                     $status_color="GREEN";
 
                             echo '<tr><td align="center">' .$date. '</td>
-                            <td align="center"><a href="assessments.php?goalID=' .$id. '">' .$title. '</a></td>
+                            <td align="center">' .$title. '</a></td>
                             <td align="center"><font color=' .$status_color. '>' .$status. '</font></td>' . '<td align="center">
                             
+                            
                                 <div class="action-item">
-                                    <a href="edit_assessment.php?stat_updateID=' . $updateID . '">
+                                    <a href="edit_assessment.php?assessmentID=' . $stat_id . '">
                                         <i class="fa fa-pen-to-square"></i> 
-										
                                         <p>Edit</p>
                                    </a>
                                 </div>
