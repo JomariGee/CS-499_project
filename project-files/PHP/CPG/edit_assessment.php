@@ -90,7 +90,7 @@
 							on su.statusID=s.statusID) 
 						as s1 
 					on s1.goalID=g.goalID 
-					where s1.stat_updateID=1;";
+					where s1.stat_updateID=$id;";
 			$response = mysqli_query($dbc, $sql);
 
 			if ($response) {
