@@ -69,7 +69,11 @@ $newest=1;
 				error_log(mysqli_error($dbc));
 			}
 		
-		
+		    if(isset($_POST['status']) && !empty($_POST['status'])){
+                    $status = $_POST['status'];
+                }else{              
+                    $status=1;
+                }
 			//Assessment Date
 			if(isset($_POST['assessment_date']) && !empty($_POST['assessment_date'])){
 				$assessment_date = $_POST['assessment_date'];
@@ -90,6 +94,7 @@ $newest=1;
 						values ($goalNum, $status, '$assessment_date', $newest, '$note'); ";
 			mysqli_query($dbc, $query);
 			// update goal info		
+
 			require_once('mysqli_connect.php');
             $query = "UPDATE goal SET assessment_date = '$assessment_date', statusID = $status WHERE goalID=$goalNum; ";
 			if(!empty($_POST['note_desc'])){
@@ -107,7 +112,7 @@ $newest=1;
 			}
 			mysqli_close($dbc);
         } else {
-            echo '<br /><br /><b>You need to select a goal!</b><br /><br />';
+            echo '<br /><br /><b>You need to select a goal and status!</b><br /><br />';
         }
     }
 ?>
