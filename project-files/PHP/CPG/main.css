@@ -520,7 +520,7 @@
                 height: auto;
                 padding: 10px 20px; 
                 left: 50%;
-                top: 30%; 
+                top: 35%; 
                 transform: translate(-50%, -50%);
                 /*background: #D0E9FF;*/
                 border-radius: 9px;
@@ -547,7 +547,7 @@
             height: auto; 
             padding: 10px 20px; 
             left: 50%;
-            top: 800px;
+            top: 115%;
             transform: translate(-50%, -50%);
             /*background: #D0E9FF;*/
             border-radius: 9px;
@@ -578,7 +578,7 @@
                 height: auto;
                 padding: 10px 20px; 
                 left: 50%;
-                top: 450px; 
+                top: 65%; 
                 transform: translate(-50%, -50%);
                 /*background: #D0E9FF;*/
                 border-radius: 9px;
@@ -605,7 +605,7 @@
                 height: auto;
                 padding: 10px 20px; 
                 left: 50%;
-                top: 650px; 
+                top: 90%; 
                 transform: translate(-50%, -50%);
                 /*background: #D0E9FF;*/
                 border-radius: 9px;
