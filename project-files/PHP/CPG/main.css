@@ -520,13 +520,13 @@
                 height: auto;
                 padding: 10px 20px; 
                 left: 50%;
-                top: 250px; 
+                top: 30%; 
                 transform: translate(-50%, -50%);
                 /*background: #D0E9FF;*/
                 border-radius: 9px;
             }
             .Rectangle44-action-recommend p {
-                font-size: 20px;
+                font-size: 25px;
                 line-height: 100%;
                 text-align: left;
                 color: black;
@@ -534,7 +534,7 @@
                 line-height: 1.2;
             }
             .risks-addressed-text {
-                font-size: 1rem; 
+                font-size: 2rem; 
                 line-height: 1.2;
                 text-align: center;
                 color: black;
@@ -547,19 +547,19 @@
             height: auto; 
             padding: 10px 20px; 
             left: 50%;
-            top: 700px;
+            top: 800px;
             transform: translate(-50%, -50%);
             /*background: #D0E9FF;*/
             border-radius: 9px;
         }
             .resources-text {
-                font-size: 20px; 
+                font-size: 10px; 
                 line-height: 1.2;
                 text-align: center;
                 color: black;
             }
             .Rectangle-resources p {
-                font-size: 2vw;
+                font-size: 25px;
                 line-height: 150%;
                 text-align: center;
                 color: black;
@@ -572,19 +572,19 @@
             }*/
 			
             .Rectangle-it {
-                position: relative;
+                position: absolute;
                 width: 1450px;
                 min-width: 250px; 
                 height: auto;
                 padding: 10px 20px; 
                 left: 50%;
-                top: 350px; 
+                top: 450px; 
                 transform: translate(-50%, -50%);
                 /*background: #D0E9FF;*/
                 border-radius: 9px;
             }
             .Rectangle-it p {
-                font-size: 20px;
+                font-size: 25px;
                 line-height: 100%;
                 text-align: left;
                 color: black;
@@ -592,7 +592,7 @@
                 line-height: 1.2;
             }
             .it-text {
-                font-size: 1rem; 
+                font-size: 2rem; 
                 line-height: 1.2;
                 text-align: left;
                 color: black;
@@ -605,13 +605,13 @@
                 height: auto;
                 padding: 10px 20px; 
                 left: 50%;
-                top: 550px; 
+                top: 650px; 
                 transform: translate(-50%, -50%);
                 /*background: #D0E9FF;*/
                 border-radius: 9px;
             }
             .Rectangle-ot p {
-                font-size: 20px;
+                font-size: 25px;
                 line-height: 100%;
                 text-align: left;
                 color: black;
