@@ -384,11 +384,12 @@
         align-items: center;
         gap: 0.625rem;
         padding-top: 50px;
+		width: 25px;
         
     }
 
     .action-item .fa {
-        font-size: 28px;
+        font-size:20px;
     }
     a {
         text-decoration: none;
@@ -396,6 +397,9 @@
         a:visited{
             color: #303030;
         }
+	.action-item p {
+		font-size: 15px;
+	}
 /**************************************************************
                 Assessment  History Page 
 ***************************************************************/
