@@ -97,12 +97,6 @@ $newest=1;
 
 			require_once('mysqli_connect.php');
             $query = "UPDATE goal SET assessment_date = '$assessment_date', statusID = $status WHERE goalID=$goalNum; ";
-			if(!empty($_POST['note_desc'])){
-				$sql="INSERT INTO notes (note_desc, goalID) 
-						values ('$note', $goalNum);";
-				mysqli_query($dbc, $sql);
-			}
-
 			
 			if (mysqli_query($dbc, $query)) {
 				header('Location:assessment_history.php');
