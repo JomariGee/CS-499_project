@@ -80,8 +80,8 @@
 			<?php 
 			// Connect to the database
 			require_once('mysqli_connect.php');
-			$id = $_GET['stat_updateID'];
-			$sql = "SELECT s1.stat_updateID, s1.status_desc, g.goalTitle 
+			$id = $_GET['assessmentID'];
+			$sql = "SELECT s1.stat_updateID, s1.status_desc, g.goalTitle, g.goalID 
 					FROM goal g 
 					right join 
 						(SELECT su.stat_updateID, s.status_desc, su.goalID 
@@ -97,6 +97,7 @@
 			$row = mysqli_fetch_assoc($response);
 			$title = $row['goalTitle'];
 			$stat_desc = $row['status_desc'];
+			$goalID = $row['goalID'];
 			}else {
                 // Log the error to a file or send it to a logging service
                 error_log(mysqli_error($dbc));
@@ -108,7 +109,7 @@
 			<!--Choose Goal-->
             <p>Goal: <br>
                 <select id="goalID" name="goalID">   
-                    <option value="0"><?php echo $title; ?></option>
+                    <option value="<?php echo $goalID; ?>"><?php echo $title; ?></option>
                     <!-- LOOP FOR EACH GOAL -->
                     <?php
                         // NEED TO UPDATE SO THAT DROPDOWN DOESNT SET ALL STUFF UNCHANGED TO 0!
@@ -128,7 +129,7 @@
                                 $id = $row['goalID']; ?>
                         
                                 <option value= "<?php echo $id; ?>"> <?php echo $title;?> </option>
-                    <?php	}
+						<?php }	
                         }else {
                             // Log the error to a file or send it to a logging service
                             error_log(mysqli_error($dbc));
