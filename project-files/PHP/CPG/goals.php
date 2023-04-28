@@ -220,7 +220,7 @@ Need to do:
                                 
                     if($response){
                         echo '<table align="center"
-                        cellspacing="0" cellpadding="0">
+                        cellspacing="0" cellpadding="0" style="width:70%">
                         ';
                         
 			echo '
@@ -246,7 +246,7 @@ Need to do:
 							elseif ($status == "Implemented")
 								$status_color="GREEN";
                             
-                            echo '<tr><td align="center" style="font-size:20px">' .$title. '</a></td>
+                            echo '<tr style="height:10px"><td align="center" style="font-size:20px">' .$title. '</a></td>
                             <td align="center" style="font-size:20px">' .$last. '</td>
                             <td align="center" style="font-size:20px"><font color=' .$status_color. '>' .$status. '</font></td>' . '<td align="center">
                             
