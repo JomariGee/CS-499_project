@@ -60,10 +60,10 @@ Need to do:
             <div class="Spacing"></div>
 
             <form class="filter-form">
-                <p class="Filter"><br>Filter:</p>
+                <p class="Filter" style="padding-top:20px">Filter:</p>
 
                 <div class="filter-form-column">
-                    <select id="category" name="category">                      
+                    <select id="category" name="category">                        
                         <option value="0">--Select Category--</option>
                         <option value="1">Account Security</option>
                         <option value="2">Device Security</option>
@@ -219,16 +219,17 @@ Need to do:
             
                                 
                     if($response){
-                        echo '<table align="center"
-                        cellspacing="0" cellpadding="0" style="width:70%">
+                        echo '
+				<table
+                        	cellspacing="0" cellpadding="0">
                         ';
                         
 			echo '
 				<tr>
-					<th bgcolor="#4682B4" style="color:white; font-size:25px" height="70px">Goal</th>
-					<th bgcolor="#4682B4" style="color:white; font-size:25px" height="70px">Last Assessment</th>
-					<th bgcolor="#4682B4" style="color:white; font-size:25px" height="70px">Status</th>
-					<th bgcolor="#4682B4" style="color:white; font-size:25px" height="70px"></th>
+					<th>Goal</th>
+					<th>Last Assessment</th>
+					<th>Status</th>
+					<th></th>
 				</tr>';
 			    
                         while($row = mysqli_fetch_array($response)){
@@ -246,9 +247,11 @@ Need to do:
 							elseif ($status == "Implemented")
 								$status_color="GREEN";
                             
-                            echo '<tr style="height:10px"><td align="center" style="font-size:20px">' .$title. '</a></td>
-                            <td align="center" style="font-size:20px">' .$last. '</td>
-                            <td align="center" style="font-size:20px"><font color=' .$status_color. '>' .$status. '</font></td>' . '<td align="center">
+                            echo '
+							
+				<tr><td>' .$title. '</a></td>
+                            		<td>' .$last. '</td>
+                            		<td><font color=' .$status_color. '>' .$status. '</font></td>' . '<td>
                             
                                 <div class="action-item">
                                     <a href="edit_goal.php?goalID=' . $id . '">
