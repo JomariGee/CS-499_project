@@ -225,10 +225,10 @@ Need to do:
                         
 			echo '
 				<tr>
-					<th bgcolor="#4682B4" style="color:white; font-size:30px" height="75px">Goal</th>
-					<th bgcolor="#4682B4" style="color:white; font-size:30px" height="75px">Last Assessment</th>
-					<th bgcolor="#4682B4" style="color:white; font-size:30px" height="75px">Status</th>
-					<th bgcolor="#4682B4" style="color:white; font-size:30px" height="75px"></th>
+					<th bgcolor="#4682B4" style="color:white; font-size:25px" height="70px">Goal</th>
+					<th bgcolor="#4682B4" style="color:white; font-size:25px" height="70px">Last Assessment</th>
+					<th bgcolor="#4682B4" style="color:white; font-size:25px" height="70px">Status</th>
+					<th bgcolor="#4682B4" style="color:white; font-size:25px" height="70px"></th>
 				</tr>';
 			    
                         while($row = mysqli_fetch_array($response)){
@@ -246,9 +246,9 @@ Need to do:
 							elseif ($status == "Implemented")
 								$status_color="GREEN";
                             
-                            echo '<tr><td align="center" style="font-size:25px">' .$title. '</a></td>
-                            <td align="center" style="font-size:25px">' .$last. '</td>
-                            <td align="center" style="font-size:25px"><font color=' .$status_color. '>' .$status. '</font></td>' . '<td align="center">
+                            echo '<tr><td align="center" style="font-size:20px">' .$title. '</a></td>
+                            <td align="center" style="font-size:20px">' .$last. '</td>
+                            <td align="center" style="font-size:20px"><font color=' .$status_color. '>' .$status. '</font></td>' . '<td align="center">
                             
                                 <div class="action-item">
                                     <a href="edit_goal.php?goalID=' . $id . '">
