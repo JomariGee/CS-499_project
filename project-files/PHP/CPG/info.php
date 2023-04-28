@@ -191,7 +191,13 @@
 							<i class="fas fa-arrow-circle-left"></i>Previous Goal
 						</a>
 					</div>
-
+					
+					<div class="recommended">
+						<a href="assessments.php?goalID=<?php echo $id; ?>">
+							<i class="fas fa-list-ul"></i>Assessments
+						</a>
+					</div>
+					
 					<div class="recommended">
 						<a href="recommended-action.php?goalID=<?php echo $id; ?>">
 							<i class="fas fa-list-ul"></i>Recommended Action
