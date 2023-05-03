@@ -653,7 +653,7 @@
 ***************************************************************/
     /* Navigation Actions*/
         .navigation-actions a{
-            font-size: 21px;
+            font-size: 15px;
             line-height: 100%;
             text-align: center;
             color: black;
@@ -664,8 +664,8 @@
             padding: 10px 20px;
             border-radius: 9px;
             margin-bottom: 10px;
-            margin-right: 100px;
-            margin-left: 70px; 
+            margin-right: 50px; 
+            margin-left: 100px;
             text-align: center;
             margin-top: 10px;
         }
@@ -677,7 +677,10 @@
                 padding-left: 10px;
                 color: #202020;
             }
-        
+	    .next a {
+		font-size:13px;
+    	    }
+
         .recommended {
             display: inline-block;
             background: #9fbbd4;
@@ -737,7 +740,10 @@
                 padding-right: 10px;
                 color: #202020;
             }
-    /* Rectangle Hell */
+	    .previous a {
+		font-size:13px;
+	    }    
+/* Rectangle Hell */
         .Rectangle39 {
             width: 1150px;
             height: 71px;
