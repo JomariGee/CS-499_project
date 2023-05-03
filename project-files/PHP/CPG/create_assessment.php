@@ -92,8 +92,8 @@
 
             <!--- Date Selection -->
             <div class="date-container">
-                <label for="assessment_date">Date:</label>
-                <input class="datepicker" type="date" id="assessment_date" value="<?php echo date('Y-m-d'); ?>" />
+                <p>Date: 
+                <input class="datepicker" type="date" id="assessment_date" name="assessment_date"/></p>
             </div>
 
             <!-- Notes -->
