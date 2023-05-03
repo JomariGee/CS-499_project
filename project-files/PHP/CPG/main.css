@@ -516,11 +516,11 @@
     /** Return button */
         .return-to-info {
             position: absolute;
-			right: 150px;
+			right: 5%;
             background: #8bb8df;
-            padding: 10px 20px;
+            padding: 8px 18px;
             border-radius: 9px;
-            margin-top: 100px;
+            margin-top: 80px;
 
         }
             .return-to-info:hover{
@@ -529,7 +529,7 @@
                 background-color: #6f90ad;
             }
             .return-to-info a{
-                font-size: 21px;
+                font-size: 15px;
                 line-height: 100%;
                 text-align: center;
                 color: black;
@@ -538,18 +538,17 @@
         /** Action box **/
             .Rectangle44-action-recommend {
                 position: absolute;
-                width: 1450px;
+                width: 80%;
                 min-width: 250px; 
-                height: auto;
+                height: 150%;
                 padding: 10px 20px; 
                 left: 50%;
-                top: 35%; 
+                top: 675px; 
                 transform: translate(-50%, -50%);
-                /*background: #D0E9FF;*/
                 border-radius: 9px;
             }
             .Rectangle44-action-recommend p {
-                font-size: 25px;
+                font-size: 18px;
                 line-height: 100%;
                 text-align: left;
                 color: black;
@@ -562,7 +561,15 @@
                 text-align: center;
                 color: black;
             }
-
+            .Rectangle44-action-recommend center {
+                font-size: 18px;
+                line-height: 100%;
+                text-align: center;
+                color: black;
+                letter-spacing: 0.9px;
+                line-height: 1.2;
+            }
+			
         .Rectangle-resources {
             position: absolute;
             width: auto; 
@@ -572,7 +579,6 @@
             left: 50%;
             top: 115%;
             transform: translate(-50%, -50%);
-            /*background: #D0E9FF;*/
             border-radius: 9px;
         }
             .resources-text {
@@ -582,69 +588,9 @@
                 color: black;
             }
             .Rectangle-resources p {
-                font-size: 25px;
+                font-size: 20px;
                 line-height: 150%;
                 text-align: center;
-                color: black;
-            }
-            /*.resource-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 100vh;
-            }*/
-			
-            .Rectangle-it {
-                position: absolute;
-                width: 1450px;
-                min-width: 250px; 
-                height: auto;
-                padding: 10px 20px; 
-                left: 50%;
-                top: 65%; 
-                transform: translate(-50%, -50%);
-                /*background: #D0E9FF;*/
-                border-radius: 9px;
-            }
-            .Rectangle-it p {
-                font-size: 25px;
-                line-height: 100%;
-                text-align: left;
-                color: black;
-                letter-spacing: 0.9px;
-                line-height: 1.2;
-            }
-            .it-text {
-                font-size: 2rem; 
-                line-height: 1.2;
-                text-align: left;
-                color: black;
-            }
-			
-            .Rectangle-ot {
-                position: absolute;
-                width: 1450px;
-                min-width: 250px; 
-                height: auto;
-                padding: 10px 20px; 
-                left: 50%;
-                top: 90%; 
-                transform: translate(-50%, -50%);
-                /*background: #D0E9FF;*/
-                border-radius: 9px;
-            }
-            .Rectangle-ot p {
-                font-size: 25px;
-                line-height: 100%;
-                text-align: left;
-                color: black;
-                letter-spacing: 0.9px;
-                line-height: 1.2;
-            }
-            .it-text {
-                font-size: 1rem; 
-                line-height: 1.2;
-                text-align: left;
                 color: black;
             }
 
