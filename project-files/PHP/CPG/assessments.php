@@ -48,12 +48,6 @@
 
         <br>
 
-        <!-- Parameters -->
-            <div class="ParametersRectangle">
-                <p class=" goal">Date</p>
-                <p class="last-assessment">Status</p>
-                <p class="status">Notes</p>
-            </div>
 
 <?php
     // Get a connection for the database
@@ -92,10 +86,13 @@
 
         
     if($response){
-        echo '<table align="center"
-        cellspacing="0" cellpadding="20">';
-        
-        echo '<tbody>';
+        echo '<table cellspacing="0" cellpadding="0">
+				<tr>
+					<th>Date</th>
+					<th>Status</th>
+					<th>Notes</th>
+				</tr>';
+
         
         while($row = mysqli_fetch_array($response)){
             $status= $row['Stat'];
@@ -114,7 +111,7 @@
             echo '<td>' . $row['Note'] . '</td>';
             echo '</tr>';
         }
-        echo '</tbody></table>';
+        echo '</table>';
 
     } else {
         echo "Couldn't issue database query<br />";
@@ -123,7 +120,7 @@
     // Close connection to the database
     mysqli_close($dbc);
 ?>
-
+	    
 <br>
     <a href="assessment_history.php">
     <button type="submit" input class="submit-button">Return to Assessment History</button>
