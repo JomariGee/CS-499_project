@@ -419,6 +419,29 @@
 	.action-item p {
 		font-size: 15px;
 	}
+
+	table {
+            width: 70%;
+        }
+        td {
+            align-items: center;
+            justify-content: space-between;
+            width: 800.80px;
+            gap: 20px;
+            padding-top: 10px;
+            border-bottom: 3px solid #8f8d8d81;
+            text-align: center;
+            font-size: 18px;
+        }
+	tr {
+		height:70px;
+	}
+	th {
+		background:#4682B4;
+		color:white;
+		font-size:25px;
+		padding:20px;
+	}
 /**************************************************************
                 Assessment  History Page 
 ***************************************************************/
