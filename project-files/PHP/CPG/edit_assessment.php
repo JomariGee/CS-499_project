@@ -8,16 +8,14 @@
     if ($response) {
     $row = mysqli_fetch_assoc($response);
     if (isset($_POST['submit'])) {
-		$notes="";
-		$notes .=$row['notes'];
-		$notes .=$_POST['note'];
+		$notes =$_POST['note'];
 
         // Get the updated values or use existing values if input fields are empty
         $goalID = isset($_POST['goalID']) && $_POST['goalID'] !== '' ? $_POST['goalID'] : $row['goalID'];
 
         
         $status = ($_POST['status']) && $_POST['status'] !== '' ? $_POST['status'] : $row['statusID'];
-		$update_date = ($_POST['update_date']) && $_POST['update_date'] !== '' ? $_POST['update_date'] : $row['update_date'];
+	$update_date = ($_POST['assessment_date']) && $_POST['assessment_date'] !== '' ? $_POST['assessment_date'] : $row['assessment_date'];
         
         // Update the record in the database
         $sql = "UPDATE status_update 
@@ -81,16 +79,16 @@
 			// Connect to the database
 			require_once('mysqli_connect.php');
 			$id = $_GET['assessmentID'];
-			$sql = "SELECT s1.stat_updateID, s1.status_desc, g.goalTitle, g.goalID 
-					FROM goal g 
-					right join 
-						(SELECT su.stat_updateID, s.status_desc, su.goalID 
+			$sql = "SELECT s1.stat_updateID, s1.status_desc, g.goalTitle, g.goalID, s1.update_date, s1.notes 
+				FROM goal g 
+				right join 
+					(SELECT su.stat_updateID, s.status_desc, su.goalID, su.update_date, su.notes 
 						FROM status_update su 
-							join status s 
-							on su.statusID=s.statusID) 
-						as s1 
-					on s1.goalID=g.goalID 
-					where s1.stat_updateID=$id;";
+						join status s 
+					on su.statusID=s.statusID) 
+					as s1 
+				on s1.goalID=g.goalID 
+				where s1.stat_updateID=$id;";
 			$response = mysqli_query($dbc, $sql);
 
 			if ($response) {
@@ -98,6 +96,12 @@
 			$title = $row['goalTitle'];
 			$stat_desc = $row['status_desc'];
 			$goalID = $row['goalID'];
+			$note = $row['notes'];
+			$up_date = $row['update_date'];
+			
+			if(!$note)
+				$note=" ";
+				
 			}else {
                 // Log the error to a file or send it to a logging service
                 error_log(mysqli_error($dbc));
@@ -151,15 +155,15 @@
                 </select>
             </p>
 
-			<div class="date-container">
-                <label for="assessment_date">Date:</label>
-                <input class="datepicker" type="date" id="assessment_date" value="<?php echo date('Y-m-d'); ?>" />
+            <div class="date-container">
+                <p>Date: 
+                <input class="datepicker" type="date" id="assessment_date" name="assessment_date" value="<?php echo $up_date; ?>"/></p>
             </div>
 
             <!-- Notes -->
             <p>Notes:
-                <br><input class="input-field-notes" type="text" name="note" size="30" value="" />
-            <p>
+                <br><input class="input-field-notes" type="text" name="note" size="30" value="<?php echo $note; ?>" />
+            </p>
             
             <br>
 
