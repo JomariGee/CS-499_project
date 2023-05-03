@@ -861,10 +861,9 @@
             min-width: 150px; 
             height: auto; 
             padding: 10px 20px; 
-            left: 34%;
-            top: 240px;
+            left: 36%;
+            top: 35%;
             transform: translate(-50%, -50%);
-            /*background: #D0E9FF;*/
             border-radius: 9px;
         }
         
@@ -876,7 +875,7 @@
             }
 
             .Rectangle46-category-box p {
-                font-size: 2vw;
+                font-size: 23px;
                 line-height: 100%;
                 text-align: center;
                 color: black;
@@ -887,10 +886,9 @@
             min-width: 150px; 
             height: auto; 
             padding: 10px 20px; 
-            left: 71%;
-            top: 240px;
+            left: 60%;
+            top: 35%;
             transform: translate(-50%, -50%);
-            /*background: #D0E9FF;*/
             border-radius: 9px;
         }
             .status-text {
@@ -900,7 +898,7 @@
                 color: black;
             }
             .Rectangle46-status p {
-                font-size: 2vw;
+                font-size: 23px; 
                 line-height: 100%;
                 text-align: center;
                 color: black;
@@ -912,10 +910,9 @@
             min-width: 150px; 
             height: auto; 
             padding: 10px 20px; 
-            left: 25%;
-            top: 450px;
+            left: 50%;
+            top: 400px;
             transform: translate(-50%, -50%);
-            /*background: #D0E9FF;*/
             border-radius: 9px;
         }
         
@@ -926,7 +923,7 @@
                 color: black;
             }
             .Rectangle48-cost p {
-                font-size: 2vw;
+                font-size: 23px;
                 line-height: 100%;
                 text-align: center;
                 color: black;
@@ -938,11 +935,9 @@
             min-width: 150px; 
             height: auto; 
             padding: 10px 20px; 
-            left: 50%;
-            top: 450px;
+            left: 60%;
+            top: 325px;
             transform: translate(-50%, -50%);
-            /*background: #D0E9FF;*/
-            border-radius: 9px;
         }
             .complexity-text {
                 font-size: 1rem; 
@@ -951,7 +946,7 @@
                 color: black;
             }
                 .Rectangle49-complexity p {
-                    font-size: 2vw;
+					font-size: 23px;
                     line-height: 100%;
                     text-align: center;
                     color: black;
@@ -963,11 +958,9 @@
             min-width: 150px; 
             height: auto; 
             padding: 10px 20px; 
-            left: 75%;
-            top: 450px;
+            left: 42%;
+            top: 325px;
             transform: translate(-50%, -50%);
-            /*background: #D0E9FF;*/
-            border-radius: 9px;
         }
             .impact-text {
                 font-size: 1rem; 
@@ -976,7 +969,7 @@
                 color: black;
             }
             .Rectangle50-impact p {
-                font-size: 2vw;
+                font-size: 23px;
                 line-height: 100%;
                 text-align: center;
                 color: black;
@@ -989,9 +982,8 @@
             height: auto; 
             padding: 10px 20px; 
             left: 50%;
-            top: 725px;
+            top: 85%;
             transform: translate(-50%, -50%);
-            /*background: #D0E9FF;*/
             border-radius: 9px;
         }
             .risks-addressed-text {
@@ -1001,7 +993,7 @@
                 color: black;
             }
             .Rectangle51-risks-addressed p {
-                font-size: 2vw;
+                font-size: 23px;
                 line-height: 150%;
                 text-align: center;
                 color: black;
