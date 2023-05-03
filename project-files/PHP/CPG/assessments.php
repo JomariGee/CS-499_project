@@ -34,7 +34,7 @@
                 <div></div>
                 <div></div>
             </div>
-            <p class="title"><?php  echo $title; ?> Assessments</p>
+            <p class="title" style="font-size: 30px"><?php  echo $title; ?> Assessments</p>
         </div>
 
         <!-- Navigation bar -->
