@@ -1,10 +1,3 @@
-<!-- 
-
-Need to do:
-    - import
-
- -->
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -146,7 +139,7 @@ Need to do:
             // Get a connection for the database
             require_once('mysqli_connect.php');
 
-            //band-aid for filter warnings :^( idk how else to fix
+            //band-aid for filter warnings
             error_reporting(E_ERROR | E_PARSE);
 
             $category = isset($_GET['category']) ? intval($_GET['category']) : 0;
